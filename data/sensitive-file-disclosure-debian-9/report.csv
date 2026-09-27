@@ -1,0 +1,38 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.1.33,,8080,tcp,5.0,Medium,70,Mitigation,Sensitive File Disclosure (HTTP),"The script attempts to identify files containing sensitive data
+  at the remote web server.","The following files containing sensitive information were identified:
+
+Description:   Microsoft IIS / ASP.NET Core Module web.config file accessible. This could contain sensitive information about the structure of the application / web server and shouldn't be accessible.
+Match:         <configuration>
+  <system.webServer>
+Used regex:    ^\s*<(configuration|system\.web(Server)?)>
+Extra match 1:   </system.webServer>
+</configuration>
+Used regex:    ^\s*</(configuration|system\.web(Server)?)>
+URL:           http://192.168.1.33:8080/vendor/web.config
+",1.3.6.1.4.1.25623.1.0.107305,CVE-2017-16894,33a72f8f-f8ef-454b-adef-eb0430127d9e,Immediate scan of IP 192.168.1.33,2025-11-14T02:40:47Z,e1a0f873-d1fc-4a68-bfff-ae81e004f180,"Based on the information provided in these files an attacker
+  might be able to gather additional info and/or sensitive data like usernames and passwords.","The sensitive files shouldn't be accessible via a web server.
+  Restrict access to it or remove it completely.",,"Currently the script is checking for files like e.g.:
+
+  - Software (Blog, CMS) configuration or log files
+
+  - Web / application server configuration / password files (.htaccess, .htpasswd, web.config,
+  web.xml, ...)
+
+  - Cloud (e.g. AWS) configuration files
+
+  - Files containing API keys for services / providers
+
+  - Database backup files
+
+  - Editor / history files
+
+  - SSH or SSL/TLS Private Keys
+
+  - CVE-2017-16894: Laravel framework environment/.env files","Enumerate the remote web server and check if sensitive files
+  are accessible.
+Details:
+Sensitive File Disclosure (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.107305)
+Version used: 2025-05-09T15:42:11Z
+",,,,

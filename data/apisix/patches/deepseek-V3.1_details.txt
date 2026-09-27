@@ -1,0 +1,5 @@
+=== PATCH GENERATION DETAILS ===
+Model: deepseek-V3.1
+NVT OID: 1.3.6.1.4.1.25623.1.0.149673
+Vulnerability: CVE-2023-32082
+Time elapsed: 20.6244 seconds
