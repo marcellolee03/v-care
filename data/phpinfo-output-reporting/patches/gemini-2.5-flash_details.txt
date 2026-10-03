@@ -1,0 +1,6 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.11229
+Vulnerability: CVE-2008-0149,CVE-2023-49282,CVE-2023-49283,CVE-2024-10486
+Time elapsed: 16.2417 seconds
+Patch functional?: 

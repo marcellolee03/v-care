@@ -1,0 +1,5 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.141636
+Vulnerability: CVE-2012-6708
+Time elapsed: 29.0433 seconds

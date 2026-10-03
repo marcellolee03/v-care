@@ -1,0 +1,102 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,,,10.0,Critical,80,"Mitigation","Operating System (OS) End of Life (EOL) Detection","The Operating System (OS) on the remote host has reached the end
+  of life (EOL) and should not be used anymore.","The ""Debian GNU/Linux"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:debian:debian_linux:8
+Installed version,
+build or SP:       8
+EOL date:          2020-06-30
+EOL info:          https://en.wikipedia.org/wiki/List_of_Debian_releases#Release_table
+",1.3.6.1.4.1.25623.1.0.103674,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-08T13:56:36Z,2961a7c0-2949-46a8-9c59-9ccc4efb4915,"An EOL version of an OS is not receiving any security updates
+  from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise
+  the security of this host.","Update the OS on the remote host to a version which is still
+  supported and receiving security updates by the vendor.
+
+  Note / Important: Please create an override for this result if the target host is a:
+
+  - Windows system with Extended Security Updates (ESU)
+
+  - System with additional 3rd-party / non-vendor security updates like e.g. from 'TuxCare',
+  'Freexian Extended LTS' or similar","","","Checks if an EOL version of an OS is present on the target
+  host.
+Details:
+Operating System (OS) End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103674)
+Version used: 2025-05-21T05:40:19Z
+","Product: cpe:/o:debian:debian_linux:8
+Method: OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+","","",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,99,"VendorFix","GNU Bash Environment Variable Handling RCE Vulnerability (Shellshock, HTTP, CVE-2014-6271/CVE-2014-6278) - Active Check","GNU Bash is prone to a remote command execution (RCE)
+  vulnerability dubbed 'Shellshock'.","By doing the following HTTP request:
+
+Affected URL             : http://fedora:8080/victim.cgi
+HTTP ""User-Agent"" header : () { OpenVASVT:; }; echo Content-Type: text/plain; echo; echo; PATH=/usr/bin:/usr/local/bin:/bin; export PATH; id;
+HTTP Method              : GET
+
+it was possible to execute the command ""id"".
+
+Result:
+
+uid=33(www-data) gid=33
+",1.3.6.1.4.1.25623.1.0.804489,"CVE-2014-6271,CVE-2014-6278",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-08T13:56:36Z,bbe4aa24-b3a4-46d0-9089-2075ed446b7a,"Successful exploitation will allow remote or local attackers to
+  inject shell commands, allowing local privilege escalation or remote command execution depending
+  on the application vector.","Update to patch version bash43-025 of Bash 4.3 or later.","GNU Bash versions 1.0.3 through 4.3.","GNU bash contains a flaw that is triggered when evaluating
+  environment variables passed from another environment. After processing a function definition,
+  bash continues to process trailing strings.","Sends multiple crafted HTTP GET and POST requests and checks
+  the response.
+
+  Note: This VT is using a default list of known affected files. To broaden the coverage of checked
+  files it is possible to set the 'Enable generic web application scanning' setting within the VT
+  'Global variable settings' (OID: 1.3.6.1.4.1.25623.1.0.12288) to 'yes'.
+Details:
+GNU Bash Environment Variable Handling RCE Vulnerability (Shellshock, HTTP, ...
+(OID: 1.3.6.1.4.1.25623.1.0.804489)
+Version used: 2024-10-09T05:05:35Z
+","","","DFN-CERT-2017-1785,DFN-CERT-2016-1928,DFN-CERT-2014-1307,DFN-CERT-2014-1261,DFN-CERT-2014-1258,CB-K17/1709,CB-K16/1819,CB-K14/1313,CB-K14/1245,CB-K14/1199,CB-K14/1196",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 143613993
+Packet 2: 3157310947
+",1.3.6.1.4.1.25623.1.0.80091,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-08T13:56:36Z,30d95d74-2421-4291-854b-1d52a4781591,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-08T13:56:36Z,104dc51f-cebd-4745-924b-e4c0f5a0aa8c,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""
