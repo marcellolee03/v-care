@@ -8,13 +8,10 @@ ID=debian
 HOME_URL="https://www.debian.org/"
 SUPPORT_URL="https://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
--e 
 **USER INFO**
 uid=50000(airflow) gid=50000(airflow) groups=50000(airflow)
--e 
 **PACKAGE MANAGER**
 /usr/bin/apt-get
--e 
 **TOOLS**
 /usr/bin/curl
 /bin/sed

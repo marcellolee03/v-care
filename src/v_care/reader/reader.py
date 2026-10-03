@@ -42,11 +42,12 @@ def _folders(root: Path, names: list[str] | None) -> list[Path]:
 def _read_folder(folder: Path) -> dict[str, Any]:
     patches = _read_patches(folder / "patches")
     details = patches[0]["details"] if patches else None
+    report = _read_report(folder / "report.csv")
     return {
         "name": folder.name,
-        "nvt_oid": _nvt_oid(details),
+        "nvt_oid": _nvt_oid(details) or _report_oid(report),
         "environment_info": _read_text(folder / "environment_info.txt"),
-        "report": _read_report(folder / "report.csv"),
+        "report": report,
         "patches": patches,
     }
 
@@ -81,6 +82,13 @@ def _read_report(path: Path) -> list[dict[str, str | None]] | None:
         return None
     with path.open("r", encoding="utf-8-sig", newline="") as file:
         return list(csv.DictReader(file))
+
+
+def _report_oid(report: list[dict[str, str | None]] | None) -> str | None:
+    if not report:
+        return None
+    oid = report[0].get("NVT OID")
+    return oid.strip() if oid else None
 
 
 def _read_text(path: Path) -> str | None:

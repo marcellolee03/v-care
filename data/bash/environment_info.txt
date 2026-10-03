@@ -7,13 +7,10 @@ ID=debian
 HOME_URL="http://www.debian.org/"
 SUPPORT_URL="http://www.debian.org/support"
 BUG_REPORT_URL="https://bugs.debian.org/"
--e 
 **USER INFO**
 uid=0(root) gid=0(root) groups=0(root)
--e 
 **PACKAGE MANAGER**
 /usr/bin/apt-get
--e 
 **TOOLS**
 /bin/sed
 /usr/bin/awk
