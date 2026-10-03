@@ -1,0 +1,14 @@
+﻿"IP","Hostname","Port","Port Protocol","CVSS","Severity","QoD","Solution Type","NVT Name","Summary","Specific Result","NVT OID","CVEs","Task ID","Task Name","Timestamp","Result ID","Impact","Solution","Affected Software/OS","Vulnerability Insight","Vulnerability Detection Method","Product Detection Result","BIDs","CERTs","Other References"
+"192.168.1.20","","8500","tcp","4.3","Medium","80","VendorFix","Adobe ColdFusion Help Page Cross Site Scripting Vulnerability","Adobe ColdFusion is prone to a cross site scripting vulnerability.","Installed version: 8.0.1.195765
+Fixed version:     Upgrade to ColdFusion 9 or later
+Installation
+path / port:       /
+
+","1.3.6.1.4.1.25623.1.0.812286","CVE-2014-5315","59af7b91-5e88-4d40-83bc-506258398d99","Immediate scan of IP 192.168.1.20","2026-10-03T15:09:02Z","b728f3c6-9685-4237-8da5-fafb277af95d","Successful exploitation will allow remote
+  attackers to inject arbitrary web script or HTML via unspecified vectors.","Upgrade to ColdFusion 9 or later.","ColdFusion 8.0.1 and earlier.","The flaw is due to an input validation
+  error in Help page.","Checks if a vulnerable version is present on the target host.
+Details:
+Adobe ColdFusion Help Page Cross Site Scripting Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.812286)
+Version used: 2025-01-15T05:38:11Z
+","","","",""
