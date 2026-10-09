@@ -1,0 +1,6 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.107305
+Vulnerability: CVE-2017-16894
+Time elapsed: 95.1888 seconds
+Patch functional?: 

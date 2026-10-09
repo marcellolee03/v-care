@@ -1,0 +1,6 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.108253
+Vulnerability: Apache ActiveMQ Web Console Default / No Credentials (HTTP)
+Time elapsed: 36.6078 seconds
+Patch functional?: 

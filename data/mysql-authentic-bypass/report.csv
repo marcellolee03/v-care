@@ -1,0 +1,18 @@
+﻿"IP","Hostname","Port","Port Protocol","CVSS","Severity","QoD","Solution Type","NVT Name","Summary","Specific Result","NVT OID","CVEs","Task ID","Task Name","Timestamp","Result ID","Impact","Solution","Affected Software/OS","Vulnerability Insight","Vulnerability Detection Method","Product Detection Result","BIDs","CERTs","Other References"
+"192.168.1.20","","3306","tcp","5.1","Medium","95","VendorFix","MySQL / MariaDB Authentication Bypass (Apr 2012) - Active Check","MySQL / MariaDB is prone to an authentication bypass.","It was possible to bypass authentication and login as the user 'root'.
+","1.3.6.1.4.1.25623.1.0.103492","CVE-2012-2122","59af7b91-5e88-4d40-83bc-506258398d99","Immediate scan of IP 192.168.1.20","2026-10-03T15:09:02Z","60508a48-9f0e-454a-9535-71ac4e3dfee4","Successful exploitation will yield unauthorized access to the
+  database.","Update to:
+
+  - MariaDB version 5.1.62, 5.2.12, 5.3.6, 5.5.23 or later
+
+  - MySQL version 5.1.63, 5.5.24, 5.6.6 or later","All MariaDB and MySQL versions up to 5.1.61, 5.2.11, 5.3.5,
+  5.5.23 are vulnerable.","","Sends various crafted TCP requests and checks the
+  responses.
+Details:
+MySQL / MariaDB Authentication Bypass (Apr 2012) - Active Check
+(OID: 1.3.6.1.4.1.25623.1.0.103492)
+Version used: 2025-09-09T05:38:49Z
+","Product: cpe:/a:mysql:mysql:5.5.23
+Method: MariaDB / Oracle MySQL Detection (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.100152)
+","","DFN-CERT-2013-0106,DFN-CERT-2012-1563,DFN-CERT-2012-1335,DFN-CERT-2012-1256,DFN-CERT-2012-1170,DFN-CERT-2012-1163",""

