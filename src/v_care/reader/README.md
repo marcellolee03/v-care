@@ -57,19 +57,36 @@ Each line is a complete, independent JSON object:
 {
   "name": "activemq",
   "nvt_oid": "1.3.6.1.4.1.25623.1.0.108253",
-  "environment_info": "...",
-  "report": [{"NVT OID": "..."}],
+  "environment_info": {
+    "os_info": {"pretty_name": "Debian GNU/Linux 9 (stretch)"},
+    "user_info": {"uid": 0, "username": "root"},
+    "package_manager": "/usr/bin/apt-get",
+    "tools": ["/usr/bin/curl", "/bin/sed"]
+  },
+  "report": {"NVT OID": "..."},
   "patches": [
     {
       "model": "deepseek-V3.1",
       "patch": "...",
-      "details": "..."
+      "details": {
+        "nvt_oid": "...",
+        "vulnerability": "...",
+        "time_elapsed_seconds": 15.6407,
+        "functional": null
+      }
     }
   ]
 }
 ```
 
-`report` is `null` when the directory does not yet contain `report.csv`.
+`report` contains only the CSV row whose `NVT OID` matches the vulnerability.
+The reader raises an error instead of silently selecting a row when the match
+is missing or ambiguous. `report` is `null` when the directory does not contain
+`report.csv`.
+
+Environment and patch details are converted to structured values. Unknown
+fields or sections are preserved in `extra`, `extra_sections`, or
+`unparsed_lines` rather than being discarded.
 
 ## Python usage
 

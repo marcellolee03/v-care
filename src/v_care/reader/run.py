@@ -27,7 +27,7 @@ def main() -> None:
 
     try:
         records = load_vulnerabilities(args.names)
-    except FileNotFoundError as error:
+    except (FileNotFoundError, ValueError) as error:
         parser.error(str(error))
 
     lines = [json.dumps(record, ensure_ascii=False) for record in records]
