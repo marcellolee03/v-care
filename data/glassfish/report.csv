@@ -1,0 +1,161 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,4848,tcp,7.5,High,99,"WillNotFix","Oracle GlassFish Server <= 4.1.1 Directory Traversal Vulnerability - Active Check","GlassFish server is prone to a directory traversal
+  vulnerability.","Vulnerable URL: https://fedora:4848/theme/META-INF/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/%c0%ae%c0%ae/etc/passwd
+",1.3.6.1.4.1.25623.1.0.806848,"CVE-2017-1000028",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,28539c90-0ff4-4b12-af64-d8d4314c5406,"Successful exploitation will allow remote attackers to gain
+  access to sensitive information.","No known solution was made available for at least one year
+  since the disclosure of this vulnerability. Likely none will be provided anymore. General
+  solution options are to upgrade to a newer release, disable respective features, remove the
+  product or replace the product by another one.","Oracle GlassFish Server version 4.1.1 and probably prior.","The flaw is due to
+
+  - Improper sanitization of parameter 'META-INF' in 'theme.php' file.","Sends a crafted HTTP GET request and checks the response.
+Details:
+Oracle GlassFish Server <= 4.1.1 Directory Traversal Vulnerability - Active ...
+(OID: 1.3.6.1.4.1.25623.1.0.806848)
+Version used: 2025-04-15T05:54:49Z
+","","","",""
+192.168.20.58,fedora,4848,tcp,5.0,Medium,99,"Mitigation","SSL/TLS: Certificate Expired","The remote server's SSL/TLS certificate has already expired.","The certificate of the remote service expired on 2024-08-18 13:30:10.
+
+Certificate details:
+fingerprint (SHA-1)             | 1FF8EFF1B17DC744191E213A31029AA75982A63C
+fingerprint (SHA-256)           | 08DEFEE67D8B168E29B80A97E5233C8BE32B316ED389AACE05BE31DAA702036B
+issued by                       | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+public key algorithm            | RSA
+public key size (bits)          | 2048
+serial                          | 31EB8D9F
+signature algorithm             | sha256WithRSAEncryption
+subject                         | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+subject alternative names (SAN) | None
+valid from                      | 2014-08-21 13:30:10 UTC
+valid until                     | 2024-08-18 13:30:10 UTC
+",1.3.6.1.4.1.25623.1.0.103955,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,c11d763b-b3ea-44e9-99a8-375de9047c66,"","Replace the SSL/TLS certificate by a new one.","","This script checks expiry dates of certificates associated with
+  SSL/TLS-enabled services on the target and reports whether any have already expired.","
+Details:
+SSL/TLS: Certificate Expired
+(OID: 1.3.6.1.4.1.25623.1.0.103955)
+Version used: 2026-03-13T05:54:58Z
+","Product: cpe:/a:ietf:transport_layer_security
+Method: SSL/TLS: Collect and Report Certificate Details
+(OID: 1.3.6.1.4.1.25623.1.0.103692)
+","","",""
+192.168.20.58,fedora,4848,tcp,5.0,Medium,99,"Mitigation","SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection","The service is using an SSL/TLS certificate from a known
+  untrusted and/or dangerous certificate authority (CA).","The certificate of the remote service is signed by the following untrusted and/or dangerous CA:
+
+Issuer: CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+
+Certificate details:
+fingerprint (SHA-1)             | 1FF8EFF1B17DC744191E213A31029AA75982A63C
+fingerprint (SHA-256)           | 08DEFEE67D8B168E29B80A97E5233C8BE32B316ED389AACE05BE31DAA702036B
+issued by                       | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+public key algorithm            | RSA
+public key size (bits)          | 2048
+serial                          | 31EB8D9F
+signature algorithm             | sha256WithRSAEncryption
+subject                         | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+subject alternative names (SAN) | None
+valid from                      | 2014-08-21 13:30:10 UTC
+valid until                     | 2024-08-18 13:30:10 UTC
+",1.3.6.1.4.1.25623.1.0.113054,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,79334012-45c7-45dd-b35a-84d4ed2e3bc3,"An attacker could use this for man-in-the-middle (MITM) attacks,
+  accessing sensible data and other attacks.","Replace the SSL/TLS certificate with one signed by a trusted
+  CA.","","","The script reads the certificate used by the target host and
+  checks if it was signed by a known untrusted and/or dangerous CA.
+Details:
+SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.113054)
+Version used: 2024-06-14T05:05:48Z
+","Product: cpe:/a:ietf:transport_layer_security
+Method: SSL/TLS: Collect and Report Certificate Details
+(OID: 1.3.6.1.4.1.25623.1.0.103692)
+","","",""
+192.168.20.58,fedora,4848,tcp,5.0,Medium,70,"VendorFix","SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)","The remote SSL/TLS service is prone to a denial of service (DoS)
+  vulnerability.","The following indicates that the remote SSL/TLS service is affected:
+
+Protocol Version | Successful re-done SSL/TLS handshakes (Renegotiation) over an existing / already established SSL/TLS connection
+----------------------------------------------------------------------------------------------------------------------------------
+TLSv1.2          | 10
+",1.3.6.1.4.1.25623.1.0.117761,"CVE-2011-1473,CVE-2011-5094",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,bf634cda-8f39-484c-9d40-bf67fd49c03a,"The flaw might make it easier for remote attackers to cause a
+  DoS (CPU consumption) by performing many renegotiations within a single connection.","Users should contact their vendors for specific patch
+  information.
+
+  A general solution is to remove/disable renegotiation capabilities altogether from/in the affected
+  SSL/TLS service.","Every SSL/TLS service which does not properly restrict
+  client-initiated renegotiation.","The flaw exists because the remote SSL/TLS service does not
+  properly restrict client-initiated renegotiation within the SSL and TLS protocols.
+
+  Note: The referenced CVEs are affecting OpenSSL and Mozilla Network Security Services (NSS) but
+  both are in a DISPUTED state with the following rationale:
+
+  > It can also be argued that it is the responsibility of server deployments, not a security
+  library, to prevent or limit renegotiation when it is inappropriate within a specific environment.
+
+  Both CVEs are still kept in this VT as a reference to the origin of this flaw.","Checks if the remote service allows to re-do the same SSL/TLS
+  handshake (Renegotiation) over an existing / already established SSL/TLS connection.
+Details:
+SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)
+(OID: 1.3.6.1.4.1.25623.1.0.117761)
+Version used: 2026-03-13T05:54:58Z
+","","","DFN-CERT-2025-0933,DFN-CERT-2017-1013,DFN-CERT-2017-1012,DFN-CERT-2014-0809,DFN-CERT-2013-1928,DFN-CERT-2012-1112,WID-SEC-2026-0180,WID-SEC-2024-1591,WID-SEC-2024-0796,WID-SEC-2023-1435,CB-K17/0980,CB-K17/0979,CB-K14/0772,CB-K13/0915,CB-K13/0462",""
+192.168.20.58,fedora,4848,tcp,4.0,Medium,80,"Workaround","SSL/TLS: Diffie-Hellman Key Exchange Insufficient DH Group Strength Vulnerability","The SSL/TLS service uses Diffie-Hellman groups with insufficient
+  strength (key size < 2048).","Server Temporary Key Size: 1024 bits
+
+",1.3.6.1.4.1.25623.1.0.106223,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,4385258f-df25-42e1-8556-59f92533333c,"An attacker might be able to decrypt the SSL/TLS communication
+  offline.","'- Deploy (Ephemeral) Elliptic-Curve Diffie-Hellman (ECDHE) or use
+  a 2048-bit or stronger Diffie-Hellman group. Please see the references for more resources
+  supporting you with this task.
+
+  - For Apache Web Servers: Beginning with version 2.4.7, mod_ssl will use DH parameters which
+  include primes with lengths of more than 1024 bits.","All services providing an encrypted communication using
+  Diffie-Hellman groups with insufficient strength.","The Diffie-Hellman group are some big numbers that are used as
+  base for the DH computations. They can be, and often are, fixed. The security of the final secret
+  depends on the size of these parameters. It was found that 512 and 768 bits to be weak, 1024 bits
+  to be breakable by really powerful attackers like governments.","Checks the DHE temporary public key size.
+Details:
+SSL/TLS: Diffie-Hellman Key Exchange Insufficient DH Group Strength Vulnerab...
+(OID: 1.3.6.1.4.1.25623.1.0.106223)
+Version used: 2026-06-03T07:18:10Z
+","","","",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 3543207198
+Packet 2: 3947530227
+",1.3.6.1.4.1.25623.1.0.80091,"",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,3543c202-12ff-4af6-910d-9c386b0a4b7c,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",6fc2b4db-1156-42c6-a29d-01c28a705bc1,"self-scan",2026-07-30T15:14:38Z,6ddf2e05-f932-498e-8117-4bde74c25cd6,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""

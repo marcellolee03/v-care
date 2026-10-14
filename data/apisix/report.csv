@@ -1,0 +1,58 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,2379,tcp,4.3,Medium,80,"VendorFix","etcd < 3.4.26, 3.5.x < 3.5.9 Information Disclosure Vulnerability (GHSA-3p4g-rcw5-8298)","etcd is prone to an information disclosure vulnerability.","Installed version: 3.4.15
+Fixed version:     3.4.26
+
+",1.3.6.1.4.1.25623.1.0.149673,"CVE-2023-32082",e966c840-9e4c-47a4-b8e0-d491fca2e4b3,"self-scan",2026-07-08T13:19:57Z,e41d13a8-a012-4b0e-bcd8-ba9784394240,"","Update to version 3.4.26, 3.5.9 or later.","etcd prior to version 3.4.26 and version 3.5.x through 3.5.8.","LeaseTimeToLive API allows access to key names (not value)
+  associated to a lease when Keys parameter is true, even a user doesn't have read permission to
+  the keys. The impact is limited to a cluster which enables auth (RBAC).","Checks if a vulnerable version is present on the target host.
+Details:
+etcd < 3.4.26, 3.5.x < 3.5.9 Information Disclosure Vulnerability (GHSA-3p4g...
+(OID: 1.3.6.1.4.1.25623.1.0.149673)
+Version used: 2023-10-12T05:05:32Z
+","","","DFN-CERT-2023-1298,WID-SEC-2023-1373",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 510641436
+Packet 2: 3583414951
+",1.3.6.1.4.1.25623.1.0.80091,"",e966c840-9e4c-47a4-b8e0-d491fca2e4b3,"self-scan",2026-07-08T13:19:57Z,9e218eb7-b557-4fe9-9628-0b47f91effc2,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",e966c840-9e4c-47a4-b8e0-d491fca2e4b3,"self-scan",2026-07-08T13:19:57Z,04a69678-32b0-4399-8633-7f6969e5246b,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""

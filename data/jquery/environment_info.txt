@@ -1,0 +1,18 @@
+**OS INFO**
+PRETTY_NAME="Debian GNU/Linux 8 (jessie)"
+NAME="Debian GNU/Linux"
+VERSION_ID="8"
+VERSION="8 (jessie)"
+ID=debian
+HOME_URL="http://www.debian.org/"
+SUPPORT_URL="http://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+**USER INFO**
+uid=0(root) gid=0(root) groups=0(root)
+**PACKAGE MANAGER**
+/usr/bin/apt-get
+**TOOLS**
+/usr/bin/curl
+/usr/bin/wget
+/bin/sed
+/usr/bin/awk

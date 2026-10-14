@@ -1,0 +1,19 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.1.33,,8080,tcp,9.8,High,70,VendorFix,Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Marshalled Object Remote Code Execution - Active Check,"Apache Tomcat/JBoss Application Server is prone to multiple
+  remote code execution (RCE) vulnerabilities.","The following Servlets are accessible without authentication which indicates that a RCE attack can be executed:
+
+http://192.168.1.33:8080/invoker/EJBInvokerServlet
+http://192.168.1.33:8080/invoker/JMXInvokerServlet
+",1.3.6.1.4.1.25623.1.0.103811,"CVE-2012-0874,CVE-2013-4810",c1376413-de2d-4a67-8e6e-02ae272cf773,Immediate scan of IP 192.168.1.33,2025-11-06T23:58:08Z,5e6e93ab-6c5e-4f98-a4bf-67801f5b0c9a,"Successfully exploiting these issues may allow an attacker to
+  execute arbitrary code within the context of the affected application. Failed exploit attempts
+  may result in a denial of service condition.","Ask the Vendor for an update and enable authentication for the
+  mentioned servlets.","Apache Tomcat/JBoss Application Server providing access to the
+  EJBInvokerServlet and/or JMXInvokerServlet without prior authentication.","The specific flaw exists within the exposed EJBInvokerServlet
+  and JMXInvokerServlet. An unauthenticated attacker can post a marshalled object allowing them to
+  install an arbitrary application on the target server.","Determines if the EJBInvokerServlet and/or JMXInvokerServlet
+  is accessible without authentication.
+Details:
+Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Ma...
+(OID: 1.3.6.1.4.1.25623.1.0.103811)
+Version used: 2024-08-09T15:39:05Z
+",,,"DFN-CERT-2013-1954,CB-K13/0935",

@@ -1,0 +1,136 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,5601,tcp,10.0,Critical,80,"VendorFix","Elastic Kibana End of Life (EOL) Detection","The Elastic Kibana version on the remote host has reached
+  the End of Life (EOL) and should not be used anymore.","The ""Elastic Kibana"" version on the remote host has reached the end of life.
+
+CPE:               cpe:/a:elastic:kibana:6.5.4
+Installed version: 6.5.4
+EOL version:       6.5
+EOL date:          2020-05-14
+",1.3.6.1.4.1.25623.1.0.113130,"",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,9847dd50-e6a7-481e-baae-51e35d3431f6,"An EOL version of Elastic Kibana is not receiving any security
+  updates from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to
+  compromise the security of this host.","Update Elastic Kibana to a version that still receives technical support and updates.","","","Checks if an EOL version is present on the target host.
+Details:
+Elastic Kibana End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.113130)
+Version used: 2025-09-03T14:11:39Z
+","","","",""
+192.168.20.58,fedora,5601,tcp,10.0,Critical,100,"VendorFix","Elastic Kibana < 5.6.15, 6.x.x < 6.6.1 RCE Vulnerability - Active Check","Kibana contains an arbitrary code execution flaw in the Timelion
+  visualizer.","It was possible to execute the ""id"" command.
+
+Result:
+
+uid=1000(kibana) gid=1000(kibana) groups=1000(kibana)
+
+",1.3.6.1.4.1.25623.1.0.143092,"CVE-2019-7609",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,5483a27f-8917-43b6-88cb-fa6019b0970b,"","Update to version 5.6.15, 6.6.1 or later.","Kibana versions before 5.6.15 and 6.0.0 before 6.6.1.","An attacker with access to the Timelion application could send a
+  request that will attempt to execute javascript code. This could possibly lead to an attacker
+  executing arbitrary commands with permissions of the Kibana process on the host system.
+
+  On May 07, 2021 the NCSC, CISA, FBI and NSA publish advice on detection and mitigation of SVR
+  activity following the attribution of the SolarWinds compromise. This VT is covering one or more
+  vulnerabilities mentioned in that report.","Sends multiple crafted HTTP requests and checks the response.
+Details:
+Elastic Kibana < 5.6.15, 6.x.x < 6.6.1 RCE Vulnerability - Active Check
+(OID: 1.3.6.1.4.1.25623.1.0.143092)
+Version used: 2025-09-03T14:11:39Z
+","","","DFN-CERT-2019-2127,DFN-CERT-2019-2033",""
+192.168.20.58,fedora,5601,tcp,9.8,Critical,80,"VendorFix","Elastic Kibana Node.js Security Vulnerabilities (ESA-2021-24)","Elastic Kibana is prone to multiple vulnerabilities in Node.js.","Installed version: 6.5.4
+Fixed version:     7.14.1
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.117776,"CVE-2021-22940,CVE-2021-3672,CVE-2021-22931,CVE-2021-22939",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,ffb7b980-04be-4b6a-b79d-9803117187af,"","Update to version 7.14.1 or later.","Elastic Kibana version 7.14.0 and prior.","Node.js version 14.17.3 is affected by several security
+  vulnerabilities: CVE-2021-22940, CVE-2021-3672, CVE-2021-22931, and CVE-2021-22939. We do not
+  believe an attacker can exploit these against Kibana, but we are upgrading Node.js out of an
+  abundance of caution. Kibana 7.14.1 upgrades Node.js to version 14.17.5 to resolve these issues.","Checks if a vulnerable version is present on the target host.
+Details:
+Elastic Kibana Node.js Security Vulnerabilities (ESA-2021-24)
+(OID: 1.3.6.1.4.1.25623.1.0.117776)
+Version used: 2025-09-03T14:11:39Z
+","","","DFN-CERT-2022-2203,DFN-CERT-2022-1852,DFN-CERT-2022-1616,DFN-CERT-2022-0112,DFN-CERT-2021-2580,DFN-CERT-2021-2194,DFN-CERT-2021-2188,DFN-CERT-2021-1988,DFN-CERT-2021-1930,DFN-CERT-2021-1826,DFN-CERT-2021-1800,DFN-CERT-2021-1756,DFN-CERT-2021-1730,DFN-CERT-2021-1728,DFN-CERT-2021-1693,WID-SEC-2023-1614,WID-SEC-2023-0856,WID-SEC-2022-1308,WID-SEC-2022-1083,WID-SEC-2022-0760,WID-SEC-2022-0094,WID-SEC-2022-0029,CB-K22/0077,CB-K21/1268,CB-K21/1087,CB-K21/0866",""
+192.168.20.58,fedora,5601,tcp,6.5,Medium,80,"VendorFix","Elastic Kibana DoS Vulnerability (ESA-2021-10)","Kibana is prone to a denial of service (DoS) vulnerability.","Installed version: 6.5.4
+Fixed version:     7.12.1
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145942,"CVE-2021-22139",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,27d4a521-d419-4b2f-910b-67e206387c6e,"","Update to version 7.12.1 or later.","Kibana version 7.12.0 and prior.","A DoS vulnerability was found in the Kibana webhook actions due
+  to a lack of timeout or a limit on the request size. An attacker with permissions to create
+  webhook actions could drain the Kibana host connection pool, making Kibana unavailable for all
+  other users.","Checks if a vulnerable version is present on the target host.
+Details:
+Elastic Kibana DoS Vulnerability (ESA-2021-10)
+(OID: 1.3.6.1.4.1.25623.1.0.145942)
+Version used: 2025-09-03T14:11:39Z
+","","","",""
+192.168.20.58,fedora,5601,tcp,6.1,Medium,80,"VendorFix","Elastic Kibana URL Redirection Vulnerability (ESA-2021-12)","Elastic Kibana is prone to an URL redirection vulnerability.","Installed version: 6.5.4
+Fixed version:     6.8.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.148934,"CVE-2021-22141",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,8b2b0b70-e74c-464b-a6ce-ab59e4f74221,"If a logged in user visits a maliciously crafted URL, it could
+  result in Kibana redirecting the user to an arbitrary website.","Update to version 6.8.16, 7.13.0 or later.","Elastic Kibana prior to version 6.8.16 and version 7.x pior to
+  7.13.0.","","Checks if a vulnerable version is present on the target host.
+Details:
+Elastic Kibana URL Redirection Vulnerability (ESA-2021-12)
+(OID: 1.3.6.1.4.1.25623.1.0.148934)
+Version used: 2025-09-03T14:11:39Z
+","","","DFN-CERT-2022-1093,DFN-CERT-2021-2454",""
+192.168.20.58,fedora,5601,tcp,3.5,Low,80,"VendorFix","Elastic Kibana Timeout Bypass Vulnerability (ESA-2021-07)","Kibana is prone to a timeout bypass vulnerability.","Installed version: 6.5.4
+Fixed version:     6.8.15
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145941,"CVE-2021-22136",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,8a5ef2ee-77a1-455a-8d01-e58ffb7356cb,"","Update to version 6.8.15, 7.12.0 or later.","Kibana versions prior to 6.8.15 and 7.12.0.","A flaw in Kibana's session timeout was discovered where the
+  xpack.security.session.idleTimeout setting is not being respected. This was caused by background
+  polling activities unintentionally extending authenticated users sessions, preventing a user
+  session from timing out.","Checks if a vulnerable version is present on the target host.
+Details:
+Elastic Kibana Timeout Bypass Vulnerability (ESA-2021-07)
+(OID: 1.3.6.1.4.1.25623.1.0.145941)
+Version used: 2025-09-03T14:11:39Z
+","","","WID-SEC-2022-0720",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 654480742
+Packet 2: 3966162759
+",1.3.6.1.4.1.25623.1.0.80091,"",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,2af62a5d-2f34-481d-ad9c-79f12510dbba,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-10T13:45:18Z,7e7663ef-7625-4fd3-9d50-0bf2f9be0bee,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""

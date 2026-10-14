@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+      192.168.1.33,,512,tcp,10.0,High,80,Mitigation,The rexec service is running,This remote host is running a rexec service.,"The rexec service was detected on the target system.
+",1.3.6.1.4.1.25623.1.0.100111,CVE-1999-0618,9fa2d2f9-20d9-4c3d-acf6-0d7a2c7f398b,Immediate scan of IP 192.168.1.33,2025-11-06T00:36:22Z,13b4f232-c748-44da-aa68-bcaab668e1c6,,"Disable the rexec service and use alternatives like SSH
+  instead.",,"rexec (remote execution client for an exec server) has the same
+  kind of functionality that rsh has: you can execute shell commands on a remote computer.
+
+  The main difference is that rexec authenticate by reading the username and password *unencrypted*
+  from the socket.","Checks whether an rexec service is exposed on the target
+  host.
+Details:
+The rexec service is running
+(OID: 1.3.6.1.4.1.25623.1.0.100111)
+Version used: 2023-09-12T05:05:19Z
+",,,,

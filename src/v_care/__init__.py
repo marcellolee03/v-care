@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from v-care!")
+from .reader import load_vulnerabilities
+
+__all__ = ["load_vulnerabilities"]

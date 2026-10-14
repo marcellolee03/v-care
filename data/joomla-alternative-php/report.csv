@@ -1,0 +1,1151 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,,,10.0,Critical,80,"Mitigation","Operating System (OS) End of Life (EOL) Detection","The Operating System (OS) on the remote host has reached the end
+  of life (EOL) and should not be used anymore.","The ""Debian GNU/Linux"" Operating System on the remote host has reached the end of life.
+
+CPE:               cpe:/o:debian:debian_linux:8
+Installed version,
+build or SP:       8
+EOL date:          2020-06-30
+EOL info:          https://en.wikipedia.org/wiki/List_of_Debian_releases#Release_table
+",1.3.6.1.4.1.25623.1.0.103674,"",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,ba14a739-1d53-4bcb-88e5-eff460d0a03d,"An EOL version of an OS is not receiving any security updates
+  from the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise
+  the security of this host.","Update the OS on the remote host to a version which is still
+  supported and receiving security updates by the vendor.
+
+  Note / Important: Please create an override for this result if the target host is a:
+
+  - Windows system with Extended Security Updates (ESU)
+
+  - System with additional 3rd-party / non-vendor security updates like e.g. from 'TuxCare',
+  'Freexian Extended LTS' or similar","","","Checks if an EOL version of an OS is present on the target
+  host.
+Details:
+Operating System (OS) End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.103674)
+Version used: 2025-05-21T05:40:19Z
+","Product: cpe:/o:debian:debian_linux:8
+Method: OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+","","",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! 2.5.0 - 3.9.13 SQLi Vulnerability","Joomla! is prone to an SQL injection (SQLi) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.14
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143289,"CVE-2019-19846",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,6ef064b4-7ff7-4231-898f-b39ca0b0c6c2,"","Update to version 3.9.14.","Joomla! versions 2.5.0 - 3.9.13.","The lack of validation of configuration parameters used in SQL queries caused
+  various SQL injection vectors.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.13 SQLi Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.143289)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-2668,CB-K19/1094",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! 3.0.0 - 3.9.22 SQLi Vulnerability","Joomla! is prone to an SQL injection (SQLi) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.23
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145122,"CVE-2020-35613",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,e6ca9c1c-39e6-4c96-ba55-c63e2c878743,"","Update to version 3.9.23 or later.","Joomla! versions 3.0.0 - 3.9.22.","Improper filter blacklist configuration leads to a SQL injection
+  vulnerability in the backend user list.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.22 SQLi Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.145122)
+Version used: 2026-04-30T06:27:06Z
+","","","CB-K20/1256",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla < 3.8.12 Multiple Vulnerabilities","Joomla is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.8.12
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.112371,"CVE-2018-15880,CVE-2018-15882",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,10270f72-fb3d-4f46-94cd-4cce35b388ab,"","Update to version 3.8.12 or later.","Joomla CMS versions 1.5.0 through 3.8.11.","The following vulnerabilities exist:
+
+  - Inadequate output filtering on the user profile page could lead to a stored XSS attack. (CVE-2018-15880)
+
+  - Inadequate checks in the InputFilter class could allow specifically prepared PHAR files to pass the upload filter. (CVE-2018-15882)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla < 3.8.12 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.112371)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-1744",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla < 3.9.5 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.5
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.113369,"CVE-2019-10945,CVE-2019-10946,CVE-2019-11358",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,30bd4b56-e9b9-40ed-8ae1-1404b82e46a0,"Successful exploitation would allow an attacker to access sensitive information
+  or execute arbitrary commands.","Update to version 3.9.5.","Joomla! through version 3.9.4.","The following vulnerabilities exist:
+
+  - The Media Manager component does not properly sanitize the folder parameter,
+    allowing attackers to act outside the media manager root directory
+
+  - The 'refresh list of helpsites' endpoint of com_users lacks access checks,
+    allowing calls from unauthenticated users
+
+  - The $.extend method of JQuery is vulnerable to Object.prototype pollution attacks (CVE-2019-11358)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla < 3.9.5 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.113369)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2025-1803,DFN-CERT-2024-1997,DFN-CERT-2023-2027,DFN-CERT-2023-1197,DFN-CERT-2023-0481,DFN-CERT-2023-0245,DFN-CERT-2022-2467,DFN-CERT-2021-1536,DFN-CERT-2021-1503,DFN-CERT-2021-0826,DFN-CERT-2020-2423,DFN-CERT-2020-2335,DFN-CERT-2020-2286,DFN-CERT-2020-2130,DFN-CERT-2020-1812,DFN-CERT-2020-1574,DFN-CERT-2020-1537,DFN-CERT-2020-1506,DFN-CERT-2020-0772,DFN-CERT-2020-0769,DFN-CERT-2020-0721,DFN-CERT-2020-0276,DFN-CERT-2020-0102,DFN-CERT-2020-0100,DFN-CERT-2019-2169,DFN-CERT-2019-2158,DFN-CERT-2019-2156,DFN-CERT-2019-2126,DFN-CERT-2019-1861,DFN-CERT-2019-1663,DFN-CERT-2019-1460,DFN-CERT-2019-1182,DFN-CERT-2019-1153,DFN-CERT-2019-1118,DFN-CERT-2019-1033,DFN-CERT-2019-0914,DFN-CERT-2019-0899,DFN-CERT-2019-0805,DFN-CERT-2019-0723,WID-SEC-2026-1752,WID-SEC-2024-1872,WID-SEC-2023-1737,WID-SEC-2023-0239,WID-SEC-2022-1948,WID-SEC-2022-1947,WID-SEC-2022-0732,WID-SEC-2022-0673,CB-K22/0045,CB-K21/1083,CB-K20/1049,CB-K20/1030,CB-K20/0800,CB-K20/0710,CB-K20/0324,CB-K20/0314,CB-K20/0309,CB-K20/0106,CB-K20/0041,CB-K20/0037,CB-K20/0034,CB-K19/0921,CB-K19/0920,CB-K19/0916,CB-K19/0911,CB-K19/0909,CB-K19/0619,CB-K19/0504,CB-K19/0329,CB-K19/0287",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla Alternative PHP File Extensions File Upload and Information Disclosure Vulnerabilities","Joomla is prone to file upload and information disclosure vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.6.5
+
+",1.3.6.1.4.1.25623.1.0.809744,"CVE-2016-9836,CVE-2016-9837",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,8922fb6b-b8a2-4322-9fe0-37066aada487,"Successfully exploiting this issue allow
+  remote attackers to gain access to potentially sensitive information and
+  upload and execute files with the '.php6', '.php7', '.phtml', and '.phpt'
+  extensions.","Upgrade to Joomla version 3.6.5 or later.","Joomla core versions 3.0.0 through 3.6.4","The flaw exists due to:
+
+  - An error in file scanning mechanism of 'JFilterInput::isFileSafe' function
+    which does not consider alternative PHP file extensions when checking
+    uploaded files for PHP content.
+
+  - Inadequate ACL checks in the Beez3 com_content article layout override.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla Alternative PHP File Extensions File Upload and Information Disclosur...
+(OID: 1.3.6.1.4.1.25623.1.0.809744)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2016-1988,CB-K16/1909",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! Core Two-factor Authentication Bypass Vulnerability (Nov 2017)","Joomla is prone to an authentication bypass vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.2
+
+",1.3.6.1.4.1.25623.1.0.811897,"CVE-2017-16634",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,0e06eed6-a7c9-4b9c-b2d6-be824f2e2fd0,"Successfully exploiting this issue will allow
+  remote attackers to bypass certain security restrictions and perform unauthorized
+  actions, this may aid in launching further attacks.","Upgrade to Joomla version 3.8.2 or later.","Joomla core version 3.2.0 through 3.8.1","The flaw exists due to an error related to
+  2-factor-authentication method.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Core Two-factor Authentication Bypass Vulnerability (Nov 2017)
+(OID: 1.3.6.1.4.1.25623.1.0.811897)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1977,CB-K17/1899",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla Multiple Vulnerabilities (20180507, 20180505, 20180504)","Joomla is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.8.8
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813410,"CVE-2018-11324,CVE-2018-11326,CVE-2018-11325",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,a1a89cdd-652d-4344-81cb-4a31f1457f0d,"Successful exploitation will allow remote
+  attackers to gain access to sensitive information like password, recreation
+  of sessions and conduct XSS attacks.","Update to version 3.8.8 or later. Please see the references for more information.","Joomla version 3.0.0 through 3.8.7.","Multiple flaws exist due to:
+
+  - A race condition where a session which was expected to be destroyed would
+    be recreated.
+
+  - Inadequate input filtering.
+
+  - An error where the web install application would autofill password fields
+    after either a form validation error or navigating to a previous install
+    step, and displays the plain text password for the administrator account at
+    the confirmation screen.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla Multiple Vulnerabilities (20180507, 20180505, 20180504)
+(OID: 1.3.6.1.4.1.25623.1.0.813410)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0979",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! Core LDAP Information Disclosure Vulnerability (Nov 2017)","Joomla is prone to an information disclosure vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.2
+
+",1.3.6.1.4.1.25623.1.0.811896,"CVE-2017-14596",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,3738db79-af58-445b-b302-60d3ba6ea046,"Successfully exploiting this issue allow
+  remote attackers to disclose username and password.","Upgrade to Joomla version 3.8.2 or later.","Joomla core version 1.5.0 through 3.8.1","The flaw exists due to an inadequate
+  escaping in the LDAP authentication plugin.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Core LDAP Information Disclosure Vulnerability (Nov 2017)
+(OID: 1.3.6.1.4.1.25623.1.0.811896)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1977,DFN-CERT-2017-1663,CB-K17/1899,CB-K17/1591",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! 1.7.0 - 3.9.15 SQLi Vulnerability","Joomla! is prone to an SQL injection (SQLi) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143604,"CVE-2020-10243",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,63e72873-479c-4dde-b95d-bafcaac1e294,"","Update to version 3.9.16 or later.","Joomla! versions 1.7.0 - 3.9.15.","The lack of type casting of a variable in SQL statement leads to an SQL
+  injection vulnerability in the 'Featured Articles' frontend menutype.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 1.7.0 - 3.9.15 SQLi Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.143604)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-0502,CB-K20/0207",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! 2.5.0 - 3.10.6, 4.0.0 - 4.1.0 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.10.7
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.147884,"CVE-2022-23795,CVE-2022-23798",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,5cf19ffe-a0ec-4be8-bbe2-6261009d0647,"","Update to version 3.10.7, 4.1.1 or later.","Joomla! version 2.5.0 through 3.10.6 and 4.0.0 through
+  4.1.0.","The following vulnerabilities exit:
+
+  - CVE-2022-23795: User row are not bound to a authentication mechanism
+
+  - CVE-2022-23798: Inadequate validation of internal URLs","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.10.6, 4.0.0 - 4.1.0 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.147884)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2022-0708,CB-K22/0372",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! < 3.9.7 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.7
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.113390,"CVE-2019-12764,CVE-2019-12765,CVE-2019-12766",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,c5259b09-2267-462a-8c62-44667b011a7f,"Successful exploitation can have effects ranging from disclosure of sensitive information
+  to executing arbitrary code on the target machine.","Update to version 3.9.7.","Joomla! through version 3.9.6.","The following vulnerabilities exist:
+
+  - The update server URL of com_joomlaupdate can be manipulated by non Super-Admin users.
+
+  - The subform fieldtype does not sufficiently filter or validate input of subfields.
+    This leads to XSS attack vectors.
+
+  - The CSV export of com_actionslogs is vulnerable to CSV injection.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.7 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.113390)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-1179,CB-K19/0495",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! < 3.9.3 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.3
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141991,"CVE-2019-7739,CVE-2019-7740,CVE-2019-7741,CVE-2019-7742,CVE-2019-7743,CVE-2019-7744",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,8c9aa58b-380a-43c2-a3d7-563195c7f388,"","Update to version 3.9.3 or later.","Joomla! CMS versions 2.5.0 through 3.9.2.","Joomla! is prone to multiple vulnerabilities:
+
+  - The 'No Filtering' textfilter overrides child settings in the Global Configuration. (CVE-2019-7739)
+
+  - Inadequate parameter handling in JavaScript code (core.js writeDynaList) could lead to an XSS attack vector.
+    (CVE-2019-7740)
+
+  - Inadequate checks at the Global Configuration helpurl settings allowed stored XSS. (CVE-2019-7741)
+
+  - A combination of specific web server configurations, in connection with specific file types and browser-side
+    MIME-type sniffing, causes an XSS attack vector. (CVE-2019-7742)
+
+  - The phar:// stream wrapper can be used for objection injection attacks because there is no protection
+    mechanism (such as the TYPO3 PHAR stream wrapper) to prevent use of the phar:// handler for non .phar-files.
+    (CVE-2019-7743)
+
+  - Inadequate filtering on URL fields in various core components could lead to an XSS vulnerability.
+    (CVE-2019-7744)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.3 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.141991)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-0306",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! 3.0.0 - 3.10.6, 4.0.0 - 4.1.0 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.10.7
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.147875,"CVE-2022-23793,CVE-2022-23794,CVE-2022-23797",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,6f8703c5-bbb6-4f3f-93ef-9c42f1a696f4,"","Update to version 3.10.7, 4.1.1 or later.","Joomla! version 3.0.0 through 3.10.6 and 4.0.0 through
+  4.1.0.","The following vulnerabilities exit:
+
+  - CVE-2022-23793: Zip Slip within the Tar extractor
+
+  - CVE-2022-23794: Path disclosure within filesystem error messages
+
+  - CVE-2022-23797: Inadequate filtering on the selected Ids","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.10.6, 4.0.0 - 4.1.0 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.147875)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2022-0708,CB-K22/0372",""
+192.168.20.58,fedora,8080,tcp,9.8,Critical,80,"VendorFix","Joomla! < 3.8.0 LDAP Information Disclosure Vulnerability","Joomla is prone to an information disclosure vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.0
+
+",1.3.6.1.4.1.25623.1.0.112049,"CVE-2017-14596",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,34010bd1-ea6a-43c5-9de8-efb9d75e01e6,"Successfully exploiting these issues will allow
+  remote attackers to gain access to potentially sensitive information.","Upgrade to Joomla version 3.8.0 or later.","Joomla! versions 1.5.0 through 3.7.5","Joomla is prone to the following information disclosure vulnerability:
+
+  - Inadequate escaping in the LDAP authentication plugin can result into a disclosure of username and password.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.8.0 LDAP Information Disclosure Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.112049)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1977,DFN-CERT-2017-1663,CB-K17/1899,CB-K17/1591",""
+192.168.20.58,fedora,8080,tcp,9.1,Critical,80,"VendorFix","Joomla! 3.2.0 - 3.9.24 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.25
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145506,"CVE-2021-23126,CVE-2021-23127,CVE-2021-23128,CVE-2021-23131",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,2b3de6ba-5761-4fe8-b1da-33c077fa2ede,"","Update to version 3.9.25 or later.","Joomla! version 3.2.0 through 3.9.24.","The following vulnerabilities exist:
+
+  - Insecure randomness within 2FA secret generation. (CVE-2021-23126, CVE-2021-23127)
+
+  - Potential Insecure FOFEncryptRandval. (CVE-2021-23128)
+
+  - Input validation within the template manager. (CVE-2021-23131)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.2.0 - 3.9.24 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.145506)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0452",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla Multiple Vulnerabilities (20180502, 20180501)","Joomla is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.8.8
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813408,"CVE-2018-11323,CVE-2018-11322",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,075358ae-45d9-421d-8156-46ba0abe2e8b,"Successful exploitation will allow remote attackers to modify the access levels
+of user groups with higher permissions and use PHAR files as executable PHP scripts.","Update to version 3.8.8 or later. Please see the references for more information.","Joomla version 2.5.0 through 3.8.7","Multiple flaws exist due to:
+
+  - An error where depending on the server configuration, PHAR files might be handled as executable PHP scripts by
+the webserver.
+
+  - Inadequate checks for access level permissions.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla Multiple Vulnerabilities (20180502, 20180501)
+(OID: 1.3.6.1.4.1.25623.1.0.813408)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0979",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! Core PHP Local File Inclusion Vulnerability (20180601)","Joomla is prone to a local file inclusion vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.9
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813458,"CVE-2018-12712",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,c0e15ce7-4ecc-4eac-a087-c285b8ecb1aa,"Successful exploitation will allow remote attackers to conduct
+  local file inclusion attacks.","Update to version 3.8.9 or later.","Joomla core versions 2.5.0 through 3.8.8.","The flaw exists due to an error in PHP 5.3, where 'class_exists'
+  function validates invalid names as valid.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Core 'PHP' Local File Inclusion Vulnerability (20180601)
+(OID: 1.3.6.1.4.1.25623.1.0.813458)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-1226",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! < 3.9.13 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.13
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.113556,"CVE-2019-18650,CVE-2019-18674",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,ec3c0f57-9733-4912-bbff-30ba8157a71f,"Successful exploitation would allow an attacker to
+  access sensitive information or perform actions
+  in the context of another user.","Update to version 3.9.13.","Joomla! through version 3.9.12.","The following vulnerabilities exist:
+
+  - A missing check in com_template causes a CSRF vulnerability.
+
+  - A missing access check in the phputf8 mapping files could lead to a path disclosure.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.13 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.113556)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-2299,CB-K19/0960",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! < 3.8.13 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.8.13
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141582,"CVE-2018-17858,CVE-2018-17859",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,aed2c412-8431-4fd9-968e-ab0499093bf7,"","Update to version 3.8.13 or later.","Joomla! CMS versions 2.5.0 through 3.8.12.","Joomla! is prone to multiple vulnerabilities:
+
+  - CSRF hardening in com_installer (CVE-2018-17858)
+
+  - Inadequate checks in com_contact could allow mail submission in disabled forms (CVE-2018-17859)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.8.13 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.141582)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-2061",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! < 3.8.13 ACL Violation Vulnerability","If an attacker gets access to the mail account of an user who can approve
+admin verifications in the registration process, he can activate himself.","Installed version: 3.4.2
+Fixed version:     3.8.13
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141580,"CVE-2018-17855",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,051d14c3-e7aa-428b-bcd2-b153255ffcfe,"","Update to version 3.8.13 or later.","Joomla! CMS versions 1.5.0 through 3.8.12.","","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.8.13 ACL Violation Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.141580)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-2061",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! 3.0.0 - 3.9.14 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.15
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143416,"CVE-2020-8419,CVE-2020-8420",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,9b732448-137a-4246-a253-8d2e5aa351a0,"","Update to version 3.9.15 or later.","Joomla! versions 3.0.0 - 3.9.14.","Joomla! is prone to multiple vulnerabilities:
+
+  - Missing token checks in the batch actions of various components causes CSRF vulnerabilities (CVE-2020-8419)
+
+  - A missing CSRF token check in the LESS compiler of com_templates causes a CSRF vulnerability (CVE-2020-8420)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.14 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.143416)
+Version used: 2026-04-30T06:27:06Z
+","","","CB-K20/0079",""
+192.168.20.58,fedora,8080,tcp,8.8,High,80,"VendorFix","Joomla! 3.2.0 - 3.9.15 CSRF Vulnerability","Joomla! is prone to a cross-site request forgery (CSRF)
+  vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143605,"CVE-2020-10241",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,5e887379-a5e3-4f95-b538-755857e1f42e,"","Update to version 3.9.16 or later.","Joomla! versions 3.2.0 - 3.9.15.","Missing token checks in the image actions of com_templates causes CSRF
+  vulnerabilities.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.2.0 - 3.9.15 CSRF Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.143605)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-0502,CB-K20/0207",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! < 3.9.4 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.4
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.142138,"CVE-2019-9711,CVE-2019-9712,CVE-2019-9713,CVE-2019-9714",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,73da2ee6-9f1e-4827-9612-fa2db3508313,"","Update to version 3.9.4 or later.","Joomla! CMS versions 3.0.0 through 3.9.3.","Joomla! is prone to multiple vulnerabilities:
+
+  - The item_title layout in edit views lacks escaping, leading to XSS. (CVE-2019-9711)
+
+  - The JSON handler in com_config lacks input validation, leading to XSS. (CVE-2019-9712)
+
+  - The sample data plugins lack ACL checks, allowing unauthorized access. (CVE-2019-9713)
+
+  - The media form field lacks escaping, leading to XSS. (CVE-2019-9714)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.4 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.142138)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-0509,CB-K19/0206",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla Core Privilege Escalation Vulnerability","Joomla is prone to a privilege escalation vulnerability.","Installed version: 3.4.2
+Fixed version:     3.6.5
+
+",1.3.6.1.4.1.25623.1.0.809765,"CVE-2016-9838",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,b4fd07f5-183d-456b-b89e-60a8965b4f35,"Successfully exploiting this issue allow
+  remote attackers to gain elevated privileges and modify account information
+  for existing user accounts.","Upgrade to Joomla version 3.6.5 or later.","Joomla core versions 1.6.0 through 3.6.4","The flaw exists due to incorrect use of
+  unfiltered data stored to the session on a form validation.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla Core Privilege Escalation Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.809765)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2016-1988,CB-K16/1909",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 1.6.0 - 4.4.0, 5.0.0 Information Disclosure Vulnerability","Joomla! is prone to an information disclosure vulnerability.","Installed version: 3.4.2
+Fixed version:     4.4.1
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.151328,"CVE-2023-40626",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,73332d6a-961a-4227-a31a-f459816641bd,"","Update to version 4.4.1, 5.0.1 or later.","Joomla! version 1.6.0 through 4.4.0 and version 5.0.0.","The language file parsing process could be manipulated to
+  expose environment variables. Environment variables might contain sensible information.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 1.6.0 - 4.4.0, 5.0.0 Information Disclosure Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.151328)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2023-3011,WID-SEC-2023-3021",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 1.7.0 - 3.9.22 ACL Violation Vulnerability","Joomla! is prone to an ACL violation vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.23
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145124,"CVE-2020-35616",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,98978610-5a3c-4ee6-9887-a5d4ceb1b243,"","Update to version 3.9.23 or later.","Joomla! versions 1.7.0 - 3.9.22.","Lack of input validation while handling ACL rulesets can cause write ACL
+  violations.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 1.7.0 - 3.9.22 ACL Violation Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.145124)
+Version used: 2026-04-30T06:27:06Z
+","","","CB-K20/1256",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 2.5.0 - 3.9.15 Access Control Vulnerability","Joomla! is prone to an access control vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143603,"CVE-2020-10238",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,5eb49308-b4c4-482e-affc-90e084a49751,"","Update to version 3.9.16 or later.","Joomla! versions 2.5.0 - 3.9.15.","Various actions in com_templates lack the required ACL checks, leading to
+  various potential attack vectors.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.15 Access Control Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.143603)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-0502,CB-K20/0207",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 2.5.0 - 3.9.18 Textfilter Vulnerability","Joomla! is prone to an inconsistent default textfilter settings vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.19
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.144075,"CVE-2020-13763",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,359aec6f-c79a-49a5-ba82-6fed83631037,"","Update to version 3.9.19 or later.","Joomla! versions 2.5.0 - 3.9.18.","The default settings of the global textfilter configuration does not
+  block HTML inputs for Guest users.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.18 Textfilter Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.144075)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-1163,CB-K20/0521",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 2.5.0 - 3.9.22 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.23
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145121,"CVE-2020-35610,CVE-2020-35611,CVE-2020-35612,CVE-2020-35615",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,d3365ad3-7506-47b5-8b0e-d261876ad6a3,"","Update to version 3.9.23 or later.","Joomla! versions 2.5.0 - 3.9.22.","The following vulnerabilities exist:
+
+  - com_finder ignores access levels on autosuggest (CVE-2020-35610)
+
+  - Disclosure of secrets in Global Configuration page (CVE-2020-35611)
+
+  - Path traversal in mod_random_image (CVE-2020-35612)
+
+  - CSRF in com_privacy emailexport feature (CVE-2020-35615)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.22 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.145121)
+Version used: 2026-04-30T06:27:06Z
+","","","CB-K20/1256",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 2.5.0 - 3.9.27 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.28
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.146242,"CVE-2021-26036,CVE-2021-26037,CVE-2021-26038",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,b7dcfa3e-8f83-48e3-9ff3-74f7c5e02c8e,"","Update to version 3.9.28 or later.","Joomla! version 2.5.0 through 3.9.27.","The following vulnerabilities exist:
+
+  - CVE-2021-26036: Missing validation of input could lead to a broken usergroups table.
+
+  - CVE-2021-26037: CMS functions did not properly terminate existing user sessions when a user's
+  password was changed or the user was blocked.
+
+  - CVE-2021-26038: Install action in com_installer lack the required hardcoded ACL checks for
+  superusers. A default system is not affected cause the default ACL for com_installer is limited
+  to super users already.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.27 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.146242)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-1448",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! 3.0.0 - 3.9.24 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.25
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145505,"CVE-2021-26027,CVE-2021-26028,CVE-2021-23132",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,35775787-edf5-4b80-8e15-519c2534f88e,"","Update to version 3.9.25 or later.","Joomla! version 3.0.0 through 3.9.24.","The following vulnerabilities exist:
+
+  - ACL violation within com_content frontend editing. (CVE-2021-26027)
+
+  - Path Traversal within joomla/archive zip class. (CVE-2021-26028)
+
+  - com_media allowed paths that are not intended for image. (CVE-2021-23132)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.24 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.145505)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0452",""
+192.168.20.58,fedora,8080,tcp,7.5,High,80,"VendorFix","Joomla! Information Disclosure and XSS Vulnerabilities (Jul 2017)","Joomla is prone to information disclosure and cross-site scripting vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.7.3
+
+",1.3.6.1.4.1.25623.1.0.810999,"CVE-2017-9933,CVE-2017-9934",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,f0a8b852-55b9-45ef-ad64-6472a3f7ffdf,"Successfully exploiting these issues allow
+  remote attackers to gain access to potentially sensitive information and
+  conduct cross-site scripting attacks.","Upgrade to Joomla version 3.7.3 or later.","Joomla core versions 1.7.3 through 3.7.2","Multiple flaws are due to:
+
+  - An improper cache invalidation.
+
+  - The missing CSRF token checks and improper input validation.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Information Disclosure and XSS Vulnerabilities (Jul 2017)
+(OID: 1.3.6.1.4.1.25623.1.0.810999)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1151,CB-K17/1113",""
+192.168.20.58,fedora,8080,tcp,7.5,High,95,"VendorFix","Joomla! 1.5.0 < 3.4.6 RCE Vulnerability - Active Check","Joomla! is prone to a remote code execution (RCE)
+  vulnerability.","Vulnerable URL: http://fedora:8080/
+Concluded from:
+  <title>phpinfo()</title><meta name=""ROBOTS"" content=""NOINDEX,NOFOLLOW,NOARCHIVE"" /></head>
+  <tr><td class=""e"">Configuration File (php.ini) Path </td><td class=""v"">/usr/local/etc/php </td></tr>
+  <h2>PHP Variables</h2>
+",1.3.6.1.4.1.25623.1.0.105486,"CVE-2015-8562,CVE-2015-8563,CVE-2015-8564,CVE-2015-8565",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,30002e30-57d4-40ad-a135-e594900a23f0,"Successfully exploiting this issue allows attackers to execute
+  arbitrary code in the context of the affected application.","Update to version 3.4.6 or later.","Joomla! versions 1.5.0 through 3.4.5.","Browser information is not filtered properly while saving the
+  session values into the database which leads to a Remote Code Execution vulnerability.","Sends a crafted HTTP GET request and checks the response for
+  the output of the phpinfo() command.
+Details:
+Joomla! 1.5.0 < 3.4.6 RCE Vulnerability - Active Check
+(OID: 1.3.6.1.4.1.25623.1.0.105486)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2015-1935,CB-K15/1832",""
+192.168.20.58,fedora,8080,tcp,7.2,High,80,"VendorFix","Joomla! < 3.8.13 RCE Vulnerability","com_joomlaupdate allows the execution of arbitrary code. The default ACL
+config enabled the ability of Administrator-level users to access com_joomlaupdate and trigger code execution.","Installed version: 3.4.2
+Fixed version:     3.8.13
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141583,"CVE-2018-17856",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,e07890e5-a069-4f05-8b82-ecabc9a4ccde,"","Update to version 3.8.13 or later.","Joomla! CMS versions 2.5.4 through 3.8.12.","","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.8.13 RCE Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.141583)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-2061",""
+192.168.20.58,fedora,8080,tcp,6.5,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.26 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.27
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.146025,"CVE-2021-26032,CVE-2021-26033,CVE-2021-26034",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,2706a5fd-fc60-4d6d-a6f1-3daa775b3816,"","Update to version 3.9.27 or later.","Joomla! version 3.0.0 through 3.9.26.","The following vulnerabilities exist:
+
+  - CVE-2021-26032: HTML is missing in the executable block list of MediaHelper::canUpload, leading
+    to XSS attack vectors
+
+  - CVE-2021-26033: A missing token check causes a CSRF vulnerability in the AJAX reordering endpoint
+
+  - CVE-2021-26034: A missing token check causes a CSRF vulnerability in data download endpoints
+    in com_banners and com_sysinfo","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.26 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.146025)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-1134,CB-K21/0577",""
+192.168.20.58,fedora,8080,tcp,6.5,Medium,80,"VendorFix","Joomla! swf File Upload And Multiple XSS Vulnerabilities","Joomla is prone to swf file upload and multiple cross-site scripting vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.7.0
+
+",1.3.6.1.4.1.25623.1.0.811041,"CVE-2017-7989,CVE-2017-7987,CVE-2017-7984",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,25d574b8-6777-4b6a-abc9-7874349dae33,"Successfully exploiting these issues allow
+  remote attackers to upload swf files even if they were explicitly forbidden
+  and conduct cross-site scripting attacks.","Upgrade to Joomla version 3.7.0 or later.","Joomla core versions 3.2.0 through 3.6.5","Multiple flaws are due to:
+
+  - Inadequate mime type checks.
+
+  - Inadequate escaping of file and folder names.
+
+  - Inadequate filtering.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 'swf' File Upload And Multiple XSS Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.811041)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-0720,CB-K17/0698",""
+192.168.20.58,fedora,8080,tcp,6.4,Medium,80,"VendorFix","Joomla! Multiple Vulnerabilities (20240802, 20240805)","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.10.17
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.152911,"CVE-2024-27185,CVE-2024-40743",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,60be84e3-5e1b-49f0-abf0-24c4d1f5e3e8,"","Update to version 3.10.17, 4.4.7, 5.1.3 or later.","Joomla! version 3.0.0 through 3.10.16, 4.0.0 through 4.4.6 and
+  5.0.0 through 5.1.2.","The following vulnerabilities exist:
+
+  - CVE-2024-27185: Cache poisoning in pagination
+
+  - CVE-2024-40743: XSS vectors in Outputfilter::strip* methods","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Multiple Vulnerabilities (20240802, 20240805)
+(OID: 1.3.6.1.4.1.25623.1.0.152911)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2024-2190,WID-SEC-2024-1891",""
+192.168.20.58,fedora,8080,tcp,6.4,Medium,80,"VendorFix","Joomla! XSS Vulnerability (20250102)","Joomla! is prone to a cross-site scripting (XSS)
+  vulnerability in the id attribute of menu.","Installed version: 3.4.2
+Fixed version:     3.10.20
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.153735,"CVE-2024-40748",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,d0ee784f-a737-416e-909a-681538487cb8,"","Update to version 3.10.20-elts, 4.4.10, 5.2.3 or later.","Joomla! version 3.0.0 through 3.10.19-elts, 4.0.0 through
+  4.4.9 and 5.0.0 through 5.2.2.","Lack of output escaping in the id attribute of menu lists.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! XSS Vulnerability (20250102)
+(OID: 1.3.6.1.4.1.25623.1.0.153735)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2025-0027,WID-SEC-2025-0027",""
+192.168.20.58,fedora,8080,tcp,6.4,Medium,80,"VendorFix","Joomla! Open Redirect Vulnerability (20240202)","Joomla! is prone to an open redirect vulnerability in the
+  installation application.","Installed version: 3.4.2
+Fixed version:     3.10.15
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.151798,"CVE-2024-21723",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,bb5a0ef8-5462-4658-9d25-8f2f843c7dd2,"","Update to version 3.10.15, 4.4.3, 5.0.3 or later.","Joomla! version 1.5.0 through 3.10.14, 4.0.0 through 4.4.2 and
+  5.0.0 through 5.0.2.","Inadequate parsing of URLs could result into an open
+  redirect.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Open Redirect Vulnerability (20240202)
+(OID: 1.3.6.1.4.1.25623.1.0.151798)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2024-0450,WID-SEC-2024-0430",""
+192.168.20.58,fedora,8080,tcp,6.3,Medium,80,"VendorFix","Joomla! <= 3.9.19 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.20
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.113726,"CVE-2020-15695,CVE-2020-15696,CVE-2020-15697,CVE-2020-15698,CVE-2020-15699,CVE-2020-15700",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,1daaf9a4-6cde-4f65-ab42-ccee11e0177c,"Successful exploitation would allow an attacker to
+  read sensitive information, inject arbitrary HTML and JavaScript into the site
+  or perform actions in the context of another use.","Update to version 3.9.20.","Joomla! through version 3.9.19.","The following vulnerabilities exist:
+
+  - A missing token check in the remove request section of com_privacy causes a CSRF vulnerability. (CVE-2020-15695)
+
+  - Lack of input filtering and escaping allows XSS attacks in mod_random_image. (CVE-2020-15696)
+
+  - Internal read-only fields in the User table class could be modified by users. (CVE-2020-15697)
+
+  - Inadequate filtering on the system information screen could expose Redis or proxy credentials. (CVE-2020-15698)
+
+  - Missing validation checks on the usergroups table object can result in a broken site configuration. (CVE-2020-15699)
+
+  - A missing token check in the ajax_install endpoint of com_installer causes a CSRF vulnerability. (CVE-2020-15700)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! <= 3.9.19 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.113726)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-1517,CB-K20/0716",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.18 Multiple XSS Vulnerabilities","Joomla! is prone to multiple cross-site scripting vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.19
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.144074,"CVE-2020-13761,CVE-2020-13762",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,14a9bf96-7979-433e-9b77-57d3bdebbd30,"","Update to version 3.9.19 or later.","Joomla! versions 3.0.0 - 3.9.18.","Joomla! is prone to multiple cross-site scripting vulnerabilities:
+
+  - XSS in modules heading tag option (CVE-2020-13761)
+
+  - XSS in com_modules tag options (CVE-2020-13762)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.18 Multiple XSS Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.144074)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-1163,CB-K20/0521",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.20 Open Redirect Vulnerability","Joomla! is prone to an open redirect vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.21
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.144497,"CVE-2020-24598",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,8cafd704-2dad-4e4c-8288-87c9664622c0,"","Update to version 3.9.21 or later.","Joomla! versions 3.0.0 - 3.9.20.","Lack of input validation in com_content leads to an open redirect.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.20 Open Redirect Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.144497)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-1855,CB-K20/0846",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 1.7.0 <= 3.9.5 XSS Vulnerability","Joomla! is prone to a cross-site scripting vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.6
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.112586,"CVE-2019-11809",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,b1c1cb94-5de6-4360-9ef1-e3e32ed0b92a,"Successful exploitation would allow an attacker to inject
+  malicious content into the affected site.","Update to version 3.9.6 or later.","Joomla! versions 1.7.0 through 3.9.5.","The debug views of com_users do not properly escape user supplied data,
+  which leads to a potential XSS attack vector.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 1.7.0 <= 3.9.5 XSS Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.112586)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-0921,CB-K19/0383",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.25 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.26
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145768,"CVE-2021-26030,CVE-2021-26031",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,7a41486c-3408-447f-928e-90da7e6b0b71,"","Update to version 3.9.26 or later.","Joomla! versions 3.0.0 through 3.9.25.","The following vulnerabilities exist:
+
+  - CVE-2021-26030: Inadequate escaping allows cross-site scripting (XSS) attacks using the logo
+  parameter of the default templates on error pages.
+
+  - CVE-2021-26031: Inadequate filters on module layout settings could lead to a
+  local file inclusion (LFI).","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.25 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.145768)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0743,CB-K21/0375",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.27 Multiple XSS Vulnerabilities","Joomla! is prone to multiple cross-site scripting (XSS) vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.28
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.146241,"CVE-2021-26035,CVE-2021-26039",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,e0c4bbea-0b1a-4512-97f2-10aee8f52240,"","Update to version 3.9.28 or later.","Joomla! version 3.0.0 through 3.9.27.","The following vulnerabilities exist:
+
+  - CVE-2021-26035: Inadequate escaping in the rules field of the JForm API leads to XSS
+
+  - CVE-2021-26039: Inadequate escaping in the imagelist view of com_media leads to XSS","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.27 Multiple XSS Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.146241)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-1448",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.1.0 - 3.9.23 XSS Vulnerability","Joomla! is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.24
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145126,"CVE-2021-23125",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,9ce77fbd-24dc-4a3c-8ac8-e39f667fddaa,"","Update to version 3.9.24 or later.","Joomla! versions 3.1.0 - 3.9.23.","Lack of escaping of image-related parameters in multiple com_tags views
+  cause lead to XSS attack vectors.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.1.0 - 3.9.23 XSS Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.145126)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0070,CB-K21/0023",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla Uri class XSS Vulnerability","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.4
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.812681,"CVE-2018-6379",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,635e902e-2f50-4a6b-b959-905d448b2126,"Successfully exploiting this issue will allow remote attackers to execute
+arbitrary javascript code in the context of current user.","Update to version 3.8.4 or later.","Joomla version 1.5.0 through 3.8.3.","The flaw exists due to inadequate input filtering in the Uri class (formerly
+JUri).","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Uri' class XSS Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.812681)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0214,CB-K18/0197",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! < 3.9.12 XSS Vulnerability","Joomla! is prone to a cross-site scripting vulnerability due to inadequate
+  escaping, which makes attacks using the logo parameter of the default templates possible.","Installed version: 3.4.2
+Fixed version:     3.9.12
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.114135,"CVE-2019-16725",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,20fd7354-4c83-4e1d-a5b5-ac6125c35ae2,"","Update to version 3.9.12 or later.","Joomla! versions between 3.0.0 and 3.9.11.","","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.12 XSS Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.114135)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-2039",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla Media Manager XSS Vulnerability (20180509)","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.8
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813406,"CVE-2018-6378",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,09f2fcf5-1522-4a13-965a-4e820cfee833,"Successful exploitation will allow remote
+  attackers to conduct XSS attack.","Update to version 3.8.8 or later. Please see the references for more information.","Joomla versions 1.5.0 through 3.8.7","The flaw exists due to inadequate filtering
+  of file and folder names in media manager.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Media Manager' XSS Vulnerability (20180509)
+(OID: 1.3.6.1.4.1.25623.1.0.813406)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0979",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! < 3.9.2 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.2
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141895,"CVE-2019-6261,CVE-2019-6262,CVE-2019-6263,CVE-2019-6264",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,500e9ea3-095a-4d4d-a642-b6c53f7d3564,"","Update to version 3.9.2 or later.","Joomla! CMS versions 2.5.0 through 3.9.1.","Joomla! is prone to multiple vulnerabilities:
+
+  - Inadequate escaping in com_contact leads to a stored XSS vulnerability (CVE-2019-6261)
+
+  - Inadequate checks of the Global Configuration helpurl settings allowed stored XSS (CVE-2019-6262)
+
+  - Inadequate checks of the Global Configuration Text Filter settings allowed stored XSS (CVE-2019-6263)
+
+  - Inadequate escaping in mod_banners leads to a stored XSS vulnerability (CVE-2019-6264)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.2 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.141895)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-0107",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla Language Switcher Module XSS Vulnerability (20180602)","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.9
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813457,"CVE-2018-12711",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,4c8ab2c5-4288-481c-bbd7-a443b42962cc,"Successful exploitation will allow remote attackers to conduct a reflected XSS
+via injection of arbitrary parameters and/or values on the current page url.","Update to version 3.8.9 or later. Please see the references for more information.","Joomla versions 1.6.0 through 3.8.8","The flaw exists due to inadequate sanitization in the link of the current
+language.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Language Switcher' Module XSS Vulnerability (20180602)
+(OID: 1.3.6.1.4.1.25623.1.0.813457)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-1226",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla Chromes module XSS Vulnerability","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.4
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.812682,"CVE-2018-6380",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,23153930-4d0b-4c8e-b859-5154c4e4157c,"Successfully exploiting this issue will allow remote attackers to execute
+arbitrary javascript code in the context of current user.","Update to version 3.8.4 or later.","Joomla version 3.0.0 through 3.8.3","The flaw exists due to lack of escaping in the module chromes in module
+system.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Chromes' module XSS Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.812682)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0214,CB-K18/0197",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! Core XSS Vulnerability (Jul 2017)","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.7.4
+
+",1.3.6.1.4.1.25623.1.0.811257,"CVE-2017-11612",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,0bc50de3-96fd-48fb-8da2-78ad76223925,"Successfully exploiting this issue will allow
+  remote attacker to conduct cross-site scripting attacks.","Upgrade to Joomla version 3.7.4 or later.","Joomla core versions 1.5.0 through 3.7.3.","The flaw exists due to Inadequate filtering
+  of potentially malicious HTML tags in various components of the application.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Core XSS Vulnerability (Jul 2017)
+(OID: 1.3.6.1.4.1.25623.1.0.811257)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1286,CB-K17/1245",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! Information Disclosure and XSS Vulnerabilities","Joomla is prone to information disclosure and cross-site scripting vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.7.0
+
+",1.3.6.1.4.1.25623.1.0.811042,"CVE-2017-7983,CVE-2017-7986,CVE-2017-7985",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,abc3d1fa-9ef8-4741-a3e7-53c0cbc4fa51,"Successfully exploiting these issues allow
+  remote attackers to gain access to potentially sensitive information and
+  conduct cross-site scripting attacks.","Upgrade to Joomla version 3.7.0 or later.","Joomla core versions 1.5.0 through 3.6.5","Multiple flaws are due to:
+
+  - Mail sent using the JMail API leaked the used PHPMailer version in the mail
+    headers.
+
+  - Inadequate filtering of specific HTML attributes.
+
+  - Inadequate filtering of multibyte characters.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Information Disclosure and XSS Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.811042)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-1151,DFN-CERT-2017-0720,CB-K17/1113,CB-K17/0698",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! Multiple XSS Vulnerabilities (20240703, 20240704)","Joomla! is prone to multiple cross-site scripting (XSS)
+  vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.10.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.152583,"CVE-2024-21731,CVE-2024-26278",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,c7bb7a3f-5fac-4a17-94b6-0a7a1a2a6328,"","Update to version 3.10.16, 4.4.6, 5.1.2 or later.","Joomla! version 3.0.0 through 3.10.15, 4.0.0 through 4.4.5 and
+  5.0.0 through 5.1.1.","The following vulnerabilities exist:
+
+  - CVE-2024-21731: XSS in StringHelper::truncate method
+
+  - CVE-2024-26278: XSS in Wrapper extensions","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Multiple XSS Vulnerabilities (20240703, 20240704)
+(OID: 1.3.6.1.4.1.25623.1.0.152583)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2024-1762,WID-SEC-2024-1573",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! XSS Vulnerability (20240203)","Joomla! is prone to a cross-site scripting (XSS) vulnerability
+  in media selection fields.","Installed version: 3.4.2
+Fixed version:     3.10.15
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.151799,"CVE-2024-21724",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,19eb01ce-0e92-4902-a912-86b587467438,"","Update to version 3.10.15, 4.4.3, 5.0.3 or later.","Joomla! version 1.6.0 through 3.10.14, 4.0.0 through 4.4.2 and
+  5.0.0 through 5.0.2.","Inadequate input validation for media selection fields lead to
+  XSS vulnerabilities in various extensions.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! XSS Vulnerability (20240203)
+(OID: 1.3.6.1.4.1.25623.1.0.151799)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2024-0450,WID-SEC-2024-0430",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 2.5.0 - 3.9.24 Multiple XSS Vulnerabilities","Joomla! is prone to multiple cross-site scripting (XSS) vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.25
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145504,"CVE-2021-23129,CVE-2021-23130",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,02843542-2de1-4ab9-b35d-caf161691b08,"","Update to version 3.9.25 or later.","Joomla! version 2.5.0 through 3.9.24.","The following vulnerabilities exist:
+
+  - XSS within alert messages showed to users. (CVE-2021-23129)
+
+  - XSS within the feed parser library. (CVE-2021-23130)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.24 Multiple XSS Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.145504)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0452",""
+192.168.20.58,fedora,8080,tcp,6.1,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.15 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.16
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143602,"CVE-2020-10240,CVE-2020-10242",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,81a4a052-9c85-48c1-886f-95b304cabe7c,"","Update to version 3.9.16 or later.","Joomla! versions 3.0.0 - 3.9.15.","Joomla! is prone to multiple vulnerabilities:
+
+  - Missing length checks in the user table can lead to the creation of users with duplicate usernames and/or
+    email addresses (CVE-2020-10240)
+
+  - Inadequate handling of CSS selectors in the Protostar and Beez3 JavaScript allow XSS attacks (CVE-2020-10242)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.15 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.143602)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-0502,CB-K20/0207",""
+192.168.20.58,fedora,8080,tcp,5.8,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.20 Directory Traversal Vulnerability","Joomla! is prone to a directory traversal vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.21
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.108895,"CVE-2020-24597",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,084670cf-0fa1-47c3-83eb-55870778789e,"","Update to version 3.9.21 or later.","Joomla! versions 2.5.0 - 3.9.20.","Lack of input validation allows com_media root paths outside of the webroot.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.20 Directory Traversal Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.108895)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-1855,CB-K20/0846",""
+192.168.20.58,fedora,8080,tcp,5.8,Medium,99,"Mitigation","HTTP Debugging Methods (TRACE/TRACK) Enabled","The remote web server supports the TRACE and/or TRACK
+  methods. TRACE and TRACK are HTTP methods which are used to debug web server connections.","The web server has the following HTTP methods enabled: TRACE
+",1.3.6.1.4.1.25623.1.0.11213,"CVE-2003-1567,CVE-2004-2320,CVE-2004-2763,CVE-2005-3398,CVE-2006-4683,CVE-2007-3008,CVE-2008-7253,CVE-2009-2823,CVE-2010-0386,CVE-2012-2223,CVE-2014-7883",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,7aca318e-460e-4383-8f57-5be8d2623785,"An attacker may use this flaw to trick your legitimate web
+  users to give him their credentials.","Disable the TRACE and TRACK methods in your web server
+  configuration.
+
+  Please see the manual of your web server or the references for more information.","Web servers with enabled TRACE and/or TRACK methods.","It has been shown that web servers supporting this methods
+  are subject to cross-site-scripting attacks, dubbed XST for Cross-Site-Tracing, when used in
+  conjunction with various weaknesses in browsers.","Checks if HTTP methods such as TRACE and TRACK are
+  enabled and can be used.
+Details:
+HTTP Debugging Methods (TRACE/TRACK) Enabled
+(OID: 1.3.6.1.4.1.25623.1.0.11213)
+Version used: 2023-08-01T13:29:10Z
+","","","DFN-CERT-2021-1825,DFN-CERT-2014-1018,DFN-CERT-2010-0020,CB-K14/0981",""
+192.168.20.58,fedora,8080,tcp,5.8,Medium,80,"VendorFix","Joomla! XSS Vulnerability (20250901)","Joomla! is prone to a cross-site scripting (XSS)
+  vulnerability.","Installed version: 3.4.2
+Fixed version:     4.4.14
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.155514,"CVE-2025-54476",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,2afb5dc3-0fd9-4b3d-8ba6-0f89c25e53c0,"","Update to version 4.4.14, 5.3.4 or later.","Joomla! version 3.0.0 through 3.10.20, 4.0.0 through 4.4.13
+  and 5.0.0 through 5.3.3.","Inadequate content filtering within the checkAttribute methods
+  leads to XSS vulnerabilities in various components.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! XSS Vulnerability (20250901)
+(OID: 1.3.6.1.4.1.25623.1.0.155514)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2025-2717,WID-SEC-2025-2167",""
+192.168.20.58,fedora,8080,tcp,5.5,Medium,80,"VendorFix","Joomla! Session Expiration Vulnerability (20240201)","Joomla! is prone to an insufficient session expiration
+  vulnerability in MFA.","Installed version: 3.4.2
+Fixed version:     3.10.15
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.151797,"CVE-2024-21722",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,2e5c474f-c120-4bda-8a8b-ec7f2c77635e,"","Update to version 3.10.15, 4.4.3, 5.0.3 or later.","Joomla! version 3.2.0 through 3.10.14, 4.0.0 through 4.4.2 and
+  5.0.0 through 5.0.2.","The MFA management features did not properly terminate existing
+  user sessions when a user's MFA methods have been modified.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! Session Expiration Vulnerability (20240201)
+(OID: 1.3.6.1.4.1.25623.1.0.151797)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2024-0450,WID-SEC-2024-0430",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! 1.6.0 - 3.9.24 ACL Vulnerability","Joomla! is prone to an ACL violation vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.25
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145503,"CVE-2021-26029",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,e69516f0-973e-499f-9cb1-c44f799b81c8,"","Update to version 3.9.25 or later.","Joomla! version 1.6.0 through 3.9.24.","Inadequate filtering of form contents could allow to overwrite the author
+  field. The affected core components are com_fields, com_categories, com_banners, com_contact, com_newsfeeds
+  and com_tags.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 1.6.0 - 3.9.24 ACL Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.145503)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0452",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! CVE-2017-8057 Multiple Full Path Information Disclosure Vulnerabilities","Joomla is vulnerable to multiple full path information
+  disclosure vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.7.0
+
+",1.3.6.1.4.1.25623.1.0.107158,"CVE-2017-8057",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,7093c0de-e4d5-4557-9df1-b92d0b1410e9,"Successful exploitation will allow remote attackers to obtain
+  sensitive information.","Updates are available. Please see the references or vendor
+  advisory for more information.","Joomla! 3.4.0 through 3.6.5 are vulnerable","Remote attackers can exploit these issues to obtain sensitive
+  information that may lead to further attacks.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! CVE-2017-8057 Multiple Full Path Information Disclosure Vulnerabilit...
+(OID: 1.3.6.1.4.1.25623.1.0.107158)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-0720,CB-K17/0698",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! < 3.9.11 Mail Submission Vulnerability","Joomla! is prone to inadequate checks in com_contact which could allow mail
+  submission in disabled forms.","Installed version: 3.4.2
+Fixed version:     3.9.11
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.142738,"CVE-2019-15028",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,74b89740-fed7-4edf-adcd-820619347453,"","Update to version 3.9.11 or later.","Joomla! CMS versions 1.6.2 through 3.9.10.","","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.9.11 Mail Submission Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.142738)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2019-1693,CB-K19/0719",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! 3.0.0 - 3.9.23 ACL Vulnerability","Joomla! is prone to an ACL vulnerability.","Installed version: 3.4.2
+Fixed version:     3.9.24
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145125,"CVE-2021-23123",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,6c322590-4c41-4fa1-93f8-1409efc37679,"","Update to version 3.9.24 or later.","Joomla! versions 3.0.0 - 3.9.23.","Lack of ACL checks in the orderPosition endpoint of com_modules leak names
+  of unpublished and/or inaccessible modules.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 3.0.0 - 3.9.23 ACL Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.145125)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2021-0070,CB-K21/0023",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! 2.5.0 - 3.9.16 Multiple Vulnerabilities","Joomla! is prone to multiple vulnerabilities.","Installed version: 3.4.2
+Fixed version:     3.9.17
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.143744,"CVE-2020-11889,CVE-2020-11890",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,fa82172f-3a05-43b7-9d3a-71e3b30f7d47,"","Update to version 3.9.17 or later.","Joomla! versions 2.5.0 - 3.9.16.","Joomla! is prone to multiple vulnerabilities:
+
+  - Incorrect ACL checks in the access level section of com_users allow the unauthorized deletion of usergroups
+    (CVE-2020-11889)
+
+  - Improper input validations in the usergroup table class could lead to a broken ACL configuration (CVE-2020-11890)","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! 2.5.0 - 3.9.16 Multiple Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.143744)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2020-0826,CB-K20/0353",""
+192.168.20.58,fedora,8080,tcp,5.3,Medium,80,"VendorFix","Joomla! CVE-2017-7988 Security Bypass Vulnerability","Joomla is prone to a security bypass vulnerability.","Installed version: 3.4.2
+Fixed version:     3.7.0
+
+",1.3.6.1.4.1.25623.1.0.108154,"CVE-2017-7988",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,647eba39-ca18-4bb3-b329-f7c51ecc0438,"An attacker can exploit this issue to bypass certain security
+  restrictions and perform unauthorized actions. This may aid in launching further attacks.","Upgrade to Joomla version 3.7.0 or later.","Joomla core versions 1.6.0 through 3.6.5","The flaw exists due to inadequate filtering of form contents.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! CVE-2017-7988 Security Bypass Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.108154)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2017-0720,CB-K17/0698",""
+192.168.20.58,fedora,8080,tcp,4.8,Medium,80,"Workaround","Cleartext Transmission of Sensitive Information via HTTP","The host / application transmits sensitive information (username, passwords) in
+  cleartext via HTTP.","The following input fields were identified (URL:input name):
+
+http://fedora:8080/Login:password
+http://fedora:8080/author-login:password
+http://fedora:8080/log-out:password
+http://fedora:8080/login:password
+",1.3.6.1.4.1.25623.1.0.108440,"",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,7b335142-bf38-4624-9337-4c5591a1af65,"An attacker could use this situation to compromise or eavesdrop on the
+  HTTP communication between the client and the server using a man-in-the-middle attack to get access to
+  sensitive data like usernames or passwords.","Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.
+  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before
+  allowing to input sensitive data into the mentioned functions.","Hosts / applications which doesn't enforce the transmission of sensitive data via an
+  encrypted SSL/TLS connection.","","Evaluate previous collected information and check if the host / application is not
+  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.
+
+  The script is currently checking the following:
+
+  - HTTP Basic Authentication (Basic Auth)
+
+  - HTTP Forms (e.g. Login) with input field of type 'password'
+Details:
+Cleartext Transmission of Sensitive Information via HTTP
+(OID: 1.3.6.1.4.1.25623.1.0.108440)
+Version used: 2023-09-07T05:05:21Z
+","","","",""
+192.168.20.58,fedora,8080,tcp,4.7,Medium,80,"VendorFix","Joomla Redirect Method XSS Vulnerability (20180508)","Joomla is prone to a cross-site scripting (XSS) vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.8
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813411,"CVE-2018-11328",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,9f674201-cdbd-4c9f-a2cb-1b029f5eed6c,"Successful exploitation will allow remote attackers to conduct XSS attack.","Update to version 3.8.8 or later. Please see the references for more information.","Joomla versions 3.1.2 through 3.8.7.","The flaw exists due to lack of escaping the user-info component of the URI.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Redirect' Method XSS Vulnerability (20180508)
+(OID: 1.3.6.1.4.1.25623.1.0.813411)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0979",""
+192.168.20.58,fedora,8080,tcp,4.3,Medium,80,"VendorFix","Joomla Unpublished Tags Information Disclosure Vulnerability (20180503)","Joomla is prone to an information disclosure vulnerability.","Installed version: 3.4.2
+Fixed version:     3.8.8
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.813407,"CVE-2018-11327",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,6f61ec83-8f75-4475-b61b-8b138a980e6c,"Successful exploitation will allow remote attackers to gain access to
+potentially sensitive information.","Update to version 3.8.8 or later. Please see the references for more information.","Joomla versions 3.1.0 through 3.8.7.","The flaw exists due to inadequate checks for users to see the names of tags
+that were either unpublished or published with restricted view permission.","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla 'Unpublished Tags' Information Disclosure Vulnerability (20180503)
+(OID: 1.3.6.1.4.1.25623.1.0.813407)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-0979",""
+192.168.20.58,fedora,8080,tcp,4.3,Medium,80,"VendorFix","Joomla! < 3.8.13 Access Level Violation Vulnerability","Inadequate checks on the tags search fields can lead to an access level
+violation.","Installed version: 3.4.2
+Fixed version:     3.8.13
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.141581,"CVE-2018-17857",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,b117519d-3466-4fca-9c6d-aec90e61530b,"","Update to version 3.8.13 or later.","Joomla! CMS versions 3.1.0 through 3.8.12.","","Checks if a vulnerable version is present on the target host.
+Details:
+Joomla! < 3.8.13 Access Level Violation Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.141581)
+Version used: 2026-04-30T06:27:06Z
+","","","DFN-CERT-2018-2061",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 1405356437
+Packet 2: 4284935157
+",1.3.6.1.4.1.25623.1.0.80091,"",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,de88dc12-ab75-4c3a-849c-158acfa9949f,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-07T16:21:52Z,6513feeb-a805-4a75-a660-b9bf8f3fec93,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""

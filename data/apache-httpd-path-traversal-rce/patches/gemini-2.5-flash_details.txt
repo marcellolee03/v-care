@@ -1,0 +1,6 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.146871
+Vulnerability: CVE-2021-42013
+Time elapsed: 60.6721 seconds
+Patch functional?: 

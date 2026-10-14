@@ -1,0 +1,20 @@
+**OS INFO**
+PRETTY_NAME="Debian GNU/Linux 11 (bullseye)"
+NAME="Debian GNU/Linux"
+VERSION_ID="11"
+VERSION="11 (bullseye)"
+VERSION_CODENAME=bullseye
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+**USER INFO**
+uid=0(root) gid=0(root) groups=0(root)
+**PACKAGE MANAGER**
+/usr/bin/apt-get
+**TOOLS**
+/usr/bin/curl
+/usr/bin/wget
+/bin/sed
+/usr/bin/awk
+/usr/bin/python3
