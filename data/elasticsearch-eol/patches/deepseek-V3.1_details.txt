@@ -1,0 +1,5 @@
+=== PATCH GENERATION DETAILS ===
+Model: deepseek-V3.1
+NVT OID: 1.3.6.1.4.1.25623.1.0.113131
+Vulnerability: Elasticsearch End of Life (EOL) Detection
+Time elapsed: 34.3526 seconds

@@ -1,0 +1,6 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-2.5-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.105925
+Vulnerability: Missing HttpOnly Cookie Attribute (HTTP)
+Time elapsed: 29.3303 seconds
+Patch functional?: 

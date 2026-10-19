@@ -1,0 +1,149 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,3306,tcp,9.8,Critical,95,"Mitigation","MySQL / MariaDB Default Credentials (MySQL Protocol)","It was possible to login into the remote MySQL using default
+  credentials.","It was possible to login as user ""root"" with password ""123456"".
+",1.3.6.1.4.1.25623.1.0.103551,"CVE-2001-0645,CVE-2002-1809,CVE-2004-1532,CVE-2004-2357,CVE-2006-1451,CVE-2007-2554,CVE-2007-6081,CVE-2009-0919,CVE-2014-3419,CVE-2015-4669,CVE-2016-6531,CVE-2018-15719,CVE-2024-22901,CVE-2026-47847",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,abcd4d98-e6a0-45ae-b970-c12c5e389b77,"","'- Change the password as soon as possible
+
+  - Contact the vendor for other possible fixes / updates","The following products are know to use such weak credentials:
+
+  - CVE-2001-0645: Symantec/AXENT NetProwler 3.5.x
+
+  - CVE-2002-1809: Windows binary release of MySQL 3.23.2 through 3.23.52
+
+  - CVE-2004-1532: AppServ 2.5.x and earlier
+
+  - CVE-2004-2357: Proofpoint Protection Server
+
+  - CVE-2006-1451: MySQL Manager in Apple Mac OS X 10.3.9 and 10.4.6
+
+  - CVE-2007-2554: Associated Press (AP) Newspower 4.0.1 and earlier
+
+  - CVE-2007-6081: AdventNet EventLog Analyzer build 4030
+
+  - CVE-2009-0919: XAMPP
+
+  - CVE-2014-3419: Infoblox NetMRI before 6.8.5
+
+  - CVE-2015-4669: Xsuite 2.x
+
+  - CVE-2016-6531, CVE-2018-15719: Open Dental before version 18.4
+
+  - CVE-2024-22901: Vinchin Backup & Recovery 7.2 and prior
+
+  - CVE-2026-47847: Bitnami MariaDB Galera container images and Helm chart
+
+  - No CVE / GHSA-g38h-mr9p-fjmf: Vvveb CMS 1.0.8 and prior
+
+  Other products might be affected as well.","","
+Details:
+MySQL / MariaDB Default Credentials (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.103551)
+Version used: 2026-07-22T06:26:54Z
+","Product: cpe:/a:mysql:mysql:5.5.23
+Method: MariaDB / Oracle MySQL Detection (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.100152)
+","","",""
+192.168.20.58,fedora,6379,tcp,7.5,High,99,"Workaround","Redis Server No Password (TCP)","The remote Redis server is not protected with a password.","Redis Server is not protected with a password.
+",1.3.6.1.4.1.25623.1.0.105291,"",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,296d71e7-8d14-4892-bb97-3f1a29625171,"This issue may be exploited by a remote attacker to gain
+  access to sensitive information or modify system configuration.","Set password.","","It was possible to login without a password.","Evaluates if the remote Redis server is protected by a
+  password.
+
+  Notes:
+
+  - No scan result is expected if localhost (127.0.0.1) was scanned (self scanning)
+
+  - If the scanned network is e.g. a private LAN / private WAN which contains systems not accessible
+  to the public (access restricted) and it is accepted that the service is accessible without
+  authentication please set the 'Network type' configuration of the following VT to e.g.
+  'Private LAN' or 'Private WAN':
+
+  Global variable settings (OID: 1.3.6.1.4.1.25623.1.0.12288)
+Details:
+Redis Server No Password (TCP)
+(OID: 1.3.6.1.4.1.25623.1.0.105291)
+Version used: 2025-11-25T05:40:35Z
+","","","",""
+192.168.20.58,fedora,3306,tcp,5.1,Medium,95,"VendorFix","MySQL / MariaDB Authentication Bypass (Apr 2012) - Active Check","MySQL / MariaDB is prone to an authentication bypass.","It was possible to bypass authentication and login as the user 'root'.
+",1.3.6.1.4.1.25623.1.0.103492,"CVE-2012-2122",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,011f2b9f-296d-4755-a948-981d915549a6,"Successful exploitation will yield unauthorized access to the
+  database.","Update to:
+
+  - MariaDB version 5.1.62, 5.2.12, 5.3.6, 5.5.23 or later
+
+  - MySQL version 5.1.63, 5.5.24, 5.6.6 or later","All MariaDB and MySQL versions up to 5.1.61, 5.2.11, 5.3.5,
+  5.5.23 are vulnerable.","","Sends various crafted TCP requests and checks the
+  responses.
+Details:
+MySQL / MariaDB Authentication Bypass (Apr 2012) - Active Check
+(OID: 1.3.6.1.4.1.25623.1.0.103492)
+Version used: 2025-09-09T05:38:49Z
+","Product: cpe:/a:mysql:mysql:5.5.23
+Method: MariaDB / Oracle MySQL Detection (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.100152)
+","","DFN-CERT-2013-0106,DFN-CERT-2012-1563,DFN-CERT-2012-1335,DFN-CERT-2012-1256,DFN-CERT-2012-1170,DFN-CERT-2012-1163",""
+192.168.20.58,fedora,3000,tcp,4.8,Medium,80,"Workaround","Cleartext Transmission of Sensitive Information via HTTP","The host / application transmits sensitive information (username, passwords) in
+  cleartext via HTTP.","The following input fields were identified (URL:input name):
+
+http://fedora:3000/login:password
+",1.3.6.1.4.1.25623.1.0.108440,"",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,98491c83-afa0-4417-aea9-3a0d29e48c2f,"An attacker could use this situation to compromise or eavesdrop on the
+  HTTP communication between the client and the server using a man-in-the-middle attack to get access to
+  sensitive data like usernames or passwords.","Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.
+  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before
+  allowing to input sensitive data into the mentioned functions.","Hosts / applications which doesn't enforce the transmission of sensitive data via an
+  encrypted SSL/TLS connection.","","Evaluate previous collected information and check if the host / application is not
+  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.
+
+  The script is currently checking the following:
+
+  - HTTP Basic Authentication (Basic Auth)
+
+  - HTTP Forms (e.g. Login) with input field of type 'password'
+Details:
+Cleartext Transmission of Sensitive Information via HTTP
+(OID: 1.3.6.1.4.1.25623.1.0.108440)
+Version used: 2023-09-07T05:05:21Z
+","","","",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 922661794
+Packet 2: 4146085837
+",1.3.6.1.4.1.25623.1.0.80091,"",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,9269f017-07a1-4eac-9fab-eccaf3b56952,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",d3827814-38fc-4f24-8b8f-4beefdda7e3b,"self-scan",2026-08-11T18:54:26Z,6f5ac7b2-4362-4a17-b801-21d76ed90132,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""

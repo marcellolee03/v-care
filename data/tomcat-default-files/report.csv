@@ -1,0 +1,19 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.1.33,,8080,tcp,6.8,Medium,99,Mitigation,Apache Tomcat servlet/JSP container default files,The Apache Tomcat servlet/JSP container has default files installed.,"The following default files were found : 
+http://192.168.1.33:8080/examples/servlets/index.html
+http://192.168.1.33:8080/examples/jsp/snp/snoop.jsp
+http://192.168.1.33:8080/examples/jsp/index.html
+
+",1.3.6.1.4.1.25623.1.0.12085,,7b8a9adb-e068-4679-8051-e61cb777e547,Immediate scan of IP 192.168.1.33,2025-11-13T23:26:14Z,f99d1298-e2dc-49ca-bda1-bb9a3a1f2c51,"These files should be removed as they may help an attacker to guess the
+  exact version of the Apache Tomcat which is running on this host and may
+  provide other useful information.","Remove default files, example JSPs and Servlets from the Tomcat
+  Servlet/JSP container.",,"Default files, such as documentation, default Servlets and JSPs were found on
+  the Apache Tomcat servlet/JSP container.","
+Details:
+Apache Tomcat servlet/JSP container default files
+(OID: 1.3.6.1.4.1.25623.1.0.12085)
+Version used: 2023-08-01T13:29:10Z
+","Product: cpe:/a:apache:tomcat:8.5.19
+Method: Apache Tomcat Detection Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.107652)
+",,,

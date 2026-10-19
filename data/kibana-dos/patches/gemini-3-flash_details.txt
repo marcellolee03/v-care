@@ -1,0 +1,5 @@
+=== PATCH GENERATION DETAILS ===
+Model: gemini-3-flash
+NVT OID: 1.3.6.1.4.1.25623.1.0.145942
+Vulnerability: CVE-2021-22139
+Time elapsed: 28.6281 seconds

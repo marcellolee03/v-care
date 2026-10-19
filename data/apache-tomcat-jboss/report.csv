@@ -1,0 +1,90 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8080,tcp,9.8,Critical,70,"VendorFix","Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Marshalled Object Remote Code Execution - Active Check","Apache Tomcat/JBoss Application Server is prone to multiple
+  remote code execution (RCE) vulnerabilities.","The following Servlets are accessible without authentication which indicates that a RCE attack can be executed:
+
+http://fedora:8080/invoker/EJBInvokerServlet
+http://fedora:8080/invoker/JMXInvokerServlet
+",1.3.6.1.4.1.25623.1.0.103811,"CVE-2012-0874,CVE-2013-4810",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-06T16:03:51Z,61721bdb-23b9-4f48-90c5-81355c26e404,"Successfully exploiting these issues may allow an attacker to
+  execute arbitrary code within the context of the affected application. Failed exploit attempts
+  may result in a denial of service condition.","Ask the Vendor for an update and enable authentication for the
+  mentioned servlets.","Apache Tomcat/JBoss Application Server providing access to the
+  EJBInvokerServlet and/or JMXInvokerServlet without prior authentication.","The specific flaw exists within the exposed EJBInvokerServlet
+  and JMXInvokerServlet. An unauthenticated attacker can post a marshalled object allowing them to
+  install an arbitrary application on the target server.","Determines if the EJBInvokerServlet and/or JMXInvokerServlet
+  is accessible without authentication.
+Details:
+Apache Tomcat/JBoss EJBInvokerServlet / JMXInvokerServlet (RMI over HTTP) Ma...
+(OID: 1.3.6.1.4.1.25623.1.0.103811)
+Version used: 2024-08-09T15:39:05Z
+","","","DFN-CERT-2013-1954,CB-K13/0935",""
+192.168.20.58,fedora,8080,tcp,4.8,Medium,80,"Workaround","Cleartext Transmission of Sensitive Information via HTTP","The host / application transmits sensitive information (username, passwords) in
+  cleartext via HTTP.","The following URLs requires Basic Authentication (URL:realm name):
+
+http://fedora:8080/jbossws/:""JBossWS Management Console""
+http://fedora:8080/jmx-console/:""JBoss JMX Console""
+http://fedora:8080/jmx-console/HtmlAdaptor:""JBoss JMX Console""
+http://fedora:8080/jmx-console:""JBoss JMX Console""
+",1.3.6.1.4.1.25623.1.0.108440,"",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-06T16:03:51Z,486d6cbc-533a-4cec-bf4b-115c7a9f8074,"An attacker could use this situation to compromise or eavesdrop on the
+  HTTP communication between the client and the server using a man-in-the-middle attack to get access to
+  sensitive data like usernames or passwords.","Enforce the transmission of sensitive data via an encrypted SSL/TLS connection.
+  Additionally make sure the host / application is redirecting all users to the secured SSL/TLS connection before
+  allowing to input sensitive data into the mentioned functions.","Hosts / applications which doesn't enforce the transmission of sensitive data via an
+  encrypted SSL/TLS connection.","","Evaluate previous collected information and check if the host / application is not
+  enforcing the transmission of sensitive data via an encrypted SSL/TLS connection.
+
+  The script is currently checking the following:
+
+  - HTTP Basic Authentication (Basic Auth)
+
+  - HTTP Forms (e.g. Login) with input field of type 'password'
+Details:
+Cleartext Transmission of Sensitive Information via HTTP
+(OID: 1.3.6.1.4.1.25623.1.0.108440)
+Version used: 2023-09-07T05:05:21Z
+","","","",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 248767740
+Packet 2: 1708494304
+",1.3.6.1.4.1.25623.1.0.80091,"",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-06T16:03:51Z,3d756023-c765-452b-bd45-fad3da2f6bbe,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",6337cdea-02d4-4102-9ff0-d3a5a253509d,"selfscan",2026-08-06T16:03:51Z,c77427f8-4641-4438-bee0-b7cd7a6211a6,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""
