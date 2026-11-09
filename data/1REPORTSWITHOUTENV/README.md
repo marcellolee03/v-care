@@ -4,19 +4,7 @@ Este diretório contém os relatórios consolidados de vulnerabilidades extraíd
 
 ---
 
-## 1. Arquivos CSV Consolidados
-
-- **`report_bruto.csv`** (760 instâncias): Agregação completa de todas as detecções, sem duplicatas contra o restante do repositório.
-- **`report_cve.csv`** (195 instâncias): Todas as vulnerabilidades com código CVE associado.
-- **`report_cve_com_oid.csv`** (152 instâncias): Vulnerabilidades com **CVE e NVT OID padrão OpenVAS (`1.3.6.1.4.1.25623...`)**.
-- **`report_cvss_maior_zero.csv`** (337 instâncias): Apenas itens com CVSS > 0.0 (sem eventos puramente informativos de `Log`).
-- **`report_missing_info.csv`** (7 instâncias): Registros incompletos isolados para análise manual posterior.
-
-*Nota de privacidade: Todos os valores da coluna `Hostname` foram esvaziados em conformidade com as diretrizes de dados sensíveis.*
-
----
-
-## 2. Estrutura de Pastas de Vulnerabilidades (`data/REPORTSWITHOUTENV/data/`)
+## 1. Estrutura de Pastas de Vulnerabilidades (`data/REPORTSWITHOUTENV/data/`)
 
 Ao todo, foram gerados **111 cenários de vulnerabilidades estritamente inéditos** (nenhum deles se repete entre si e nenhum deles existe nas 53 pastas da raiz do repositório), divididos em **3 lotes metodológicos**:
 
