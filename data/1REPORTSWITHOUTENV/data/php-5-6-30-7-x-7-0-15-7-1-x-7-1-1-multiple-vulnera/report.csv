@@ -1,0 +1,26 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,80,tcp,9.8,High,80,VendorFix,"PHP < 5.6.30, 7.x < 7.0.15, 7.1.x < 7.1.1 Multiple Vulnerabilities (Jan 2017) - Linux",PHP is prone to multiple vulnerabilities.,"Installed version: 5.2.4
+Fixed version:     5.6.30
+Installation
+path / port:       80/tcp",1.3.6.1.4.1.25623.1.0.108052,"CVE-2017-11147,CVE-2016-10158,CVE-2016-10159,CVE-2016-10160,CVE-2016-10161,CVE-2016-10167,CVE-2016-10168",d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,0651ab37-8c7b-488d-81be-6ca8ad058347,,"Update to version 5.6.30, 7.0.15, 7.1.1 or later.","PHP prior to version 5.6.30, 7.x prior to 7.0.15 and 7.1.x
+  prior to 7.1.1.","The following flaws exist:
+
+  - CVE-2016-10161: Heap out of bounds read on unserialize in finish_nested_data()
+
+  - CVE-2016-10158: FPE when parsing a tag format
+
+  - CVE-2016-10168: Signed Integer Overflow gd_io.c
+
+  - CVE-2016-10167: DOS vulnerability in gdImageCreateFromGd2Ctx()
+
+  - CVE-2017-11147: Seg fault when loading hostile phar
+
+  - CVE-2016-10160: Memory corruption when loading hostile phar
+
+  - CVE-2016-10159: Crash while loading hostile phar archive","Checks if a vulnerable version is present on the target host.
+Details:
+PHP < 5.6.30, 7.x < 7.0.15, 7.1.x < 7.1.1 Multiple Vulnerabilities (Jan 2017...
+(OID: 1.3.6.1.4.1.25623.1.0.108052)
+Version used: 2025-05-21T05:40:19Z","Product: cpe:/a:php:php:5.2.4
+Method: PHP Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.800109)",,"DFN-CERT-2018-0835,DFN-CERT-2017-2044,DFN-CERT-2017-1647,DFN-CERT-2017-1529,DFN-CERT-2017-1420,DFN-CERT-2017-1295,DFN-CERT-2017-0532,DFN-CERT-2017-0334,DFN-CERT-2017-0325,DFN-CERT-2017-0274,DFN-CERT-2017-0270,DFN-CERT-2017-0234,DFN-CERT-2017-0179,DFN-CERT-2017-0144,WID-SEC-2023-2718,CB-K17/1957,CB-K17/1575,CB-K17/1461,CB-K17/1358,CB-K17/1252,CB-K17/0527,CB-K17/0327,CB-K17/0318,CB-K17/0269,CB-K17/0264,CB-K17/0232,CB-K17/0182,CB-K17/0141",

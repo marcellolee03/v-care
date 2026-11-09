@@ -1,0 +1,30 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+10.129.4.125,,5000,tcp,9.8,High,80,VendorFix,Python Multiple Vulnerabilities (Aug 2024) - Windows,"Python is prone to an infinite loop vulnerability leading to a
+  denial of service (DoS).","Installed version: 3.10.12
+Fixed version:     3.10.15
+Installation
+path / port:       5000/tcp",1.3.6.1.4.1.25623.1.0.170806,"CVE-2024-6232,CVE-2024-7592,CVE-2024-8088,CVE-2024-45490,CVE-2024-45491,CVE-2024-45492",0b867e17-c49c-4652-930d-f9e0b9de2eb7,testelab,2025-04-28T15:56:00Z,9f171802-c566-4825-ada7-516e86161d8e,,"Update to version 3.8.20, 3.9.20, 3.10.15, 3.11.10, 3.12.6 or
+  later.","Python prior to version 3.8.20, 3.9.x prior to 3.9.20, 3.10.x
+  prior to 3.10.15, 3.11.x prior to 3.11.10 and 3.12.x prior to 3.12.6.","The following flaws exist:
+
+  - CVE-2024-6232: Regular expressions that allowed excessive backtracking during tarfile.TarFile
+  header parsing are vulnerable to ReDoS via specifically-crafted tar archives.
+
+  - CVE-2024-7592: When parsing cookies that contained backslashes for quoted characters in the
+  cookie value, the parser would use an algorithm with quadratic complexity, resulting in excess
+  CPU resources being used while parsing the value.
+
+  - CVE-2024-8088: When iterating over names of entries in a zip archive (for example, methods of
+  'zipfile.Path' like 'namelist()', 'iterdir()', etc) the process can be put into an infinite loop
+  with a maliciously crafted zip archive. This defect applies when reading only metadata or
+  extracting the contents of the zip archive.This vulnerability only affects zipfile.Path, while the
+  more common API zipfile.ZipFile class is unaffected.
+
+  - CVE-2024-45490, CVE-2024-45491, CVE-2024-45492: vulnerabilities in libexpat prior to version
+  2.6.3","Checks if a vulnerable version is present on the target host.
+Details:
+Python Multiple Vulnerabilities (Aug 2024) - Windows
+(OID: 1.3.6.1.4.1.25623.1.0.170806)
+Version used: 2024-12-13T15:40:54Z","Product: cpe:/a:python:python:3.10.12
+Method: Python Detection Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.112857)",,"DFN-CERT-2025-0933,DFN-CERT-2025-0880,DFN-CERT-2025-0854,DFN-CERT-2025-0509,DFN-CERT-2025-0179,DFN-CERT-2025-0175,DFN-CERT-2025-0170,DFN-CERT-2025-0041,DFN-CERT-2024-3317,DFN-CERT-2024-3316,DFN-CERT-2024-3315,DFN-CERT-2024-3314,DFN-CERT-2024-3313,DFN-CERT-2024-3182,DFN-CERT-2024-3103,DFN-CERT-2024-3083,DFN-CERT-2024-2994,DFN-CERT-2024-2993,DFN-CERT-2024-2937,DFN-CERT-2024-2933,DFN-CERT-2024-2783,DFN-CERT-2024-2743,DFN-CERT-2024-2664,DFN-CERT-2024-2571,DFN-CERT-2024-2540,DFN-CERT-2024-2525,DFN-CERT-2024-2512,DFN-CERT-2024-2509,DFN-CERT-2024-2497,DFN-CERT-2024-2492,DFN-CERT-2024-2466,DFN-CERT-2024-2463,DFN-CERT-2024-2456,DFN-CERT-2024-2425,DFN-CERT-2024-2399,DFN-CERT-2024-2340,DFN-CERT-2024-2332,DFN-CERT-2024-2251,DFN-CERT-2024-2245,DFN-CERT-2024-2244,DFN-CERT-2024-2227,WID-SEC-2025-0794,WID-SEC-2025-0225,WID-SEC-2025-0166,WID-SEC-2025-0148,WID-SEC-2025-0144,WID-SEC-2025-0143,WID-SEC-2025-0135,WID-SEC-2025-0001,WID-SEC-2024-3692,WID-SEC-2024-3691,WID-SEC-2024-3684,WID-SEC-2024-3196,WID-SEC-2024-3195,WID-SEC-2024-3191,WID-SEC-2024-2047,WID-SEC-2024-1951,WID-SEC-2024-1914,WID-SEC-2024-1889",

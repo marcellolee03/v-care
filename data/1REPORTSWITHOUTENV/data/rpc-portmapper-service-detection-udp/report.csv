@@ -1,0 +1,13 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+10.129.4.25,,111,udp,0.0,Log,80,,RPC Portmapper Service Detection (UDP),UDP based detection of a RPC portmapper service.,"Detected RPC Portmapper
+
+Location:      111/udp
+CPE:           cpe:/a:portmap:portmap
+
+Extra information:
+Possible known aliases / names for this product are 'port mapper', 'rpc.portmap', 'portmap' or 'rpcbind'",1.3.6.1.4.1.25623.1.0.900602,CVE-1999-0632,0b867e17-c49c-4652-930d-f9e0b9de2eb7,testelab,2025-04-28T15:56:00Z,6bcb05da-2b73-4e85-8b2c-74d5af3b527a,,,,"The RPC portmapper service is an unsecured protocol for Internet
+  facing systems and should only be used on a trusted network segment, otherwise disabled. The
+  software should be patched and configured properly.","Details:
+RPC Portmapper Service Detection (UDP)
+(OID: 1.3.6.1.4.1.25623.1.0.900602)
+Version used: 2023-09-12T05:05:19Z",,,,
