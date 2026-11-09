@@ -1,0 +1,29 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,25,tcp,3.7,Low,80,VendorFix,SSL/TLS: DHE_EXPORT MITM Security Bypass Vulnerability (LogJam),"This host is accepting 'DHE_EXPORT' cipher suites and is prone
+  to a man-in-the-middle (MITM) vulnerability.","'DHE_EXPORT' cipher suites accepted by this service via the SSLv3 protocol:
+
+TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA
+TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA
+TLS_DH_anon_EXPORT_WITH_RC4_40_MD5
+
+'DHE_EXPORT' cipher suites accepted by this service via the TLSv1.0 protocol:
+
+TLS_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA
+TLS_DH_anon_EXPORT_WITH_DES40_CBC_SHA
+TLS_DH_anon_EXPORT_WITH_RC4_40_MD5",1.3.6.1.4.1.25623.1.0.805188,CVE-2015-4000,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,6c1e96fa-c23a-4425-a8c2-69c974e0b094,"Successful exploitation will allow a man-in-the-middle attacker
+  to downgrade the security of a TLS session to 512-bit export-grade cryptography, which is
+  significantly weaker, allowing the attacker to more easily break the encryption and monitor or
+  tamper with the encrypted stream.","'- Remove support for 'DHE_EXPORT' cipher
+  suites from the service. Please see the references for more resources supporting you with this
+  task.
+
+  - If the service is using OpenSSL: Update to version 1.0.1n, 1.0.2b or later.","'- Hosts accepting 'DHE_EXPORT' cipher suites.
+
+  - OpenSSL versions prior to 1.0.1n and 1.0.2 prior to 1.0.2b.","Flaw is triggered when handling Diffie-Hellman key exchanges
+  defined in the 'DHE_EXPORT' cipher suites.","Checks previous collected cipher suites.
+Details:
+SSL/TLS: 'DHE_EXPORT' MITM Security Bypass Vulnerability (LogJam)
+(OID: 1.3.6.1.4.1.25623.1.0.805188)
+Version used: 2025-03-27T05:38:50Z","Product: cpe:/a:ietf:transport_layer_security
+Method: SSL/TLS: Report Supported Cipher Suites
+(OID: 1.3.6.1.4.1.25623.1.0.802067)",,"DFN-CERT-2023-2939,DFN-CERT-2021-0775,DFN-CERT-2020-1561,DFN-CERT-2020-1276,DFN-CERT-2016-1692,DFN-CERT-2016-1648,DFN-CERT-2016-0665,DFN-CERT-2016-0642,DFN-CERT-2016-0184,DFN-CERT-2016-0135,DFN-CERT-2016-0101,DFN-CERT-2016-0035,DFN-CERT-2015-1679,DFN-CERT-2015-1632,DFN-CERT-2015-1608,DFN-CERT-2015-1542,DFN-CERT-2015-1518,DFN-CERT-2015-1406,DFN-CERT-2015-1341,DFN-CERT-2015-1194,DFN-CERT-2015-1144,DFN-CERT-2015-1113,DFN-CERT-2015-1078,DFN-CERT-2015-1067,DFN-CERT-2015-1016,DFN-CERT-2015-0980,DFN-CERT-2015-0977,DFN-CERT-2015-0976,DFN-CERT-2015-0960,DFN-CERT-2015-0956,DFN-CERT-2015-0944,DFN-CERT-2015-0925,DFN-CERT-2015-0879,DFN-CERT-2015-0844,DFN-CERT-2015-0737,CB-K21/0067,CB-K19/0812,CB-K16/1593,CB-K16/1552,CB-K16/0617,CB-K16/0599,CB-K16/0168,CB-K16/0121,CB-K16/0090,CB-K16/0030,CB-K15/1591,CB-K15/1550,CB-K15/1517,CB-K15/1464,CB-K15/1442,CB-K15/1334,CB-K15/1269,CB-K15/1136,CB-K15/1090,CB-K15/1059,CB-K15/1022,CB-K15/1015,CB-K15/0964,CB-K15/0932,CB-K15/0927,CB-K15/0926,CB-K15/0907,CB-K15/0901,CB-K15/0896,CB-K15/0877,CB-K15/0834,CB-K15/0802,CB-K15/0733",

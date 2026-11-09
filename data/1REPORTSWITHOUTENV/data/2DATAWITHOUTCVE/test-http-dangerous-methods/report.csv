@@ -1,0 +1,19 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,80,tcp,7.5,High,99,Mitigation,Test HTTP dangerous methods,"Misconfigured web servers allows remote clients to perform
+  dangerous HTTP methods such as PUT and DELETE.","We could upload the following files via the PUT method at this web server:
+
+http://192.168.100.20/dav/puttest537126888.html
+
+We could delete the following files via the DELETE method at this web server:
+
+http://192.168.100.20/dav/puttest537126888.html",1.3.6.1.4.1.25623.1.0.10498,,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,4697427f-da29-4644-87a3-24a763167fd3,"'- Enabled PUT method: This might allow an attacker to upload
+  and run arbitrary code on this web server.
+
+  - Enabled DELETE method: This might allow an attacker to delete additional files on this web
+  server.","Use access restrictions to these dangerous HTTP methods
+  or disable them completely.",Web servers with enabled PUT and/or DELETE methods.,,"Checks if dangerous HTTP methods such as PUT and DELETE are
+  enabled and can be misused to upload or delete files.
+Details:
+Test HTTP dangerous methods
+(OID: 1.3.6.1.4.1.25623.1.0.10498)
+Version used: 2023-08-01T13:29:10Z",,,,

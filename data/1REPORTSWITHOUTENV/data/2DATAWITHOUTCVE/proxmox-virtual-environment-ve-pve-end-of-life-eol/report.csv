@@ -1,0 +1,18 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+10.129.4.25,,,,10.0,High,80,VendorFix,"Proxmox Virtual Environment (VE, PVE) End of Life (EOL) Detection","The Proxmox Virtual Environment (VE, PVE) version on
+  the remote host has reached the end of life (EOL) and should not be used anymore.","The ""Proxmox Virtual Environment (VE, PVE)"" version on the remote host has reached the end of life.
+
+CPE:               cpe:/a:proxmox:virtual_environment:7.3-3
+Installed version: 7.3-3
+EOL version:       7
+EOL date:          2024-07-01",1.3.6.1.4.1.25623.1.0.108283,,0b867e17-c49c-4652-930d-f9e0b9de2eb7,testelab,2025-04-28T15:56:00Z,12980ae0-e3c5-4907-ab44-496e98715916,"An EOL version of Proxmox Virtual Environment is not
+  receiving any security updates from the vendor. Unfixed security vulnerabilities might
+  be leveraged by an attacker to compromise the security of this host.","Update the PVE version on the remote host to a still
+  supported version.",,,"Checks if an EOL version is present on the
+  target host.
+Details:
+Proxmox Virtual Environment (VE, PVE) End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.108283)
+Version used: 2021-03-24T16:37:24Z","Product: cpe:/a:proxmox:virtual_environment:7.3-3
+Method: Proxmox Virtual Environment (VE, PVE) Detection Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.117270)",,,

@@ -1,0 +1,20 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+10.129.4.125,,5000,tcp,4.9,Medium,80,VendorFix,Python Multiple Vulnerabilities (Mar 2024) - Windows,Python is prone to multiple vulnerabilities.,"Installed version: 3.10.12
+Fixed version:     3.10.14
+Installation
+path / port:       5000/tcp",1.3.6.1.4.1.25623.1.0.151952,CVE-2024-0450,0b867e17-c49c-4652-930d-f9e0b9de2eb7,testelab,2025-04-28T15:56:00Z,5755654b-a218-4e61-b788-c9e8a133a3be,,"Update to version 3.8.19, 3.9.19, 3.10.14, 3.11.8, 3.12.2
+  or later.","Python prior to version 3.8.19, 3.9.x prior to 3.9.19, 3.10.x
+  prior to 3.10.14, 3.11.x prior to 3.11.8 and 3.12.x prior to 3.12.2.","The following vulnerabilities exist:
+
+  - CVE-2024-0450: Quoted zip-bomb protection for zipfile
+
+  - No CVE: crash in socket.if_indextoname() with a specific value (UINT_MAX).
+
+  - No CVE: .pth files with names starting with a dot or containing the hidden file attribute are
+  not skipped","Checks if a vulnerable version is present on the target host.
+Details:
+Python Multiple Vulnerabilities (Mar 2024) - Windows
+(OID: 1.3.6.1.4.1.25623.1.0.151952)
+Version used: 2024-10-11T15:39:44Z","Product: cpe:/a:python:python:3.10.12
+Method: Python Detection Consolidation
+(OID: 1.3.6.1.4.1.25623.1.0.112857)",,"DFN-CERT-2025-0933,DFN-CERT-2025-0132,DFN-CERT-2024-3182,DFN-CERT-2024-2994,DFN-CERT-2024-2993,DFN-CERT-2024-2962,DFN-CERT-2024-2745,DFN-CERT-2024-2179,DFN-CERT-2024-1846,DFN-CERT-2024-1833,DFN-CERT-2024-1805,DFN-CERT-2024-1645,DFN-CERT-2024-1433,DFN-CERT-2024-1432,DFN-CERT-2024-1415,DFN-CERT-2024-0828,DFN-CERT-2024-0785,DFN-CERT-2024-0782,WID-SEC-2025-0794,WID-SEC-2025-0225,WID-SEC-2025-0148,WID-SEC-2024-3377,WID-SEC-2024-3222,WID-SEC-2024-3195,WID-SEC-2024-1656,WID-SEC-2024-1642,WID-SEC-2024-1307,WID-SEC-2024-0687",
