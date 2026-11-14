@@ -1,0 +1,92 @@
+{
+  "service": {
+    "port_internal": 5555,
+    "protocol": "tcp",
+    "application": "flower",
+    "version": "",
+    "install_method": "tarball",
+    "install_root": "/usr/local",
+    "config_paths": []
+  },
+  "os": {
+    "distro": "debian",
+    "release": "10",
+    "package_manager": "apt",
+    "repos_reachable": true,
+    "tools": [
+      "apt",
+      "apt-get",
+      "awk",
+      "base64",
+      "bash",
+      "cat",
+      "chattr",
+      "chmod",
+      "chown",
+      "cp",
+      "curl",
+      "cut",
+      "dash",
+      "dpkg",
+      "dpkg-query",
+      "egrep",
+      "find",
+      "findmnt",
+      "getent",
+      "grep",
+      "gzip",
+      "head",
+      "hostname",
+      "ls",
+      "mkdir",
+      "mount",
+      "mv",
+      "mysql",
+      "nc",
+      "od",
+      "openssl",
+      "perl",
+      "psql",
+      "python",
+      "python3",
+      "readlink",
+      "realpath",
+      "rm",
+      "sed",
+      "service",
+      "sh",
+      "sort",
+      "sqlite3",
+      "tail",
+      "tar",
+      "touch",
+      "tr",
+      "uname",
+      "uniq",
+      "xargs"
+    ]
+  },
+  "filesystem": {
+    "exec_user": "50000",
+    "writable": [
+      "/dev/shm",
+      "/opt/airflow",
+      "/tmp"
+    ],
+    "mounts": [],
+    "volatile_paths": [
+      "/dev/shm",
+      "/run",
+      "/tmp"
+    ],
+    "capabilities": [
+      "none"
+    ],
+    "init_system": false,
+    "read_only_rootfs": false
+  },
+  "config_lifecycle": {
+    "applies_on_restart": true,
+    "main_pid_is_1": false
+  }
+}

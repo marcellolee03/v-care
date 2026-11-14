@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import json
 import re
 from pathlib import Path
 from typing import Any
@@ -20,7 +21,8 @@ def load_vulnerabilities(
 
     root = Path(data_root) if data_root is not None else _default_data_root()
     folders = _folders(root, names, include_new_batch=include_new_batch)
-    records = [_read_folder(folder) for folder in folders]
+    default_env = _read_environment_info(root / "3DEFAULTENVINFO")
+    records = [_read_folder(folder, default_env=default_env) for folder in folders]
 
     if has_oid is not None:
         records = [r for r in records if r["has_oid"] is has_oid]
@@ -51,9 +53,15 @@ def _folders(
     # Coletar todas as pastas de vulnerabilidade disponíveis
     all_vuln_folders: list[Path] = []
 
-    # 1. Pastas originais na raiz de data/
+    # 1. Pastas originais na raiz de data/ e em 2VULNSPOPOS
     for child in root.iterdir():
-        if child.is_dir() and _is_vuln_folder(child):
+        if not child.is_dir():
+            continue
+        if child.name in ("2VULNSPOPOS", "VULNSPOPOS"):
+            for nested in child.iterdir():
+                if nested.is_dir() and _is_vuln_folder(nested):
+                    all_vuln_folders.append(nested)
+        elif _is_vuln_folder(child):
             all_vuln_folders.append(child)
 
     # 2. Pastas do novo lote (em 1REPORTSWITHOUTENV/data ou REPORTSWITHOUTENV/data)
@@ -90,7 +98,10 @@ def _folders(
     return sorted(all_vuln_folders, key=lambda folder: folder.name)
 
 
-def _read_folder(folder: Path) -> dict[str, Any]:
+def _read_folder(
+    folder: Path,
+    default_env: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     patches = _read_patches(folder / "patches")
     report_rows = _read_report(folder / "report.csv")
     patch_oids = {
@@ -101,7 +112,9 @@ def _read_folder(folder: Path) -> dict[str, Any]:
     if len(patch_oids) > 1:
         raise ValueError(f"Conflicting patch NVT OIDs for vulnerability: {folder.name}")
     nvt_oid = next(iter(patch_oids), None) or _report_oid(report_rows)
-    env_info = _read_environment_info(folder / "environment_info.txt")
+    env_info = _read_environment_info(folder)
+    if env_info is None and any(p in ("1REPORTSWITHOUTENV", "REPORTSWITHOUTENV") for p in folder.parts):
+        env_info = default_env
     report_entry = _matching_report(report_rows, nvt_oid, folder.name)
 
     # Verificações de presença para filtros e metadados
@@ -169,17 +182,35 @@ def _matching_report(
         raise ValueError(f"NVT OID not found for vulnerability: {vulnerability_name}")
 
     matches = [row for row in report if (row.get("NVT OID") or "").strip() == nvt_oid]
-    if len(matches) != 1:
+    if not matches:
         raise ValueError(
-            f"Expected one report row for {vulnerability_name} ({nvt_oid}), "
-            f"found {len(matches)}"
+            f"Expected at least one report row for {vulnerability_name} ({nvt_oid}), "
+            f"found 0"
         )
     return matches[0]
 
 
-def _read_environment_info(path: Path) -> dict[str, Any] | None:
-    text = _read_text(path)
-    return _parse_environment_info(text) if text is not None else None
+def _read_environment_info(folder: Path) -> dict[str, Any] | None:
+    """Read environment info, prioritizing environment_info.json over .txt."""
+    if folder.is_dir():
+        json_path = folder / "environment_info.json"
+        txt_path = folder / "environment_info.txt"
+    else:
+        json_path = folder if folder.suffix == ".json" else folder.with_suffix(".json")
+        txt_path = folder if folder.suffix == ".txt" else folder.with_suffix(".txt")
+
+    if json_path.is_file():
+        try:
+            with json_path.open("r", encoding="utf-8") as file:
+                return json.load(file)
+        except Exception:
+            pass
+
+    if txt_path.is_file():
+        text = _read_text(txt_path)
+        return _parse_environment_info(text) if text is not None else None
+
+    return None
 
 
 def _parse_environment_info(text: str) -> dict[str, Any]:

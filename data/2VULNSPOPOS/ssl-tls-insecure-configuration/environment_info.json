@@ -1,0 +1,82 @@
+{
+  "service": {
+    "port_internal": 25,
+    "protocol": "tcp",
+    "application": "smtp-ssl",
+    "version": "",
+    "install_method": "package",
+    "install_root": "/usr",
+    "config_paths": []
+  },
+  "os": {
+    "distro": "pop",
+    "release": "22.04",
+    "package_manager": "apt",
+    "repos_reachable": true,
+    "tools": [
+      "apt",
+      "apt-get",
+      "awk",
+      "base64",
+      "bash",
+      "cat",
+      "chmod",
+      "chown",
+      "cp",
+      "curl",
+      "cut",
+      "dash",
+      "dpkg",
+      "find",
+      "grep",
+      "gzip",
+      "head",
+      "hostname",
+      "ls",
+      "lsof",
+      "mkdir",
+      "mv",
+      "nc",
+      "netstat",
+      "ps",
+      "python3",
+      "readlink",
+      "rm",
+      "sed",
+      "service",
+      "sh",
+      "sort",
+      "ss",
+      "systemctl",
+      "tail",
+      "tar",
+      "tr",
+      "uname",
+      "uniq",
+      "wget",
+      "xargs"
+    ]
+  },
+  "filesystem": {
+    "exec_user": "kaynan",
+    "writable": [
+      "/dev/shm",
+      "/tmp",
+      "/var/tmp"
+    ],
+    "mounts": [
+      "/"
+    ],
+    "volatile_paths": [
+      "/tmp",
+      "/var/tmp"
+    ],
+    "capabilities": [],
+    "init_system": "systemd",
+    "read_only_rootfs": false
+  },
+  "config_lifecycle": {
+    "applies_on_restart": true,
+    "main_pid_is_1": false
+  }
+}

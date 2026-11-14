@@ -1,0 +1,91 @@
+{
+  "service": {
+    "port_internal": 5601,
+    "protocol": "tcp",
+    "application": "unknown",
+    "version": "",
+    "install_method": "image",
+    "install_root": "/usr/share/kibana/bin/../node",
+    "config_paths": []
+  },
+  "os": {
+    "distro": "centos",
+    "release": "7",
+    "package_manager": "dnf",
+    "repos_reachable": true,
+    "tools": [
+      "awk",
+      "base64",
+      "bash",
+      "capsh",
+      "cat",
+      "chmod",
+      "chown",
+      "cp",
+      "curl",
+      "cut",
+      "egrep",
+      "find",
+      "findmnt",
+      "getcap",
+      "getent",
+      "grep",
+      "gzip",
+      "head",
+      "hostname",
+      "ls",
+      "mkdir",
+      "mount",
+      "mv",
+      "od",
+      "ping",
+      "pkill",
+      "ps",
+      "python",
+      "readlink",
+      "realpath",
+      "rm",
+      "rpm",
+      "sed",
+      "setcap",
+      "sh",
+      "sort",
+      "sqlite3",
+      "strings",
+      "systemctl",
+      "tail",
+      "tar",
+      "touch",
+      "tr",
+      "uname",
+      "uniq",
+      "xargs",
+      "yum"
+    ]
+  },
+  "filesystem": {
+    "exec_user": "1000",
+    "writable": [
+      "/dev/shm",
+      "/tmp",
+      "/usr/share/kibana",
+      "/usr/share/kibana/bin/../node",
+      "/usr/share/kibana/node/bin"
+    ],
+    "mounts": [],
+    "volatile_paths": [
+      "/dev/shm",
+      "/run",
+      "/tmp"
+    ],
+    "capabilities": [
+      "none"
+    ],
+    "init_system": false,
+    "read_only_rootfs": false
+  },
+  "config_lifecycle": {
+    "applies_on_restart": true,
+    "main_pid_is_1": true
+  }
+}

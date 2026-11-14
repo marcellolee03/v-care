@@ -1,0 +1,29 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,4848,tcp,5.0,Medium,70,VendorFix,"SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)","The remote SSL/TLS service is prone to a denial of service (DoS)
+  vulnerability.","The following indicates that the remote SSL/TLS service is affected:
+
+Protocol Version | Successful re-done SSL/TLS handshakes (Renegotiation) over an existing / already established SSL/TLS connection
+----------------------------------------------------------------------------------------------------------------------------------
+TLSv1.2          | 10
+",1.3.6.1.4.1.25623.1.0.117761,"CVE-2011-1473,CVE-2011-5094",d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-04T15:53:51Z,e9fbf56a-0743-4f87-af60-3e7fd149d71c,"The flaw might make it easier for remote attackers to cause a
+  DoS (CPU consumption) by performing many renegotiations within a single connection.","Users should contact their vendors for specific patch
+  information.
+
+  A general solution is to remove/disable renegotiation capabilities altogether from/in the affected
+  SSL/TLS service.","Every SSL/TLS service which does not properly restrict
+  client-initiated renegotiation.","The flaw exists because the remote SSL/TLS service does not
+  properly restrict client-initiated renegotiation within the SSL and TLS protocols.
+
+  Note: The referenced CVEs are affecting OpenSSL and Mozilla Network Security Services (NSS) but
+  both are in a DISPUTED state with the following rationale:
+
+  > It can also be argued that it is the responsibility of server deployments, not a security
+  library, to prevent or limit renegotiation when it is inappropriate within a specific environment.
+
+  Both CVEs are still kept in this VT as a reference to the origin of this flaw.","Checks if the remote service allows to re-do the same SSL/TLS
+  handshake (Renegotiation) over an existing / already established SSL/TLS connection.
+Details:
+SSL/TLS: Renegotiation DoS Vulnerability (CVE-2011-1473, CVE-2011-5094)
+(OID: 1.3.6.1.4.1.25623.1.0.117761)
+Version used: 2026-03-13T05:54:58Z
+",,,"DFN-CERT-2025-0933,DFN-CERT-2017-1013,DFN-CERT-2017-1012,DFN-CERT-2014-0809,DFN-CERT-2013-1928,DFN-CERT-2012-1112,WID-SEC-2026-0180,WID-SEC-2024-1591,WID-SEC-2024-0796,WID-SEC-2023-1435,CB-K17/0980,CB-K17/0979,CB-K14/0772,CB-K13/0915,CB-K13/0462",

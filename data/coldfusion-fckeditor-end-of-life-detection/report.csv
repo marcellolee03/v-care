@@ -1,0 +1,17 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8500,tcp,7.5,High,80,Mitigation,FCKeditor End of Life (EOL) Detection,"The remote host is using the FCKeditor which is discontinued and
+  will not receive any security updates.","The ""FCKeditor"" product on the remote host has reached the end of life.
+
+CPE:               cpe:/a:fckeditor:fckeditor
+Location/URL:      /cfide/scripts/ajax/FCKeditor
+EOL version:       All versions
+EOL date:          unknown
+",1.3.6.1.4.1.25623.1.0.117499,,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-03T18:15:15Z,b6e41750-57e6-4969-8ef8-83a1de2927e7,"A discontinued product is not receiving any security updates from
+  the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise the
+  security of this host.","Replace FCKeditor with CKEditor which is still supported by the
+  vendor.",,,"Checks if the target host is using a discontinued product.
+Details:
+FCKeditor End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.117499)
+Version used: 2025-04-15T05:54:49Z
+",,,,

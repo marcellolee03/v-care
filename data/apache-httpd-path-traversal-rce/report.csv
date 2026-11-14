@@ -1,5 +1,4 @@
 IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
-,,,,,,,,,,,,,,,,,,,,,,,,,
       192.168.1.33,,8080,tcp,9.8,High,100,VendorFix,Apache HTTP Server 2.4.49 - 2.4.50 Directory Traversal / RCE Vulnerability - Active Check,"Apache HTTP Server is prone to a directory traversal
   and a possible remote code execution (RCE) vulnerability.","By doing the following HTTP request:
 
