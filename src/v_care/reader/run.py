@@ -16,7 +16,7 @@ def main() -> None:
     parser.add_argument(
         "names",
         nargs="*",
-        help="Optional vulnerability folder names. Without them, returns all records.",
+        help="Optional folder names or source/name paths. Without them, returns all records.",
     )
     parser.add_argument(
         "--stdout",
@@ -63,20 +63,20 @@ def main() -> None:
         dest="has_env",
         action="store_true",
         default=None,
-        help="Filter only vulnerabilities with environment_info.txt.",
+        help="Filter only vulnerabilities with environment info.",
     )
     env_group.add_argument(
         "--without-env",
         dest="has_env",
         action="store_false",
         default=None,
-        help="Filter only vulnerabilities without environment_info.txt.",
+        help="Filter only vulnerabilities without environment info.",
     )
 
     parser.add_argument(
         "--exclude-new-batch",
         action="store_true",
-        help="Exclude the new batch of 111 vulnerabilities, loading only root data folders.",
+        help="Exclude web vulnerabilities.",
     )
     args = parser.parse_args()
 
