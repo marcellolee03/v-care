@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,9200,tcp,4.9,Medium,80,VendorFix,Elastic Elasticsearch Information Disclosure Vulnerability (ESA-2021-03),Elasticsearch is prone to an information disclosure vulnerability.,"Installed version: 1.1.1
+Fixed version:     6.8.14
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.145383,CVE-2020-7021,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-03T19:13:36Z,f7080a41-82f0-4277-b291-14f40c5ed783,This could allow an Elasticsearch administrator to view sensitive details.,"Update to version 6.8.14, 7.10.0 or later.",Elasticsearch versions prior to 6.8.14 and 7.0.0 prior to 7.10.0.,"Elasticsearch has an information disclosure issue when audit logging and
+  the emit_request_body option is enabled. The Elasticsearch audit log could contain sensitive information
+  such as password hashes or authentication tokens.","Checks if a vulnerable version is present on the target host.
+Details:
+Elastic Elasticsearch Information Disclosure Vulnerability (ESA-2021-03)
+(OID: 1.3.6.1.4.1.25623.1.0.145383)
+Version used: 2025-09-03T08:26:15Z
+",,,DFN-CERT-2025-0933,

@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8088,tcp,7.5,High,80,Mitigation,Apache Hadoop HDFS Permissive listXAttr Authorization,"HDFS exposes extended attribute key/value pairs during listXAttrs, verifying
+only path-level search access to the directory rather than path-level read permission to the referent. This
+affects features that store sensitive data in extended attributes, such as HDFS encryption secrets.","Installed version: 2.8.1
+Fixed version:     See advisory
+
+",1.3.6.1.4.1.25623.1.0.141986,CVE-2018-1296,6337cdea-02d4-4102-9ff0-d3a5a253509d,selfscan,2026-08-04T20:29:30Z,e96b0cab-7e01-4509-93a0-b03b30ec1409,,"If a file contains sensitive data in extended attributes, users and admins
+need to change the permission to prevent others from listing the directory which contains the file.","Apache Hadoop 3.0.0-alpha1 to 3.0.0, 2.9.0, 2.8.0 to 2.8.3 and 2.5.0 to
+2.7.5.",,"Checks if a vulnerable version is present on the target host
+Details:
+Apache Hadoop HDFS Permissive listXAttr Authorization
+(OID: 1.3.6.1.4.1.25623.1.0.141986)
+Version used: 2026-01-28T05:49:43Z
+",,,,

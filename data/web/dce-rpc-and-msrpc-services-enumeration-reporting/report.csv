@@ -1,0 +1,95 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+10.129.4.11,,135,tcp,5.0,Medium,80,Mitigation,DCE/RPC and MSRPC Services Enumeration Reporting,"Distributed Computing Environment / Remote Procedure Calls (DCE/RPC) or MSRPC services running
+  on the remote host can be enumerated by connecting on port 135 and doing the appropriate queries.","Here is the list of DCE/RPC or MSRPC services running on this host via the TCP protocol:
+
+Port: 49664/tcp
+
+     UUID: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7, version 0
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49664]
+     Annotation: RemoteAccessCheck
+
+     UUID: 12345778-1234-abcd-ef00-0123456789ac, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49664]
+     Named pipe : lsass
+     Win32 service or process : lsass.exe
+     Description : SAM access
+
+     UUID: 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49664]
+     Annotation: Ngc Pop Key Service
+
+     UUID: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49664]
+     Annotation: Ngc Pop Key Service
+
+     UUID: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 2
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49664]
+     Annotation: KeyIso
+
+Port: 49665/tcp
+
+     UUID: d95afe70-a6d5-4259-822e-2c84da1ddb0d, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49665]
+
+Port: 49666/tcp
+
+     UUID: 3a9ef155-691d-4449-8d05-09ad57031823, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49666]
+
+     UUID: 86d35949-83c9-4044-b424-db363231fd0c, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49666]
+
+Port: 49667/tcp
+
+     UUID: f6beaff7-1e19-4fbb-9f8f-b89e2018337c, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49667]
+     Annotation: Windows Event Log
+
+Port: 49668/tcp
+
+     UUID: 0b6edbfa-4a24-4fc6-8a23-942b1eca65d1, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49668]
+
+     UUID: 12345678-1234-abcd-ef00-0123456789ab, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49668]
+     Named pipe : spoolss
+     Win32 service or process : spoolsv.exe
+     Description : Spooler service
+
+     UUID: 4a452661-8290-4b36-8fbe-7f4093a94978, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49668]
+
+     UUID: 76f03f96-cdfd-44fc-a22c-64950a001209, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49668]
+
+     UUID: ae33069b-a2a8-46ee-a235-ddfd339be281, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49668]
+
+Port: 49669/tcp
+
+     UUID: 0b1c2170-5732-4e0e-8cd3-d9b16f3b84d7, version 0
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49669]
+     Annotation: RemoteAccessCheck
+
+     UUID: 51a227ae-825b-41f2-b4a9-1ac9557a1018, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49669]
+     Annotation: Ngc Pop Key Service
+
+     UUID: 8fb74744-b2ff-4c00-be0d-9ef9a191fe1b, version 1
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49669]
+     Annotation: Ngc Pop Key Service
+
+     UUID: b25a52bf-e5dd-4f4a-aea6-8ca7272a0e86, version 2
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49669]
+     Annotation: KeyIso
+
+Port: 49671/tcp
+
+     UUID: 367abb81-9844-35f1-ad32-98f038001003, version 2
+     Endpoint: ncacn_ip_tcp:10.129.4.11[49671]
+
+Note: DCE/RPC or MSRPC services running on this host locally were identified. Reporting this list is not enabled by default due to the possible large size of this list. See the script preferences to enable this reporting.",1.3.6.1.4.1.25623.1.0.10736,,0b867e17-c49c-4652-930d-f9e0b9de2eb7,testelab,2025-04-28T15:56:00Z,8bce7b15-9bce-4dc3-aa16-47939c54dc5e,"An attacker may use this fact to gain more knowledge
+  about the remote host.",Filter incoming traffic to this ports.,,,"Details:
+DCE/RPC and MSRPC Services Enumeration Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.10736)
+Version used: 2022-06-03T10:17:07Z",,,,

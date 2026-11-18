@@ -1,0 +1,103 @@
+{
+  "service": {
+    "port_internal": 3306,
+    "protocol": "tcp",
+    "application": "mysqld_safe",
+    "version": "",
+    "install_method": "tarball",
+    "install_root": "/usr/local",
+    "config_paths": []
+  },
+  "os": {
+    "distro": "ubuntu",
+    "release": "16.04",
+    "package_manager": "apt",
+    "repos_reachable": "unknown",
+    "tools": [
+      "apt",
+      "apt-get",
+      "awk",
+      "base64",
+      "bash",
+      "capsh",
+      "cat",
+      "chattr",
+      "chmod",
+      "chown",
+      "cp",
+      "cut",
+      "dash",
+      "dpkg",
+      "dpkg-query",
+      "egrep",
+      "find",
+      "findmnt",
+      "getcap",
+      "getent",
+      "grep",
+      "gzip",
+      "head",
+      "hostname",
+      "ls",
+      "mkdir",
+      "mount",
+      "mv",
+      "mysql",
+      "od",
+      "perl",
+      "pkill",
+      "ps",
+      "readlink",
+      "realpath",
+      "rm",
+      "sed",
+      "service",
+      "setcap",
+      "sh",
+      "sort",
+      "systemctl",
+      "tail",
+      "tar",
+      "touch",
+      "tr",
+      "uname",
+      "uniq",
+      "xargs"
+    ]
+  },
+  "filesystem": {
+    "exec_user": "root",
+    "writable": [
+      "/bin",
+      "/dev/shm",
+      "/etc",
+      "/home",
+      "/opt",
+      "/root",
+      "/run",
+      "/srv",
+      "/tmp",
+      "/usr",
+      "/usr/bin",
+      "/usr/lib",
+      "/usr/local",
+      "/var",
+      "/var/lib"
+    ],
+    "mounts": [],
+    "volatile_paths": [
+      "/dev/shm",
+      "/run",
+      "/tmp"
+    ],
+    "capabilities": [
+      "default"
+    ],
+    "init_system": false,
+    "read_only_rootfs": false
+  },
+  "config_lifecycle": {
+    "applies_on_restart": true,
+    "main_pid_is_1": "unknown"
+  }
+}

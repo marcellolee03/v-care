@@ -1,0 +1,85 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8080,tcp,9.8,Critical,99,VendorFix,/;/WEB-INF/ Information Disclosure Vulnerability (HTTP),"Various application or web servers / products are prone to an
+  information disclosure vulnerability.","Vulnerable URL: http://fedora:8080/s/test/_/;/WEB-INF/web.xml
+Response (truncated):
+
+<?xml version=""1.0""?>
+<web-app xmlns=""http://java.sun.com/xml/ns/javaee""
+         xmlns:xsi=""http://www.w3.org/2001/XMLSchema-instance""
+         xsi:schemaLocation=""http://java.sun.com/xml/ns/javaee
+                http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd""
+         version=""3.0""
+         metadata-complete=""true"">
+    <!-- General -->
+    <display-name>Atlassian JIRA Web Application</display-name>
+    <description>The Atlassian JIRA web application - see http://www.atlassian.com/software/jira for more information
+    </description>
+
+    <absolute-ordering />
+
+
+    <!-- Filters -->
+
+    <!-- Special filters that must come at the beginning of the chain because they prevent
+         all other filters from running.  This is to prevent those later filters from doing
+         lookups in Pico, which could alter the order in which it instantiates components
+         and thereby trigger a deadlock. -->
+    <filter>
+        <filter-name>JiraImportProgressFilter</filter-name>
+        <filter-class>com.atlassian.jira.web.filters.JiraImportProgressFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>SetupProgressFilter</filter-name>
+        <filter-class>com.atlassian.jira.web.filters.SetupProgressFilter</filter-class>
+    </filter>
+
+    <filter>
+        <filter-name>StartupProgressFilter</filter-name>
+        <filter-class>com.atlassian.jira.web.filters.StartupProgressFilter</filter-class>
+    </filter>
+
+    <!-- ==================================================
+",1.3.6.1.4.1.25623.1.0.117708,"CVE-2021-26085,CVE-2021-26086,CVE-2021-44138,CVE-2022-31656",6337cdea-02d4-4102-9ff0-d3a5a253509d,selfscan,2026-08-07T15:54:11Z,aaaccec3-c375-457d-81d0-5540fa136678,"Based on the information provided in this file an attacker might
+  be able to gather additional info and/or sensitive data about the application / the application /
+  web server.","The following vendor fixes are known:
+
+  - Update Atlassian Confluence to the latest available version
+
+  - Update Atlassian Jira Server to the latest available version
+
+  - Update Caucho Resin to the latest available version
+
+  For other products please contact the vendor for more information on possible fixes.","The following products are known to be affected:
+
+  - CVE-2021-26085: Atlassian Confluence
+
+  - CVE-2021-26086: Atlassian Jira Server
+
+  - CVE-2021-44138: Caucho Resin version 4.0.52 through 4.0.56
+
+  - CVE-2022-31656: VMware Workspace ONE Access, Identity Manager and Realize Automation
+
+  Other products might be affected as well.","The servlet specification prohibits servlet containers from
+  serving resources in the '/WEB-INF' and '/META-INF' directories of a web application archive
+  directly to clients.
+
+  This means that URLs like:
+
+  http://example.com/WEB-INF/web.xml
+
+  will return an error message, rather than the contents of the deployment descriptor.
+
+  However, some application or web servers / products are prone to a vulnerability that exposes this
+  information if the client requests a URL like this instead:
+
+  http://example.com/<semicolon>/WEB-INF/web.xml
+
+  http://example.com/<semicolon>/web-inf/web.xml
+
+  (note the '<semicolon>/' before 'WEB-INF').","Sends a crafted HTTP GET request and checks the response.
+Details:
+'/;/WEB-INF/' Information Disclosure Vulnerability (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.117708)
+Version used: 2025-01-21T05:37:33Z
+",,,"WID-SEC-2022-0896,CB-K21/0880,CB-K21/0826",

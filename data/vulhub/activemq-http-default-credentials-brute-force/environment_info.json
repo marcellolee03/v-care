@@ -1,0 +1,112 @@
+{
+  "service": {
+    "port_internal": 8161,
+    "protocol": "tcp",
+    "application": "activemq",
+    "version": "5.11.1",
+    "install_method": "tarball",
+    "install_root": "/opt/activemq",
+    "config_paths": [
+      "/opt/activemq/conf/login.config",
+      "/opt/activemq/conf"
+    ]
+  },
+  "os": {
+    "distro": "debian",
+    "release": "9",
+    "package_manager": "apt",
+    "repos_reachable": true,
+    "tools": [
+      "apt",
+      "apt-get",
+      "awk",
+      "base64",
+      "bash",
+      "cat",
+      "chattr",
+      "chmod",
+      "chown",
+      "cp",
+      "cron",
+      "crontab",
+      "curl",
+      "cut",
+      "dash",
+      "dpkg",
+      "dpkg-query",
+      "egrep",
+      "find",
+      "findmnt",
+      "getent",
+      "grep",
+      "gzip",
+      "head",
+      "hostname",
+      "ip",
+      "java",
+      "javac",
+      "ls",
+      "mkdir",
+      "mount",
+      "mv",
+      "od",
+      "openssl",
+      "perl",
+      "ping",
+      "readlink",
+      "realpath",
+      "rm",
+      "sed",
+      "service",
+      "sh",
+      "sort",
+      "ss",
+      "tail",
+      "tar",
+      "touch",
+      "tr",
+      "uname",
+      "uniq",
+      "wget",
+      "xargs"
+    ]
+  },
+  "filesystem": {
+    "exec_user": "root",
+    "writable": [
+      "/dev/shm",
+      "/etc",
+      "/home",
+      "/opt",
+      "/opt/activemq",
+      "/opt/activemq/conf",
+      "/opt/apache-activemq-5.11.1",
+      "/opt/jdk/bin",
+      "/root",
+      "/run",
+      "/srv",
+      "/tmp",
+      "/usr",
+      "/usr/bin",
+      "/usr/lib",
+      "/usr/local",
+      "/var",
+      "/var/lib"
+    ],
+    "mounts": [],
+    "volatile_paths": [
+      "/dev/shm",
+      "/run",
+      "/tmp"
+    ],
+    "capabilities": [
+      "default"
+    ],
+    "init_system": false,
+    "read_only_rootfs": false
+  },
+  "config_lifecycle": {
+    "applies_on_restart": true,
+    "main_pid_is_1": false
+  }
+}

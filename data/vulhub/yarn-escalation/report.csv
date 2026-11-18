@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8088,tcp,8.8,High,80,VendorFix,Apache Hadoop Privilege Escalation Vulnerability (CVE-2018-8029),Apache Hadoop is prone to a privilege escalation vulnerability.,"Installed version: 2.8.1
+Fixed version:     2.8.5
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.142482,CVE-2018-8029,6337cdea-02d4-4102-9ff0-d3a5a253509d,selfscan,2026-08-04T20:29:30Z,11d85416-a65d-433d-be17-6bb3e8d865ed,,"Update to version 2.8.5, 2.9.2, 3.1.1 or later.","Apache Hadoop versions 3.0.0-alpha1 to 3.1.0, 2.9.0 to 2.9.1 and 2.2.0 to
+  2.8.4.","A user who can escalate to yarn user can possibly run arbitrary commands as
+  root user.","Checks if a vulnerable version is present on the target host
+Details:
+Apache Hadoop Privilege Escalation Vulnerability (CVE-2018-8029)
+(OID: 1.3.6.1.4.1.25623.1.0.142482)
+Version used: 2026-01-28T05:49:43Z
+",,,WID-SEC-2025-0227,

@@ -16,17 +16,78 @@ def main() -> None:
     parser.add_argument(
         "names",
         nargs="*",
-        help="Optional vulnerability folder names. Without them, returns all records.",
+        help="Optional folder names or source/name paths. Without them, returns all records.",
     )
     parser.add_argument(
         "--stdout",
         action="store_true",
         help="Print JSONL to the terminal instead of writing a file.",
     )
+
+    # Filtros de subconjunto de dados
+    oid_group = parser.add_mutually_exclusive_group()
+    oid_group.add_argument(
+        "--with-oid",
+        dest="has_oid",
+        action="store_true",
+        default=None,
+        help="Filter only vulnerabilities with standard OpenVAS NVT OID (1.3.6.1...).",
+    )
+    oid_group.add_argument(
+        "--without-oid",
+        dest="has_oid",
+        action="store_false",
+        default=None,
+        help="Filter only vulnerabilities without standard NVT OID (e.g. CVE-based).",
+    )
+
+    cve_group = parser.add_mutually_exclusive_group()
+    cve_group.add_argument(
+        "--with-cve",
+        dest="has_cve",
+        action="store_true",
+        default=None,
+        help="Filter only vulnerabilities with an associated CVE.",
+    )
+    cve_group.add_argument(
+        "--without-cve",
+        dest="has_cve",
+        action="store_false",
+        default=None,
+        help="Filter only vulnerabilities without an associated CVE.",
+    )
+
+    env_group = parser.add_mutually_exclusive_group()
+    env_group.add_argument(
+        "--with-env",
+        dest="has_env",
+        action="store_true",
+        default=None,
+        help="Filter only vulnerabilities with environment info.",
+    )
+    env_group.add_argument(
+        "--without-env",
+        dest="has_env",
+        action="store_false",
+        default=None,
+        help="Filter only vulnerabilities without environment info.",
+    )
+
+    parser.add_argument(
+        "--exclude-new-batch",
+        action="store_true",
+        help="Exclude web vulnerabilities.",
+    )
     args = parser.parse_args()
 
     try:
-        records = load_vulnerabilities(args.names)
+        records = load_vulnerabilities(
+            names=args.names,
+            include_new_batch=not args.exclude_new_batch,
+            has_oid=args.has_oid,
+            has_cve=args.has_cve,
+            has_env=args.has_env,
+        )
     except (FileNotFoundError, ValueError) as error:
         parser.error(str(error))
 

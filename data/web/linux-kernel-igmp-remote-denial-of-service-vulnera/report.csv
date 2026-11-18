@@ -1,0 +1,7 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.0.10,,general,tcp,7.8,High,,,Linux Kernel IGMP Remote Denial of Service Vulnerability,"This host is running Linux and prone to remote denial of service
+  vulnerability.",,1.3.6.1.4.1.25623.1.0.802295,CVE-2012-0207,,,,7dc6d647-2643-445c-a8b9-d9d4ed2924f9,"Successful exploitation may allow remote attackers to cause a kernel crash,
+  denying service to legitimate users.
+  Impact Level: System","Upgrade to Linux Kernel version 3.0.17, 3.1.9 or 3.2.1
+  For updates refer to http://www.kernel.org",Linux Kernels above or equal to 2.6.36,"The flaw is due to an error in IGMP protocol implementation, which
+  can be exploited to cause a kernel crash via specially crafted IGMP queries.",,,51343,,"URL:http://secunia.com/advisories/47472, URL:http://www.exploit-db.com/exploits/18378, URL:http://www.securitytracker.com/id/1026526, URL:http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=654876, URL:http://womble.decadent.org.uk/blog/igmp-denial-of-service-in-linux-cve-2012-0207.html, URL:http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=commitdiff;h=a8c1f65c79cbbb2f7da782d4c9d15639a9b94b27"

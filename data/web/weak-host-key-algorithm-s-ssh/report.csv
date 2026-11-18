@@ -1,0 +1,18 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,22,tcp,5.3,Medium,80,Mitigation,Weak Host Key Algorithm(s) (SSH),"The remote SSH server is configured to allow / support weak host
+  key algorithm(s).","The remote SSH server supports the following weak host key algorithm(s):
+
+host key algorithm | Description
+-----------------------------------------------------------------------------------------
+ssh-dss            | Digital Signature Algorithm (DSA) / Digital Signature Standard (DSS)",1.3.6.1.4.1.25623.1.0.117687,,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,39ef1d4c-1019-461c-8f0d-f0d982b214ac,,Disable the reported weak host key algorithm(s).,,,"Checks the supported host key algorithms of the remote SSH
+  server.
+
+  Currently weak host key algorithms are defined as the following:
+
+  - ssh-dss: Digital Signature Algorithm (DSA) / Digital Signature Standard (DSS)
+Details:
+Weak Host Key Algorithm(s) (SSH)
+(OID: 1.3.6.1.4.1.25623.1.0.117687)
+Version used: 2024-06-14T05:05:48Z","Product: cpe:/a:ietf:secure_shell_protocol
+Method: SSH Protocol Algorithms Supported
+(OID: 1.3.6.1.4.1.25623.1.0.105565)",,,

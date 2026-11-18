@@ -1,0 +1,44 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,3306,tcp,9.8,Critical,95,Mitigation,MySQL / MariaDB Default Credentials (MySQL Protocol),"It was possible to login into the remote MySQL using default
+  credentials.","It was possible to login as user ""root"" with password ""123456"".
+",1.3.6.1.4.1.25623.1.0.103551,"CVE-2001-0645,CVE-2002-1809,CVE-2004-1532,CVE-2004-2357,CVE-2006-1451,CVE-2007-2554,CVE-2007-6081,CVE-2009-0919,CVE-2014-3419,CVE-2015-4669,CVE-2016-6531,CVE-2018-15719,CVE-2024-22901,CVE-2026-47847",d3827814-38fc-4f24-8b8f-4beefdda7e3b,self-scan,2026-08-11T18:54:26Z,abcd4d98-e6a0-45ae-b970-c12c5e389b77,,"'- Change the password as soon as possible
+
+  - Contact the vendor for other possible fixes / updates","The following products are know to use such weak credentials:
+
+  - CVE-2001-0645: Symantec/AXENT NetProwler 3.5.x
+
+  - CVE-2002-1809: Windows binary release of MySQL 3.23.2 through 3.23.52
+
+  - CVE-2004-1532: AppServ 2.5.x and earlier
+
+  - CVE-2004-2357: Proofpoint Protection Server
+
+  - CVE-2006-1451: MySQL Manager in Apple Mac OS X 10.3.9 and 10.4.6
+
+  - CVE-2007-2554: Associated Press (AP) Newspower 4.0.1 and earlier
+
+  - CVE-2007-6081: AdventNet EventLog Analyzer build 4030
+
+  - CVE-2009-0919: XAMPP
+
+  - CVE-2014-3419: Infoblox NetMRI before 6.8.5
+
+  - CVE-2015-4669: Xsuite 2.x
+
+  - CVE-2016-6531, CVE-2018-15719: Open Dental before version 18.4
+
+  - CVE-2024-22901: Vinchin Backup & Recovery 7.2 and prior
+
+  - CVE-2026-47847: Bitnami MariaDB Galera container images and Helm chart
+
+  - No CVE / GHSA-g38h-mr9p-fjmf: Vvveb CMS 1.0.8 and prior
+
+  Other products might be affected as well.",,"
+Details:
+MySQL / MariaDB Default Credentials (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.103551)
+Version used: 2026-07-22T06:26:54Z
+","Product: cpe:/a:mysql:mysql:5.5.23
+Method: MariaDB / Oracle MySQL Detection (MySQL Protocol)
+(OID: 1.3.6.1.4.1.25623.1.0.100152)
+",,,

@@ -1,0 +1,5 @@
+services:
+  jira:
+    image: vulhub/jira:8.1.0
+    ports:
+      - "8080:8080"

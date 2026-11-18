@@ -1,0 +1,12 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,2379,tcp,4.3,Medium,80,VendorFix,"etcd < 3.4.26, 3.5.x < 3.5.9 Information Disclosure Vulnerability (GHSA-3p4g-rcw5-8298)",etcd is prone to an information disclosure vulnerability.,"Installed version: 3.4.15
+Fixed version:     3.4.26
+
+",1.3.6.1.4.1.25623.1.0.149673,CVE-2023-32082,e966c840-9e4c-47a4-b8e0-d491fca2e4b3,self-scan,2026-07-08T13:19:57Z,e41d13a8-a012-4b0e-bcd8-ba9784394240,,"Update to version 3.4.26, 3.5.9 or later.",etcd prior to version 3.4.26 and version 3.5.x through 3.5.8.,"LeaseTimeToLive API allows access to key names (not value)
+  associated to a lease when Keys parameter is true, even a user doesn't have read permission to
+  the keys. The impact is limited to a cluster which enables auth (RBAC).","Checks if a vulnerable version is present on the target host.
+Details:
+etcd < 3.4.26, 3.5.x < 3.5.9 Information Disclosure Vulnerability (GHSA-3p4g...
+(OID: 1.3.6.1.4.1.25623.1.0.149673)
+Version used: 2023-10-12T05:05:32Z
+",,,"DFN-CERT-2023-1298,WID-SEC-2023-1373",
