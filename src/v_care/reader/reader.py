@@ -53,11 +53,11 @@ def _folders(
     # Coletar todas as pastas de vulnerabilidade disponíveis
     all_vuln_folders: list[Path] = []
 
-    # 1. Pastas originais na raiz de data/ e em 2VULNSPOPOS
+    # 1. Pastas originais na raiz de data/, em 2VULNSPOPOS e em 4DOCKERNOIMAGE
     for child in root.iterdir():
         if not child.is_dir():
             continue
-        if child.name in ("2VULNSPOPOS", "VULNSPOPOS"):
+        if child.name in ("2VULNSPOPOS", "VULNSPOPOS", "4DOCKERNOIMAGE"):
             for nested in child.iterdir():
                 if nested.is_dir() and _is_vuln_folder(nested):
                     all_vuln_folders.append(nested)
