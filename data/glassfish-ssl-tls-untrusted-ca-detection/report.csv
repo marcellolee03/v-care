@@ -1,0 +1,30 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,4848,tcp,5.0,Medium,99,Mitigation,SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection,"The service is using an SSL/TLS certificate from a known
+  untrusted and/or dangerous certificate authority (CA).","The certificate of the remote service is signed by the following untrusted and/or dangerous CA:
+
+Issuer: CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+
+Certificate details:
+fingerprint (SHA-1)             | 1FF8EFF1B17DC744191E213A31029AA75982A63C
+fingerprint (SHA-256)           | 08DEFEE67D8B168E29B80A97E5233C8BE32B316ED389AACE05BE31DAA702036B
+issued by                       | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+public key algorithm            | RSA
+public key size (bits)          | 2048
+serial                          | 31EB8D9F
+signature algorithm             | sha256WithRSAEncryption
+subject                         | CN=localhost,OU=GlassFish,O=Oracle Corporation,L=Santa Clara,ST=California,C=US
+subject alternative names (SAN) | None
+valid from                      | 2014-08-21 13:30:10 UTC
+valid until                     | 2024-08-18 13:30:10 UTC
+",1.3.6.1.4.1.25623.1.0.113054,,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-04T15:53:51Z,38b17cd4-204b-4ee3-a3fd-230875f0b424,"An attacker could use this for man-in-the-middle (MITM) attacks,
+  accessing sensible data and other attacks.","Replace the SSL/TLS certificate with one signed by a trusted
+  CA.",,,"The script reads the certificate used by the target host and
+  checks if it was signed by a known untrusted and/or dangerous CA.
+Details:
+SSL/TLS: Known Untrusted / Dangerous Certificate Authority (CA) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.113054)
+Version used: 2024-06-14T05:05:48Z
+","Product: cpe:/a:ietf:transport_layer_security
+Method: SSL/TLS: Collect and Report Certificate Details
+(OID: 1.3.6.1.4.1.25623.1.0.103692)
+",,,

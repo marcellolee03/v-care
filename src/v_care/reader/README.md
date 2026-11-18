@@ -7,14 +7,16 @@ Each vulnerability directory must contain:
 
 ```text
 data/<vulnerability-name>/
-  environment_info.txt
-  report.csv                 # 3 reports missing : coldfusion,fckeditor and mysql authentic bypass
-  patches/
-    <model>_patch.sh
-    <model>_details.txt
+  environment_info.json      # Structured environment context (fallback to environment_info.txt)
+  environment_info.txt       # Legacy environment info (preserved for reference)
+  environment/               # Docker Compose / Dockerfile context (for Vulhub targets)
+  report.csv                 # Single-row OpenVAS vulnerability report
+  patches/                   # Generated patches (<model>_patch.sh, <model>_details.txt)
 ```
 
-Directories without `patches/` are ignored automatically.
+- Host/VM targets (non-Vulhub) are stored in `data/2VULNSPOPOS/` (without `environment/`).
+- Reports without dedicated environment info are stored in `data/1REPORTSWITHOUTENV/` and automatically receive the default Pop!_OS profile from `data/3DEFAULTENVINFO/environment_info.json`.
+- Directories without `patches/` and `report.csv` are ignored automatically.
 
 ## Run
 
@@ -24,8 +26,7 @@ From the project root, use `uv`:
 uv run python src/v_care/reader/run.py
 ```
 
-With no arguments, the command reads every vulnerability and writes one JSON
-record per vulnerability to:
+With no arguments, the command reads all **183 vulnerabilities** (55 Vulhub Docker folders, 17 `2VULNSPOPOS` folders, and 111 `1REPORTSWITHOUTENV` folders) and writes one JSON record per vulnerability to:
 
 ```text
 output/vulnerabilities.jsonl
@@ -34,7 +35,7 @@ output/vulnerabilities.jsonl
 To select specific directories:
 
 ```powershell
-uv run python src/v_care/reader/run.py activemq jenkins-arbitrary-file-read
+uv run python src/v_care/reader/run.py activemq jenkins-arbitrary-file-read cve-2021-26690
 ```
 
 The result is saved to:
@@ -49,6 +50,33 @@ To write JSONL directly to the terminal:
 uv run python src/v_care/reader/run.py activemq --stdout
 ```
 
+### Filtering Flags
+
+You can filter vulnerability records based on their metadata:
+
+- **Filter by environment info:**
+  ```powershell
+  uv run python src/v_care/reader/run.py --with-env     # Vulnerabilities with environment_info (183/183)
+  uv run python src/v_care/reader/run.py --without-env  # Vulnerabilities without environment_info
+  ```
+
+- **Filter by NVT OID type:**
+  ```powershell
+  uv run python src/v_care/reader/run.py --with-oid     # Vulnerabilities with standard OpenVAS OID (1.3.6.1...)
+  uv run python src/v_care/reader/run.py --without-oid  # Vulnerabilities without standard OID (e.g. CVE-based in 1DATAWITHOUTOID)
+  ```
+
+- **Filter by CVE presence:**
+  ```powershell
+  uv run python src/v_care/reader/run.py --with-cve     # Vulnerabilities with associated CVE
+  uv run python src/v_care/reader/run.py --without-cve  # Vulnerabilities without CVE (e.g. 2DATAWITHOUTCVE)
+  ```
+
+- **Exclude new batch entirely:**
+  ```powershell
+  uv run python src/v_care/reader/run.py --exclude-new-batch
+  ```
+
 ## JSONL format
 
 Each line is a complete, independent JSON object:
@@ -58,36 +86,35 @@ Each line is a complete, independent JSON object:
   "name": "example-vulnerability",
   "nvt_oid": "1.3.6.1.4.1.25623.1.0.123456",
   "environment_info": {
-    "os_info": {
-      "pretty_name": "Debian GNU/Linux 12 (bookworm)",
-      "name": "Debian GNU/Linux",
-      "version_id": "12",
-      "version": "12 (bookworm)",
-      "version_codename": "bookworm",
-      "id": "debian",
-      "home_url": "https://www.debian.org/",
-      "support_url": "https://www.debian.org/support",
-      "bug_report_url": "https://bugs.debian.org/"
+    "service": {
+      "port_internal": 8161,
+      "protocol": "tcp",
+      "application": "activemq",
+      "version": "5.11.1",
+      "install_method": "tarball",
+      "install_root": "/opt/activemq",
+      "config_paths": ["/opt/activemq/conf"]
     },
-    "user_info": {
-      "uid": 0,
-      "username": "root",
-      "gid": 0,
-      "group": "root",
-      "groups": [
-        {
-          "gid": 0,
-          "name": "root"
-        }
-      ]
+    "os": {
+      "distro": "debian",
+      "release": "9",
+      "package_manager": "apt",
+      "repos_reachable": true,
+      "tools": ["apt", "apt-get", "awk", "bash", "curl", "grep", "sed", "tar"]
     },
-    "package_manager": "/usr/bin/apt-get",
-    "tools": [
-      "/usr/bin/curl",
-      "/usr/bin/wget",
-      "/bin/sed",
-      "/usr/bin/awk"
-    ]
+    "filesystem": {
+      "exec_user": "root",
+      "writable": ["/dev/shm", "/etc", "/opt/activemq", "/tmp"],
+      "mounts": [],
+      "volatile_paths": ["/dev/shm", "/run", "/tmp"],
+      "capabilities": ["default"],
+      "init_system": false,
+      "read_only_rootfs": false
+    },
+    "config_lifecycle": {
+      "applies_on_restart": true,
+      "main_pid_is_1": false
+    }
   },
   "report": {
     "IP": "192.0.2.10",
@@ -151,6 +178,16 @@ fields or sections are preserved in `extra`, `extra_sections`, or
 ```python
 from v_care.reader import load_vulnerabilities
 
+# Load all 164 records
 all_records = load_vulnerabilities()
-selected_records = load_vulnerabilities(["activemq", "jenkins-arbitrary-file-read"])
+
+# Load specific folders by name
+selected_records = load_vulnerabilities(["activemq", "cve-2021-26690"])
+
+# Filter by metadata flags
+only_with_env = load_vulnerabilities(has_env=True)        # 53 original records
+only_without_env = load_vulnerabilities(has_env=False)    # 111 new batch records
+only_standard_oid = load_vulnerabilities(has_oid=True)    # Records with 1.3.6.1... OID
+cve_based_only = load_vulnerabilities(has_oid=False)      # Records from 1DATAWITHOUTOID
+without_cve = load_vulnerabilities(has_cve=False)         # Records from 2DATAWITHOUTCVE
 ```

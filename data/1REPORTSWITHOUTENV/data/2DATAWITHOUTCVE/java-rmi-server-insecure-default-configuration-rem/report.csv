@@ -1,0 +1,6 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+127.0.0.1,,1099,tcp,10.0,High,95,Workaround,Java RMI Server Insecure Default Configuration Remote Code Execution Vulnerability,"Multiple Java products that implement the RMI Server contain a vulnerability that
+  could allow an unauthenticated, remote attacker to execute arbitrary code on a targeted system with elevated privileges.",,1.3.6.1.4.1.25623.1.0.140051,,,,2022-08-12T07:38:27Z,f5e12b1d-0267-4317-860e-c046a4dcf389,"An unauthenticated, remote attacker could exploit the vulnerability
+  by transmitting crafted packets to the affected software. When the packets are processed,
+  the attacker could execute arbitrary code on the system with elevated privileges.",Disable class-loading.,,"The vulnerability exists because of an incorrect default configuration of the
+  Remote Method Invocation (RMI) Server in the affected software.",Check if the target tries to load a Java class via a remote HTTP URL.,,,,

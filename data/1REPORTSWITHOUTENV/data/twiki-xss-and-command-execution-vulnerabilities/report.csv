@@ -1,0 +1,15 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,80,tcp,10.0,High,80,VendorFix,TWiki XSS and Command Execution Vulnerabilities,TWiki is prone to Cross-Site Scripting (XSS) and Command Execution Vulnerabilities.,"Installed version: 01.Feb.2003
+Fixed version:     4.2.4",1.3.6.1.4.1.25623.1.0.800320,"CVE-2008-5304,CVE-2008-5305",d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,7bfc60b7-46f6-47ba-923f-4246cc5a0221,"Successful exploitation could allow execution of arbitrary script code or
+  commands. This could let attackers steal cookie-based authentication credentials or compromise the affected
+  application.",Upgrade to version 4.2.4 or later.,"TWiki, TWiki version prior to 4.2.4.","The flaws are due to:
+
+  - %URLPARAM{}% variable is not properly sanitized which lets attackers
+    conduct cross-site scripting attack.
+
+  - %SEARCH{}% variable is not properly sanitised before being used in an
+    eval() call which lets the attackers execute perl code through eval
+    injection attack.","Details:
+TWiki XSS and Command Execution Vulnerabilities
+(OID: 1.3.6.1.4.1.25623.1.0.800320)
+Version used: 2024-03-01T14:37:10Z",,,,

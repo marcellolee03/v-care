@@ -1,0 +1,11 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,514,tcp,7.5,High,80,Mitigation,rsh Unencrypted Cleartext Login,This remote host is running a rsh service.,The rsh service currently has issues with name resolution and is not allowing connections from this host.,1.3.6.1.4.1.25623.1.0.100080,CVE-1999-0651,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,6072de5b-de4a-4a3b-ac0e-9e7c1d482472,,"Disable the rsh service and use alternatives like SSH
+  instead.",,"rsh (remote shell) is a command line computer program which can
+  execute shell commands as another user, and on another computer across a computer network.
+
+  Remark: NIST don't see 'configuration issues' as software flaws so the referenced CVE has a
+  severity of 0.0. The severity of this VT has been raised by Greenbone to still report a
+  configuration issue on the target.","Details:
+rsh Unencrypted Cleartext Login
+(OID: 1.3.6.1.4.1.25623.1.0.100080)
+Version used: 2021-10-20T09:03:29Z",,,,

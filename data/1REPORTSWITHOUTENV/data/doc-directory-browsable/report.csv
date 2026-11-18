@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,80,tcp,5.0,Medium,80,Mitigation,/doc directory browsable,"The /doc directory is browsable.
+  /doc shows the content of the /usr/doc directory and therefore it shows which programs and - important! - the version of the installed programs.",Vulnerable URL: http://192.168.100.20/doc/,1.3.6.1.4.1.25623.1.0.10056,CVE-1999-0678,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,5afd4ef3-b0d0-4521-8c2c-2bb4147b0478,,"Use access restrictions for the /doc directory.
+  If you use Apache you might use this in your access.conf:
+
+  <Directory /usr/doc>
+  AllowOverride None
+  order deny, allow
+  deny from all
+  allow from localhost
+  </Directory>",,,"Details:
+/doc directory browsable
+(OID: 1.3.6.1.4.1.25623.1.0.10056)
+Version used: 2023-08-01T13:29:10Z",,,,

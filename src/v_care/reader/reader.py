@@ -3,43 +3,105 @@
 from __future__ import annotations
 
 import csv
+import json
 import re
 from pathlib import Path
 from typing import Any
 
 
 def load_vulnerabilities(
-    names: list[str] | None = None, data_root: str | Path | None = None
+    names: list[str] | None = None,
+    data_root: str | Path | None = None,
+    include_new_batch: bool = True,
+    has_oid: bool | None = None,
+    has_cve: bool | None = None,
+    has_env: bool | None = None,
 ) -> list[dict[str, Any]]:
-    """Return all records, or only records in the requested folder names."""
+    """Return all records, or only records matching requested criteria."""
 
     root = Path(data_root) if data_root is not None else _default_data_root()
-    folders = _folders(root, names)
-    return [_read_folder(folder) for folder in folders]
+    folders = _folders(root, names, include_new_batch=include_new_batch)
+    default_env = _read_environment_info(root / "3DEFAULTENVINFO")
+    records = [_read_folder(folder, default_env=default_env) for folder in folders]
+
+    if has_oid is not None:
+        records = [r for r in records if r["has_oid"] is has_oid]
+    if has_cve is not None:
+        records = [r for r in records if r["has_cve"] is has_cve]
+    if has_env is not None:
+        records = [r for r in records if r["has_environment_info"] is has_env]
+
+    return records
 
 
 def _default_data_root() -> Path:
     return Path(__file__).resolve().parents[3] / "data"
 
 
-def _folders(root: Path, names: list[str] | None) -> list[Path]:
+def _is_vuln_folder(folder: Path) -> bool:
+    return folder.is_dir() and (folder / "patches").is_dir() and (folder / "report.csv").is_file()
+
+
+def _folders(
+    root: Path,
+    names: list[str] | None,
+    include_new_batch: bool = True,
+) -> list[Path]:
     if not root.is_dir():
         raise FileNotFoundError(f"Data directory not found: {root}")
 
+    # Coletar todas as pastas de vulnerabilidade disponíveis
+    all_vuln_folders: list[Path] = []
+
+    # 1. Pastas originais na raiz de data/, em 2VULNSPOPOS e em 4DOCKERNOIMAGE
+    for child in root.iterdir():
+        if not child.is_dir():
+            continue
+        if child.name in ("2VULNSPOPOS", "VULNSPOPOS", "4DOCKERNOIMAGE"):
+            for nested in child.iterdir():
+                if nested.is_dir() and _is_vuln_folder(nested):
+                    all_vuln_folders.append(nested)
+        elif _is_vuln_folder(child):
+            all_vuln_folders.append(child)
+
+    # 2. Pastas do novo lote (em 1REPORTSWITHOUTENV/data ou REPORTSWITHOUTENV/data)
+    if include_new_batch:
+        for new_batch_name in ("1REPORTSWITHOUTENV", "REPORTSWITHOUTENV"):
+            batch_data = root / new_batch_name / "data"
+            if batch_data.is_dir():
+                for sub in batch_data.iterdir():
+                    if not sub.is_dir():
+                        continue
+                    if _is_vuln_folder(sub):
+                        all_vuln_folders.append(sub)
+                    elif sub.name in ("1DATAWITHOUTOID", "DATAWITHOUTOID", "2DATAWITHOUTCVE", "DATAWITHOUTCVE"):
+                        for nested in sub.iterdir():
+                            if nested.is_dir() and _is_vuln_folder(nested):
+                                all_vuln_folders.append(nested)
+
+    folder_map = {folder.name: folder for folder in all_vuln_folders}
+
     if names:
-        folders = [root / name for name in names]
-        invalid = [folder.name for folder in folders if not (folder / "patches").is_dir()]
+        folders: list[Path] = []
+        invalid: list[str] = []
+        for name in names:
+            if name in folder_map:
+                folders.append(folder_map[name])
+            elif (root / name).is_dir() and _is_vuln_folder(root / name):
+                folders.append(root / name)
+            else:
+                invalid.append(name)
         if invalid:
             raise FileNotFoundError(f"Vulnerability folder not found: {', '.join(invalid)}")
         return folders
 
-    return sorted(
-        (folder for folder in root.iterdir() if (folder / "patches").is_dir()),
-        key=lambda folder: folder.name,
-    )
+    return sorted(all_vuln_folders, key=lambda folder: folder.name)
 
 
-def _read_folder(folder: Path) -> dict[str, Any]:
+def _read_folder(
+    folder: Path,
+    default_env: dict[str, Any] | None = None,
+) -> dict[str, Any]:
     patches = _read_patches(folder / "patches")
     report_rows = _read_report(folder / "report.csv")
     patch_oids = {
@@ -50,11 +112,27 @@ def _read_folder(folder: Path) -> dict[str, Any]:
     if len(patch_oids) > 1:
         raise ValueError(f"Conflicting patch NVT OIDs for vulnerability: {folder.name}")
     nvt_oid = next(iter(patch_oids), None) or _report_oid(report_rows)
+    env_info = _read_environment_info(folder)
+    if env_info is None and any(p in ("1REPORTSWITHOUTENV", "REPORTSWITHOUTENV") for p in folder.parts):
+        env_info = default_env
+    report_entry = _matching_report(report_rows, nvt_oid, folder.name)
+
+    # Verificações de presença para filtros e metadados
+    has_standard_oid = bool(nvt_oid and nvt_oid.startswith("1.3.6.1."))
+    cves_str = (report_entry.get("CVEs") or "") if report_entry else ""
+    has_cve = bool(
+        re.search(r"CVE-\d{4}-\d+", cves_str, re.IGNORECASE)
+        or (nvt_oid and re.match(r"^CVE-\d{4}-\d+", nvt_oid, re.IGNORECASE))
+    )
+
     return {
         "name": folder.name,
         "nvt_oid": nvt_oid,
-        "environment_info": _read_environment_info(folder / "environment_info.txt"),
-        "report": _matching_report(report_rows, nvt_oid, folder.name),
+        "has_oid": has_standard_oid,
+        "has_cve": has_cve,
+        "has_environment_info": env_info is not None,
+        "environment_info": env_info,
+        "report": report_entry,
         "patches": patches,
     }
 
@@ -104,17 +182,35 @@ def _matching_report(
         raise ValueError(f"NVT OID not found for vulnerability: {vulnerability_name}")
 
     matches = [row for row in report if (row.get("NVT OID") or "").strip() == nvt_oid]
-    if len(matches) != 1:
+    if not matches:
         raise ValueError(
-            f"Expected one report row for {vulnerability_name} ({nvt_oid}), "
-            f"found {len(matches)}"
+            f"Expected at least one report row for {vulnerability_name} ({nvt_oid}), "
+            f"found 0"
         )
     return matches[0]
 
 
-def _read_environment_info(path: Path) -> dict[str, Any] | None:
-    text = _read_text(path)
-    return _parse_environment_info(text) if text is not None else None
+def _read_environment_info(folder: Path) -> dict[str, Any] | None:
+    """Read environment info, prioritizing environment_info.json over .txt."""
+    if folder.is_dir():
+        json_path = folder / "environment_info.json"
+        txt_path = folder / "environment_info.txt"
+    else:
+        json_path = folder if folder.suffix == ".json" else folder.with_suffix(".json")
+        txt_path = folder if folder.suffix == ".txt" else folder.with_suffix(".txt")
+
+    if json_path.is_file():
+        try:
+            with json_path.open("r", encoding="utf-8") as file:
+                return json.load(file)
+        except Exception:
+            pass
+
+    if txt_path.is_file():
+        text = _read_text(txt_path)
+        return _parse_environment_info(text) if text is not None else None
+
+    return None
 
 
 def _parse_environment_info(text: str) -> dict[str, Any]:

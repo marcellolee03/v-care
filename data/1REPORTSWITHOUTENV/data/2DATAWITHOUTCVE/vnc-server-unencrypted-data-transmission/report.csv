@@ -1,0 +1,10 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,5900,tcp,4.8,Medium,70,Mitigation,VNC Server Unencrypted Data Transmission,"The remote host is running a VNC server providing one or more insecure or
+  cryptographically weak Security Type(s) not intended for use on untrusted networks.","The VNC server provides the following insecure or cryptographically weak Security Type(s):
+
+2 (VNC authentication)",1.3.6.1.4.1.25623.1.0.108529,,d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,c70fa05d-ad81-4680-9910-79cb2331cd2b,"An attacker can uncover sensitive data by sniffing traffic to the
+  VNC server.","Run the session over an encrypted channel provided by IPsec [RFC4301] or SSH [RFC4254].
+  Some VNC server vendors are also providing more secure Security Types within their products.",,,"Details:
+VNC Server Unencrypted Data Transmission
+(OID: 1.3.6.1.4.1.25623.1.0.108529)
+Version used: 2023-07-12T05:05:04Z",,,,

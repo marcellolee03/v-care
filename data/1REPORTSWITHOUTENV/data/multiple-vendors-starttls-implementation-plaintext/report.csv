@@ -1,0 +1,27 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.100.20,,25,tcp,6.8,Medium,99,VendorFix,Multiple Vendors STARTTLS Implementation Plaintext Arbitrary Command Injection Vulnerability,"Multiple vendors' implementations of 'STARTTLS' are prone to a
+  vulnerability that lets attackers inject arbitrary commands.",Vulnerability was detected according to the Vulnerability Detection Method.,1.3.6.1.4.1.25623.1.0.103935,"CVE-2011-0411,CVE-2011-1430,CVE-2011-1431,CVE-2011-1432,CVE-2011-1506,CVE-2011-1575,CVE-2011-1926,CVE-2011-2165",d467986b-5750-406a-b69f-754f8a4d1f89,Immediate scan of IP 192.168.100.20,2025-05-25T18:46:27Z,7a38be1d-201d-4586-8593-fbce235d7ce4,"An attacker can exploit this issue to execute arbitrary commands
+  in the context of the user running the application. Successful exploits can allow attackers to
+  obtain email usernames and passwords.","Updates are available. Please see the references for more
+  information.","The following vendors are known to be affected:
+
+  Ipswitch
+
+  Kerio
+
+  Postfix
+
+  Qmail-TLS
+
+  Oracle
+
+  SCO Group
+
+  spamdyke
+
+  ISC",,"Send a special crafted 'STARTTLS' request and check the
+  response.
+Details:
+Multiple Vendors STARTTLS Implementation Plaintext Arbitrary Command Injecti...
+(OID: 1.3.6.1.4.1.25623.1.0.103935)
+Version used: 2023-10-31T05:06:37Z",,,"DFN-CERT-2011-0917,DFN-CERT-2011-0912,DFN-CERT-2011-0897,DFN-CERT-2011-0844,DFN-CERT-2011-0818,DFN-CERT-2011-0808,DFN-CERT-2011-0771,DFN-CERT-2011-0741,DFN-CERT-2011-0712,DFN-CERT-2011-0673,DFN-CERT-2011-0597,DFN-CERT-2011-0596,DFN-CERT-2011-0519,DFN-CERT-2011-0516,DFN-CERT-2011-0483,DFN-CERT-2011-0434,DFN-CERT-2011-0393,DFN-CERT-2011-0381,CB-K15/1514",

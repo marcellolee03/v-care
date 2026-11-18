@@ -1,0 +1,16 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8080,tcp,9.1,Critical,80,VendorFix,elFinder < 2.1.61 Multiple Vulnerabilities - Version Check,elFinder is prone to multiple vulnerabilities.,"Installed version: 2.1.58
+Fixed version:     2.1.61
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.147846,CVE-2022-26960,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-03T19:40:16Z,7bdb67a4-399a-47e0-b247-bee1bb681f58,,Update to version 2.1.61 or later.,elFinder version 2.1.60 and prior.,"The following vulnerabilities exist:
+
+  - CVE-2022-26960: Directory traversal in connector.minimal.php
+
+  - No CVE: Filename bypass leading to remote code execution (RCE) on Windows server","Checks if a vulnerable version is present on the target host.
+Details:
+elFinder < 2.1.61 Multiple Vulnerabilities - Version Check
+(OID: 1.3.6.1.4.1.25623.1.0.147846)
+Version used: 2026-04-30T06:27:06Z
+",,,,

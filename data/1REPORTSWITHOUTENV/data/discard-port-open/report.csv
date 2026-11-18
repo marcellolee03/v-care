@@ -1,0 +1,18 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.0.10,,9,tcp,10.0,High,,,Discard port open,"The remote host is running a 'discard' service. This service
+typically sets up a listening socket and will ignore all the
+data which it receives. 
+
+This service is unused these days, so it is advised that you
+disable it.",,1.3.6.1.4.1.25623.1.0.11367,CVE-1999-0636,,,,cc19015d-4e05-4d44-bff5-1ca5d569c725,,"- Under Unix systems, comment out the 'discard' line in /etc/inetd.conf
+  and restart the inetd process
+
+- Under Windows systems, set the following registry key to 0 :
+  HKLM\System\CurrentControlSet\Services\SimpTCP\Parameters\EnableTcpDiscard
+   
+Then launch cmd.exe and type :
+
+   net stop simptcp
+   net start simptcp
+   
+To restart the service.",,,,,NOBID,,NOXREF

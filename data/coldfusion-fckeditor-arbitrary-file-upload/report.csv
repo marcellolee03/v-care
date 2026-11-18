@@ -1,0 +1,14 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,8500,tcp,4.6,Medium,70,Workaround,FCKeditor Connectors Arbitrary File Upload Vulnerability,"Web applications providing wrong configured FCKeditor connectors
+  might be prone to an arbitrary-file-upload vulnerability.","It was possible to detect a connector at:
+
+/cfide/scripts/ajax/FCKeditor/editor/filemanager/connectors/cfm/connector.cfm?Command=GetFolders&Type=File&CurrentFolder=%2F
+",1.3.6.1.4.1.25623.1.0.111022,,d2b20ac5-3610-43d6-b83d-1f3aa7048376,self-scan,2026-11-03T18:15:15Z,611d71c0-2e49-4ef9-91a3-e3bb5e43bed3,"An attacker may leverage this issue to upload arbitrary files to
+  the affected system. This can result in arbitrary code execution within the context of the
+  vulnerable application.","Check the config of this connector and make sure that no
+  arbitrary file extensions are allowed for uploading.",,,"
+Details:
+FCKeditor Connectors Arbitrary File Upload Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.111022)
+Version used: 2024-07-19T15:39:06Z
+",,,,

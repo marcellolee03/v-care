@@ -1,0 +1,15 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.0.10,,general,tcp,3.3,Low,,,Source routed packets,"The remote host accepts loose source routed IP packets.
+The feature was designed for testing purpose.
+An attacker may use it to circumvent poorly designed IP filtering 
+and exploit another flaw. However, it is not dangerous by itself.","The remote host accepts loose source routed IP packets.
+The feature was designed for testing purpose.
+An attacker may use it to circumvent poorly designed IP filtering 
+and exploit another flaw. However, it is not dangerous by itself.
+
+Worse, the remote host reverses the route when it answers to loose 
+source routed TCP packets. This makes attacks easier.
+
+Solution: drop source routed packets on this host or on other ingress 
+routers or firewalls.",1.3.6.1.4.1.25623.1.0.11834,NOCVE,,,,e05573c9-6f53-40ff-a7fe-36c12cf303b0,,"drop source routed packets on this host or on other ingress
+routers or firewalls.",,,,,NOBID,,NOXREF
