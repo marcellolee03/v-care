@@ -1,24 +1,16 @@
-import os
-from typing import Literal
+from v_care.ai.models import ModelName, caller_map
 
-from dotenv import load_dotenv
-from openai import OpenAI
 
-load_dotenv()
 class Generator:
     def __init__(self):
-        self.caller_map = {
-            'deepseek_flash': self._call_deepseek_flash,
-            'gpt_luna': self._call_gpt_luna,
-        }
-        
-        self.system_prompt = '''
+        self.system_prompt: str = '''
         <role>
         You are a senior security engineer who writes remediation scripts in Bash.
         </role>
         
         <task>
-        The finding was detected on a service running inside a Docker container. Write a Bash script that remediates it when executed inside that container.
+        A vulnerability was detected on a service running inside a Docker container. 
+        Write a Bash script that remediates the vulnerability when executed inside that container.
         
         Definitions:
         - FIXED: after the container is restarted, re-running the same check against the same port no longer reports the finding. The flaw may remain reachable by other paths (e.g. from inside the container).
@@ -46,54 +38,26 @@ class Generator:
         
         <input>
         You receive a JSON object with:
+        - `environment_details`: details about the container in which the vulnerability was found and where the script will be executed;
         - `vulnerability_details`: details about the vulnerability;
-        - `environment_details`: details about the container in which the script will be executed;
         </input>
         
         <response_format>
         Output only the script as raw text: no Markdown fences and no prose outside the script.
         </response_format>
         '''
-        
-    def _call_deepseek_flash(self, request: str):
-        model = OpenAI(
-            api_key=os.getenv('DEEPSEEK_API_KEY'),
-            base_url='https://api.deepseek.com'
-        )
-        
-        return model.chat.completions.create(
-            model='deepseek-flash',
-            messages=[
-                {'role': 'system', 'content': self.system_prompt},
-                {'role': 'user', 'content': f'{request}'}
-            ],
-            stream=False,
-            reasoning_effort='max',
-        )
-    
-    def _call_gpt_luna(self, request: str):
-        model = OpenAI(
-            api_key=os.getenv('GPT_API_KEY'),
-        )
-
-        return model.chat.completions.create(
-            model='gpt-6-luna',
-            messages=[
-                {'role': 'system', 'content': self.system_prompt},
-                {'role': 'user', 'content': f'{request}'}
-            ],
-            stream=False,
-            reasoning_effort='xhigh',
-        )
 
     def generate(
         self, 
-        model: Literal['deepseek_flash', 'gpt_luna'], 
+        model: ModelName,
         environment_details: str, 
         vulnerability_details: str
     ):
         request: str = f'''
-        vulnerability_details: {vulnerability_details}
         environment_details: {environment_details}
+        vulnerability_details: {vulnerability_details}
         '''
-        return self.caller_map[model](request).choices[0].message.content
+        
+        return caller_map[model](
+            system_prompt=self.system_prompt, request=request
+        ).choices[0].message.content
