@@ -1,4 +1,7 @@
+from pydantic import TypeAdapter
+
 from v_care.ai.models import ModelName, caller_map
+from v_care.models.judgement import Judgement
 
 
 class Judge:
@@ -34,7 +37,7 @@ class Judge:
         </input>
         
         <response_format>
-        A JSON object with the following structure:
+        Return only a JSON object with the following structure. Use double-quoted strings and JSON booleans.
         {
             <script_author_1>:
                 {
@@ -57,13 +60,17 @@ class Judge:
         patches: dict[ModelName, str],
         environment_details: str, 
         vulnerability_details: str
-    ):
+    ) -> dict[ModelName, Judgement]:
         request: str = f'''
         vulnerability_details: {vulnerability_details}
         environment_details: {environment_details}
         scripts: {patches}
         '''
         
-        return caller_map[model](
+        content = caller_map[model](
             system_prompt=self.system_prompt, request=request
         ).choices[0].message.content
+        
+        if content is None:
+            raise ValueError("The judge returned no message content")
+        return TypeAdapter(dict[ModelName, Judgement]).validate_json(content, strict=True)

@@ -141,9 +141,9 @@ printf 'Rotated ActiveMQ web console credentials. New credentials stored in %s\n
 generator = Generator()
 judge = Judge()
 
-print(judge.judge(
+judgement = judge.judge(
     model='deepseek_flash', 
     patches={'deepseek_flash': patch},
     environment_details=details["environment_details"],
     vulnerability_details=details["vulnerability_details"]
-))
+)
