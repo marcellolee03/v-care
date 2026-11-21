@@ -138,11 +138,10 @@ chmod 600 "$credentials_file" 2>/dev/null || true
 printf 'Rotated ActiveMQ web console credentials. New credentials stored in %s\n' "$credentials_file"
 '''
 
-generator = Generator()
-judge = Judge()
+generator = Generator('deepseek_flash')
+judge = Judge('deepseek_flash')
 
 judgement = judge.judge(
-    model='deepseek_flash', 
     patches={'deepseek_flash': patch},
     environment_details=details["environment_details"],
     vulnerability_details=details["vulnerability_details"]

@@ -5,7 +5,7 @@ from v_care.models.judgement import Judgement
 
 
 class Judge:
-    def __init__(self):
+    def __init__(self, model: ModelName):
         self.system_prompt: str = '''
         <role>
         You are a senior security engineer who reviews remediation scripts in Bash.
@@ -54,9 +54,10 @@ class Judge:
         </response_format>
         '''
 
+        self.model = model
+
     def judge(
         self, 
-        model: ModelName,
         patches: dict[ModelName, str],
         environment_details: str, 
         vulnerability_details: str
@@ -67,7 +68,7 @@ class Judge:
         scripts: {patches}
         '''
         
-        content = caller_map[model](
+        content = caller_map[self.model](
             system_prompt=self.system_prompt, request=request
         ).choices[0].message.content
         

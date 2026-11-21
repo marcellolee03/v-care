@@ -2,7 +2,7 @@ from v_care.ai.models import ModelName, caller_map
 
 
 class Generator:
-    def __init__(self):
+    def __init__(self, model: ModelName):
         self.system_prompt: str = '''
         <role>
         You are a senior security engineer who writes remediation scripts in Bash.
@@ -47,9 +47,10 @@ class Generator:
         </response_format>
         '''
 
+        self.model = model
+
     def generate(
         self, 
-        model: ModelName,
         environment_details: str, 
         vulnerability_details: str
     ):
@@ -58,6 +59,6 @@ class Generator:
         vulnerability_details: {vulnerability_details}
         '''
         
-        return caller_map[model](
+        return caller_map[self.model](
             system_prompt=self.system_prompt, request=request
         ).choices[0].message.content
