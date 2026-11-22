@@ -38,7 +38,20 @@ def call_gpt_luna(system_prompt: str, request: str):
         reasoning_effort='xhigh',
     )
 
+def call_gpt_sol(system_prompt: str, request: str):
+    return GPT.chat.completions.create(
+        model='gpt-6.2-sol',
+        messages=[
+            {'role': 'system', 'content': system_prompt},
+            {'role': 'user', 'content': f'{request}'}
+        ],
+        stream=False,
+        reasoning_effort='xhigh',
+    )
+
+
 caller_map = {
     'deepseek_flash': call_deepseek_flash,
     'gpt_luna': call_gpt_luna,
+    'gpt_sol': call_gpt_sol,
 }
