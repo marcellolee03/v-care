@@ -37,20 +37,20 @@ class Judge:
         </input>
         
         <response_format>
-        Return only a JSON object with the following structure. Use double-quoted strings and JSON booleans.
-        {
-            <script_author_1>:
+        Return only a JSON array with the following structure. Use double-quoted strings and JSON booleans.
+        [
                 {
+                    "author": <script_author_1>,
                     "fixes_vulnerability": <does script_1 fix the vulnerability? true or false>,
                     "strategy": <strategy adopted by script_1 to fix the vulnerability (config_change, patch_update, etc.)>
                 },
-            <script_author_2>:
                 {
+                    "author": <script_author_2>,
                     "fixes_vulnerability": <does script_2 fix the vulnerability? true or false>,
                     "strategy": <strategy adopted by script_2 to fix the vulnerability (config_change, patch_update, etc.)>
                 }
             ...
-        }
+        ]
         </response_format>
         '''
 
@@ -61,7 +61,7 @@ class Judge:
         patches: dict[ModelName, str],
         environment_details: str, 
         vulnerability_details: str
-    ) -> dict[ModelName, Judgement]:
+    ) -> list[Judgement]:
         request: str = f'''
         vulnerability_details: {vulnerability_details}
         environment_details: {environment_details}
@@ -74,4 +74,4 @@ class Judge:
         
         if content is None:
             raise ValueError("The judge returned no message content")
-        return TypeAdapter(dict[ModelName, Judgement]).validate_json(content, strict=True)
+        return TypeAdapter(list[Judgement]).validate_json(content, strict=True)

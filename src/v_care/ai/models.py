@@ -5,6 +5,7 @@ from dotenv import load_dotenv
 from openai import OpenAI
 
 type ModelName = Literal['deepseek_flash', 'gpt_luna', 'gpt_sol', 'gemini_hydrogen']
+type GeneratorModelName = Literal['deepseek_flash', 'gemini_hydrogen']
 
 load_dotenv()
 DEEPSEEK = OpenAI(
