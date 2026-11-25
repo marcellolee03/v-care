@@ -1,4 +1,7 @@
+from pydantic import TypeAdapter
+
 from v_care.ai.models import ModelName, caller_map
+from v_care.models.correction_patch import CorrectionPatch
 
 
 class Generator:
@@ -53,12 +56,17 @@ class Generator:
         self, 
         environment_details: str, 
         vulnerability_details: str
-    ):
+    ) -> CorrectionPatch:
         request: str = f'''
         environment_details: {environment_details}
         vulnerability_details: {vulnerability_details}
         '''
         
-        return caller_map[self.model](
+        content = caller_map[self.model](
             system_prompt=self.system_prompt, request=request
         ).choices[0].message.content
+
+        if content is None:
+            raise ValueError("The generator returned no message content")
+            
+        return TypeAdapter(CorrectionPatch).validate_json(content, strict=True)
