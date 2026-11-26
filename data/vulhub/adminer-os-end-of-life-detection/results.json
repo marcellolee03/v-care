@@ -1,0 +1,5 @@
+{
+  "deepseek_flash": true,
+  "claude_haiku": true,
+  "claude_sonnet": null
+}

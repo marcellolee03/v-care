@@ -1,5 +1,3 @@
-from pydantic import TypeAdapter
-
 from v_care.ai.models import ModelName, caller_map
 from v_care.models.correction_patch import CorrectionPatch
 
@@ -50,7 +48,7 @@ class Generator:
         </response_format>
         '''
 
-        self.model = model
+        self.model: ModelName = model
 
     def generate(
         self, 
@@ -68,5 +66,5 @@ class Generator:
 
         if content is None:
             raise ValueError("The generator returned no message content")
-            
-        return TypeAdapter(CorrectionPatch).validate_json(content, strict=True)
+
+        return CorrectionPatch(author=self.model, script=content)
