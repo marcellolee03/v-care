@@ -1,0 +1,17 @@
+[
+  {
+    "author": "claude_haiku",
+    "fixes_vulnerability": false,
+    "strategy": "disable"
+  },
+  {
+    "author": "claude_sonnet",
+    "fixes_vulnerability": true,
+    "strategy": "config_change"
+  },
+  {
+    "author": "deepseek_flash",
+    "fixes_vulnerability": false,
+    "strategy": "disable"
+  }
+]

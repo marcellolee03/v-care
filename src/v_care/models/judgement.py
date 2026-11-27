@@ -2,11 +2,11 @@ from typing import Literal
 
 from pydantic.main import BaseModel
 
-from v_care.ai.models import GeneratorModelName
+from v_care.ai.models import ModelName
 
 
 class Judgement(BaseModel):
-    author: GeneratorModelName
+    author: ModelName
     fixes_vulnerability: bool
     strategy: Literal[
         "config_change", 

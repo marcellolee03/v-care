@@ -1,0 +1,12 @@
+[
+  {
+    "author": "claude_haiku",
+    "fixes_vulnerability": true,
+    "strategy": "config_change"
+  },
+  {
+    "author": "deepseek_flash",
+    "fixes_vulnerability": true,
+    "strategy": "config_change"
+  }
+]
