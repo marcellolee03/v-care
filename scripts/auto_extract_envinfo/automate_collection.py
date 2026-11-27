@@ -2,7 +2,7 @@
 """Automate environment inspection for folders in data/results or custom dir.
 
 Usage:
-    python data/automate_collection.py [--dir <path>] [--clean] [--force] [--target <name>]
+    python scripts/auto_extract_envinfo/automate_collection.py [--dir <path>] [--clean] [--force] [--target <name>]
 """
 
 import argparse
@@ -13,7 +13,7 @@ import sys
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-DEFAULT_RESULTS_DIR = os.path.join(HERE, "results")
+DEFAULT_RESULTS_DIR = os.path.join(HERE, "..", "..", "data", "results")
 INSPECT_SCRIPT = os.path.join(HERE, "inspect_env.py")
 
 

@@ -1,3 +1,6 @@
+backups/
+.agents/
+
 # Agentic coding
 .claude
 
@@ -238,6 +241,3 @@ ENV/
 .ruff_cache/
 .coverage
 htmlcov/
-
-# Generated reader output
-output/

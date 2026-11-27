@@ -1,0 +1,590 @@
+IP,Hostname,Port,Port Protocol,CVSS,Severity,QoD,Solution Type,NVT Name,Summary,Specific Result,NVT OID,CVEs,Task ID,Task Name,Timestamp,Result ID,Impact,Solution,Affected Software/OS,Vulnerability Insight,Vulnerability Detection Method,Product Detection Result,BIDs,CERTs,Other References
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","Adobe ColdFusion Detection (HTTP)","HTTP based detection of Adobe ColdFusion.","Detected Adobe ColdFusion
+
+Version:       8.0.1.195765
+Location:      /
+CPE:           cpe:/a:adobe:coldfusion:8.0.1.195765
+
+Concluded from version/product identification result:
+WSDL created by ColdFusion version 8,0,1,195765-->
+
+Concluded from version/product identification location:
+http://fedora:6767/CFIDE/administrator/index.cfm
+http://fedora:6767/vt-test-non-existent.cfm
+http://fedora:6767/CFIDE/adminapi/base.cfc?wsdl
+",1.3.6.1.4.1.25623.1.0.100773,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,f08627e6-3a19-4fe7-9c9a-52be0729b108,"","","","","
+Details:
+Adobe ColdFusion Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.100773)
+Version used: 2026-07-07T06:54:03Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,9.8,Critical,99,"VendorFix","Adobe ColdFusion Directory Traversal Vulnerability (APSB10-18)","Adobe ColdFusion is prone to a directory traversal vulnerability
+  because it fails to sufficiently sanitize user-supplied input.","Vulnerable URL: http://fedora:6767/CFIDE/wizards/common/_logintowizard.cfm
+",1.3.6.1.4.1.25623.1.0.100772,"CVE-2010-2861",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,954a2032-9e4e-487f-b1e2-24f314f61c5c,"Exploiting this issue may allow an attacker to obtain sensitive
+  information that could aid in further attacks.","Updates are available. Please see the references for more
+  information.","Adobe ColdFusion version 9.0.1 and prior is known to be
+  affected.","","Sends multiple crafted HTTP POST requests and checks the
+  responses.
+Details:
+Adobe ColdFusion Directory Traversal Vulnerability (APSB10-18)
+(OID: 1.3.6.1.4.1.25623.1.0.100772)
+Version used: 2025-04-15T05:54:49Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,4.3,Medium,80,"VendorFix","Adobe ColdFusion Help Page Cross Site Scripting Vulnerability","Adobe ColdFusion is prone to a cross site scripting vulnerability.","Installed version: 8.0.1.195765
+Fixed version:     Upgrade to ColdFusion 9 or later
+Installation
+path / port:       /
+
+",1.3.6.1.4.1.25623.1.0.812286,"CVE-2014-5315",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,a511cd7c-b700-4470-a244-b28170aa2440,"Successful exploitation will allow remote
+  attackers to inject arbitrary web script or HTML via unspecified vectors.","Upgrade to ColdFusion 9 or later.","ColdFusion 8.0.1 and earlier.","The flaw is due to an input validation
+  error in Help page.","Checks if a vulnerable version is present on the target host.
+Details:
+Adobe ColdFusion Help Page Cross Site Scripting Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.812286)
+Version used: 2025-01-15T05:38:11Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,4.3,Medium,99,"VendorFix","Adobe ColdFusion HTTP Response Splitting Vulnerability (APSB12-15)","Adobe ColdFusion is prone to a response splitting vulnerability.","Vulnerable URL: http://fedora:6767/CFIDE/adminapi/base.cfc/%0d%0aX-VT_Header:1795811987
+",1.3.6.1.4.1.25623.1.0.802660,"CVE-2012-2041",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,57fcb8ad-c674-48bd-aa63-931dc945ee4f,"Successful exploitation will allow attackers to influence or misrepresent how
+  web content is served, cached, or interpreted. This could aid in various
+  attacks that try to entice client users into a false sense of trust.","Apply the patch from the referenced advisory.","Adobe ColdFusion versions 8.0 through 9.0.1.","This flaw exists because the application does not validate an unspecified
+  HTTP header before returning it to the user. This can be exploited to insert
+  arbitrary HTTP headers, which will be included in a response sent to the user.","
+Details:
+Adobe ColdFusion HTTP Response Splitting Vulnerability (APSB12-15)
+(OID: 1.3.6.1.4.1.25623.1.0.802660)
+Version used: 2025-01-15T05:38:11Z
+","","","DFN-CERT-2012-1121",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","Adobe JRun Detection (HTTP)","HTTP based detection of Adobe JRun (formerly maintained by
+  Allaire and Macromedia).","Detected Adobe JRun
+
+Version:       unknown
+Location:      /
+CPE:           cpe:/a:adobe:jrun
+
+Concluded from version/product identification result:
+Server: JRun Web Server
+
+Concluded from version/product identification location:
+http://fedora:6767/
+",1.3.6.1.4.1.25623.1.0.900822,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,9cf345da-4ac3-4f17-b228-d74d1bffb036,"","","","","
+Details:
+Adobe JRun Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.900822)
+Version used: 2023-06-23T16:09:17Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,70,"","Allowed HTTP Methods Enumeration","Enumerates which HTTP methods are allowed.","The following list contains the URLs and corresponding supported HTTP methods.
+
+URL                 | HTTP Methods
+-----------------------------------
+http://fedora:6767/ | GET,HEAD,POST
+",1.3.6.1.4.1.25623.1.0.153974,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,ed56065e-8c19-4fc2-a9e2-6df614eb1c4d,"","","","'- Basic HTTP methods: GET, HEAD, POST, PUT, DELETE, CONNECT,
+  OPTIONS, TRACE
+
+  - Extended HTTP methods: ACL, BASELINE-CONTROL, BIND, CHECKIN, CHECKOUT, COPY, LABEL, LINK, LOCK,
+  MERGE, MKACTIVITY, MKCALENDAR, MKCOL, MKREDIRECTREF, MKWORKSPACE, MOVE, ORDERPATCH, PATCH, PRI,
+  PROPFIND, PROPPATCH, REBIND, REPORT, SEARCH, UNBIND, UNCHECKOUT, UNLINK, UNLOCK, UPDATE,
+  UPDATEREDIRECTREF, VERSION-CONTROL","Sends multiple HTTP requests and checks the responses.
+
+  Disclaimer:
+
+  - This enumeration script is provided 'as is' (means no support is given) and only providing
+  rudimentary information about the possible enabled methods
+
+  - This script doesn't guarantee completeness or full reliability
+
+  For more reliable determination of the enabled HTTP methods please inspect the configuration of
+  the web server manually and directly on the target host.
+Details:
+Allowed HTTP Methods Enumeration
+(OID: 1.3.6.1.4.1.25623.1.0.153974)
+Version used: 2025-02-28T05:38:49Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","Axway SecureTransport MFT Detection (HTTP)","HTTP based detection of Axway SecureTransport MFT.","Detected Axway SecureTransport MFT
+
+Version:       unknown
+Location:      /
+CPE:           cpe:/a:axway:securetransport
+
+Concluded from version/product identification location:
+  http://fedora:6767/
+",1.3.6.1.4.1.25623.1.0.111019,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,28c73913-71dd-4d83-967e-d71b5cdbe2b8,"","","","","
+Details:
+Axway SecureTransport MFT Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.111019)
+Version used: 2026-07-31T16:15:30Z
+","","","",""
+192.168.20.58,fedora,,,0.0,Log,80,"","CPE Inventory","This routine uses information collected by other routines about
+  CPE identities of operating systems, services and applications detected during the scan.
+
+  Note: Some CPEs for specific products might show up twice or more in the output. Background:
+
+  After a product got renamed or a specific vendor was acquired by another one it might happen that
+  a product gets a new CPE within the NVD CPE Dictionary but older entries are kept with the older
+  CPE.","192.168.20.58|cpe:/a:adobe:coldfusion:8.0.1.195765
+192.168.20.58|cpe:/a:adobe:jrun
+192.168.20.58|cpe:/a:axway:securetransport
+192.168.20.58|cpe:/a:fckeditor:fckeditor:2.5
+192.168.20.58|cpe:/o:linux:kernel
+
+",1.3.6.1.4.1.25623.1.0.810002,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,a8885885-de1f-4227-8a99-92cd42164eea,"","","","","
+Details:
+CPE Inventory
+(OID: 1.3.6.1.4.1.25623.1.0.810002)
+Version used: 2022-07-27T10:11:28Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,4.6,Medium,70,"Workaround","FCKeditor Connectors Arbitrary File Upload Vulnerability","Web applications providing wrong configured FCKeditor connectors
+  might be prone to an arbitrary-file-upload vulnerability.","It was possible to detect a connector at:
+
+/CFIDE/scripts/ajax/FCKeditor/editor/filemanager/connectors/cfm/connector.cfm?Command=GetFolders&Type=File&CurrentFolder=%2F
+",1.3.6.1.4.1.25623.1.0.111022,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,4cad2869-3106-49f3-a788-5efcb3174c9c,"An attacker may leverage this issue to upload arbitrary files to
+  the affected system. This can result in arbitrary code execution within the context of the
+  vulnerable application.","Check the config of this connector and make sure that no
+  arbitrary file extensions are allowed for uploading.","","","
+Details:
+FCKeditor Connectors Arbitrary File Upload Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.111022)
+Version used: 2024-07-19T15:39:06Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,4.6,Medium,70,"Workaround","FCKeditor Connectors Arbitrary File Upload Vulnerability","Web applications providing wrong configured FCKeditor connectors
+  might be prone to an arbitrary-file-upload vulnerability.","It was possible to detect a connector at:
+
+/cfide/scripts/ajax/FCKeditor/editor/filemanager/connectors/cfm/connector.cfm?Command=GetFolders&Type=File&CurrentFolder=%2F
+",1.3.6.1.4.1.25623.1.0.111022,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,ac4c818e-9e77-445c-8e48-7132bd75af78,"An attacker may leverage this issue to upload arbitrary files to
+  the affected system. This can result in arbitrary code execution within the context of the
+  vulnerable application.","Check the config of this connector and make sure that no
+  arbitrary file extensions are allowed for uploading.","","","
+Details:
+FCKeditor Connectors Arbitrary File Upload Vulnerability
+(OID: 1.3.6.1.4.1.25623.1.0.111022)
+Version used: 2024-07-19T15:39:06Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","FCKeditor Detection (HTTP)","HTTP based detection of FCKeditor.","Detected FCKeditor
+
+Version:       2.5
+Location:      /CFIDE/scripts/ajax/FCKeditor
+CPE:           cpe:/a:fckeditor:fckeditor:2.5
+
+Concluded from version/product identification result:
+FCKeditor.prototype.Version			= '2.5'
+
+Concluded from version/product identification location:
+http://fedora:6767/CFIDE/scripts/ajax/FCKeditor/fckeditor.js
+",1.3.6.1.4.1.25623.1.0.117498,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,1d801a7d-a915-4df2-a038-2fd6b301d836,"","","","","
+Details:
+FCKeditor Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.117498)
+Version used: 2025-06-24T05:41:22Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","FCKeditor Detection (HTTP)","HTTP based detection of FCKeditor.","Detected FCKeditor
+
+Version:       2.5
+Location:      /cfide/scripts/ajax/FCKeditor
+CPE:           cpe:/a:fckeditor:fckeditor:2.5
+
+Concluded from version/product identification result:
+FCKeditor.prototype.Version			= '2.5'
+
+Concluded from version/product identification location:
+http://fedora:6767/cfide/scripts/ajax/FCKeditor/fckeditor.js
+",1.3.6.1.4.1.25623.1.0.117498,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,cc4a0c2a-77db-41b0-b0ca-0c6e7201169e,"","","","","
+Details:
+FCKeditor Detection (HTTP)
+(OID: 1.3.6.1.4.1.25623.1.0.117498)
+Version used: 2025-06-24T05:41:22Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,7.5,High,80,"Mitigation","FCKeditor End of Life (EOL) Detection","The remote host is using the FCKeditor which is discontinued and
+  will not receive any security updates.","The ""FCKeditor"" product on the remote host has reached the end of life.
+
+CPE:               cpe:/a:fckeditor:fckeditor
+Location/URL:      /CFIDE/scripts/ajax/FCKeditor
+EOL version:       All versions
+EOL date:          unknown
+",1.3.6.1.4.1.25623.1.0.117499,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,f6b4bc67-7d79-4568-ad08-fa8d63947b70,"A discontinued product is not receiving any security updates from
+  the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise the
+  security of this host.","Replace FCKeditor with CKEditor which is still supported by the
+  vendor.","","","Checks if the target host is using a discontinued product.
+Details:
+FCKeditor End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.117499)
+Version used: 2025-04-15T05:54:49Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,7.5,High,80,"Mitigation","FCKeditor End of Life (EOL) Detection","The remote host is using the FCKeditor which is discontinued and
+  will not receive any security updates.","The ""FCKeditor"" product on the remote host has reached the end of life.
+
+CPE:               cpe:/a:fckeditor:fckeditor
+Location/URL:      /cfide/scripts/ajax/FCKeditor
+EOL version:       All versions
+EOL date:          unknown
+",1.3.6.1.4.1.25623.1.0.117499,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,d7323968-3ee6-48ba-baa0-24d3a9dd6654,"A discontinued product is not receiving any security updates from
+  the vendor. Unfixed security vulnerabilities might be leveraged by an attacker to compromise the
+  security of this host.","Replace FCKeditor with CKEditor which is still supported by the
+  vendor.","","","Checks if the target host is using a discontinued product.
+Details:
+FCKeditor End of Life (EOL) Detection
+(OID: 1.3.6.1.4.1.25623.1.0.117499)
+Version used: 2025-04-15T05:54:49Z
+","","","",""
+192.168.20.58,fedora,,,0.0,Log,80,"","Hostname Determination Reporting","The script reports information on how the hostname of the target
+  was determined.","Hostname determination for IP 192.168.20.58:
+
+Hostname|Source
+fedora|Reverse-DNS
+",1.3.6.1.4.1.25623.1.0.108449,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,bbfb392c-6a0f-48df-a3c7-442134060fe9,"","","","","
+Details:
+Hostname Determination Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.108449)
+Version used: 2022-07-27T10:11:28Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","HTTP Security Headers Detection","All known security headers are being checked on the remote web
+  server.
+
+  On completion a report will hand back whether a specific security header has been implemented
+  (including its value and if it is deprecated) or is missing on the target.","Missing Headers                   | More Information
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Content-Security-Policy           | https://owasp.org/www-project-secure-headers/#content-security-policy
+Cross-Origin-Embedder-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Opener-Policy        | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Cross-Origin-Resource-Policy      | https://scotthelme.co.uk/coop-and-coep/, Note: This is an upcoming header
+Document-Policy                   | https://w3c.github.io/webappsec-feature-policy/document-policy#document-policy-http-header
+Feature-Policy                    | https://owasp.org/www-project-secure-headers/#feature-policy, Note: The Feature Policy header has been renamed to Permissions Policy
+Permissions-Policy                | https://w3c.github.io/webappsec-feature-policy/#permissions-policy-http-header-field
+Referrer-Policy                   | https://owasp.org/www-project-secure-headers/#referrer-policy
+Sec-Fetch-Dest                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Mode                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-Site                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+Sec-Fetch-User                    | https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers#fetch_metadata_request_headers, Note: This is a new header supported only in newer browsers like e.g. Firefox 90
+X-Content-Type-Options            | https://owasp.org/www-project-secure-headers/#x-content-type-options
+X-Frame-Options                   | https://owasp.org/www-project-secure-headers/#x-frame-options
+X-Permitted-Cross-Domain-Policies | https://owasp.org/www-project-secure-headers/#x-permitted-cross-domain-policies
+X-XSS-Protection                  | https://owasp.org/www-project-secure-headers/#x-xss-protection, Note: Most major browsers have dropped / deprecated support for this header in 2020.
+",1.3.6.1.4.1.25623.1.0.112081,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,a2d4828f-32eb-43f1-a370-cf40b14d7cd8,"","","","","
+Details:
+HTTP Security Headers Detection
+(OID: 1.3.6.1.4.1.25623.1.0.112081)
+Version used: 2025-03-21T15:40:43Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","HTTP Server Banner Enumeration","This script tries to detect / enumerate different HTTP server
+  banner (e.g. from a frontend, backend or proxy server) by sending various different HTTP requests
+  (valid and invalid ones).","It was possible to enumerate the following HTTP server banner(s):
+
+Server banner           | Enumeration technique
+------------------------------------------------------------------------------------------
+Server: JRun Web Server | Invalid HTTP 00.5 GET request (non-existent HTTP version) to '/'
+",1.3.6.1.4.1.25623.1.0.108708,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,ea7b45c6-9c55-465e-857c-1c3da1e0d3f0,"","","","","
+Details:
+HTTP Server Banner Enumeration
+(OID: 1.3.6.1.4.1.25623.1.0.108708)
+Version used: 2025-01-31T15:39:24Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","HTTP Server type and version","This script detects and reports the HTTP Server's banner
+  which might provide the type and version of it.","The remote HTTP Server banner is:
+
+Server: JRun Web Server
+",1.3.6.1.4.1.25623.1.0.10107,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,818ca521-786f-46cb-8a67-301b6aaba430,"","","","","
+Details:
+HTTP Server type and version
+(OID: 1.3.6.1.4.1.25623.1.0.10107)
+Version used: 2023-08-01T13:29:10Z
+","","","",""
+192.168.20.58,fedora,,,2.1,Low,80,"Mitigation","ICMP Timestamp Reply Information Disclosure","The remote host responded to an ICMP timestamp request.","The following response / ICMP packet has been received:
+- ICMP Type: 14
+- ICMP Code: 0
+",1.3.6.1.4.1.25623.1.0.103190,"CVE-1999-0524",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,7aaf27aa-cc75-41c8-ae05-a547798a90b0,"This information could theoretically be used to exploit weak
+  time-based random number generators in other services.","Various mitigations are possible:
+
+  - Disable the support for ICMP timestamp on the remote host completely
+
+  - Protect the remote host by a firewall, and block ICMP packets passing through the firewall in
+  either direction (either completely or only for untrusted networks)","","The Timestamp Reply is an ICMP message which replies to a
+  Timestamp message. It consists of the originating timestamp sent by the sender of the Timestamp as
+  well as a receive timestamp and a transmit timestamp.","Sends an ICMP Timestamp (Type 13) request and checks if a
+  Timestamp Reply (Type 14) is received.
+Details:
+ICMP Timestamp Reply Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.103190)
+Version used: 2025-01-21T05:37:33Z
+","","","DFN-CERT-2014-0658,CB-K15/1514,CB-K14/0632",""
+192.168.20.58,fedora,,,0.0,Log,80,"","OS Detection Consolidation and Reporting","This script consolidates the OS information detected by several
+  VTs and tries to find the best matching OS.
+
+  Furthermore it reports all previously collected information leading to this best matching OS. It
+  also reports possible additional information which might help to improve the OS detection.
+
+  If any of this information is wrong or could be improved please consider to report these to the
+  referenced community forum.","Best matching OS:
+
+OS:           Linux Kernel
+CPE:          cpe:/o:linux:kernel
+Found by VT:  1.3.6.1.4.1.25623.1.0.102002 (Operating System (OS) Detection (ICMP))
+Concluded from ICMP based OS fingerprint
+Setting key ""Host/runs_unixoide"" based on this information
+",1.3.6.1.4.1.25623.1.0.105937,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,4e293583-a1eb-482d-a1a6-bf09d6e81438,"","","","","
+Details:
+OS Detection Consolidation and Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.105937)
+Version used: 2026-07-31T06:37:17Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","Services","This plugin performs service detection.","A web server is running on this port
+",1.3.6.1.4.1.25623.1.0.10330,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,d800118f-1ba9-48d5-a43c-3b203e34e9cd,"","","","This plugin attempts to guess which service is running on the
+  remote port(s). For instance, it searches for a web server which could listen on another port than
+  80 or 443 and makes this information available for other check routines.","
+Details:
+Services
+(OID: 1.3.6.1.4.1.25623.1.0.10330)
+Version used: 2025-03-05T05:38:53Z
+","","","",""
+192.168.20.58,fedora,,,2.6,Low,80,"Mitigation","TCP Timestamps Information Disclosure","The remote host implements TCP timestamps and therefore allows
+  to compute the uptime.","It was detected that the host implements RFC1323/RFC7323.
+
+The following timestamps were retrieved with a delay of 1 seconds in-between:
+Packet 1: 978856239
+Packet 2: 2825325334
+",1.3.6.1.4.1.25623.1.0.80091,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,ee6f4e1c-c4e3-449a-86b9-9cc2f4754b6f,"A side effect of this feature is that the uptime of the remote
+  host can sometimes be computed.","To disable TCP timestamps on linux add the line
+  'net.ipv4.tcp_timestamps = 0' to /etc/sysctl.conf. Execute 'sysctl -p' to apply the settings at
+  runtime.
+
+  To disable TCP timestamps on Windows execute 'netsh int tcp set global timestamps=disabled'
+
+  Starting with Windows Server 2008 and Vista, the timestamp can not be completely disabled.
+
+  The default behavior of the TCP/IP stack on this Systems is to not use the Timestamp options when
+  initiating TCP connections, but use them if the TCP peer that is initiating communication includes
+  them in their synchronize (SYN) segment.
+
+  See the references for more information.","TCP implementations that implement RFC1323/RFC7323.","The remote host implements TCP timestamps, as defined by
+  RFC1323/RFC7323.","Special IP packets are forged and sent with a little delay in
+  between to the target IP. The responses are searched for a timestamps. If found, the timestamps
+  are reported.
+Details:
+TCP Timestamps Information Disclosure
+(OID: 1.3.6.1.4.1.25623.1.0.80091)
+Version used: 2023-12-15T16:10:08Z
+","","","",""
+192.168.20.58,fedora,,,0.0,Log,80,"","Traceroute","Collect information about the network route and
+  network distance between the scanner host and the target host.","Network route from scanner (172.19.0.2) to target (192.168.20.58):
+
+172.19.0.2
+192.168.20.58
+
+Network distance between scanner and target: 2
+",1.3.6.1.4.1.25623.1.0.51662,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,906b5334-d22b-4826-88e3-aa09a8655ade,"","","","For internal networks, the distances are usually
+  small, often less than 4 hosts between scanner and target. For public targets the
+  distance is greater and might be 10 hosts or more.","A combination of the protocols ICMP and TCP is used
+  to determine the route. This method is applicable for IPv4 only and it is also known as
+  'traceroute'.
+Details:
+Traceroute
+(OID: 1.3.6.1.4.1.25623.1.0.51662)
+Version used: 2022-10-17T11:13:19Z
+","","","",""
+192.168.20.58,fedora,6767,tcp,0.0,Log,80,"","Web Application Scanning Consolidation / Info Reporting","The script consolidates and reports various information for web
+  application (formerly called 'CGI') scanning.
+
+  This information is based on the following scripts / settings:
+
+  - HTTP-Version Detection (OID: 1.3.6.1.4.1.25623.1.0.100034)
+
+  - No 404 check (OID: 1.3.6.1.4.1.25623.1.0.10386)
+
+  - Web mirroring / webmirror.nasl (OID: 1.3.6.1.4.1.25623.1.0.10662)
+
+  - Directory Scanner / DDI_Directory_Scanner.nasl (OID: 1.3.6.1.4.1.25623.1.0.11032)
+
+  - The configured 'cgi_path' within the 'Scanner Preferences' of the scan config in use
+
+  - The configured 'Enable CGI scanning', 'Enable generic web application scanning' and
+  'Add historic /scripts and /cgi-bin to directories for CGI scanning' within the
+  'Global variable settings' of the scan config in use
+
+  If you think any of this information is wrong please report it to the referenced community
+  forum.","The Hostname/IP ""fedora"" was used to access the remote host.
+
+Generic web application scanning is disabled for this host via the ""Enable generic web application scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+Requests to this service are done via HTTP/1.0.
+
+This service seems to be able to host PHP scripts.
+
+This service seems to be able to host ASP scripts.
+
+The User-Agent ""Mozilla/5.0 [en] (X11, U; OpenVAS-VT <version replaced>)"" was used to access the remote host.
+
+Historic /scripts and /cgi-bin are not added to the directories used for web application scanning. You can enable this again with the ""Add historic /scripts and /cgi-bin to directories for CGI scanning"" option within the ""Global variable settings"" of the scan config in use.
+
+A possible recursion was detected during web application scanning:
+
+The service is using a relative URL in one or more HTML references where e.g. /file1.html contains <a href=""subdir/file2.html""> and a subsequent request for subdir/file2.html is linking to subdir/file2.html. This would resolves to subdir/subdir/file2.html causing a recursion. To work around this counter-measures have been enabled but the service should be fixed as well to not use such problematic links. Below an excerpt of URLs is shown to help identify those issues.
+
+Syntax : URL (HTML link)
+
+http://fedora:6767/CFIDE/adminapi/.. (adminapi/)
+http://fedora:6767/CFIDE/adminapi/.. (administrator/)
+http://fedora:6767/CFIDE/adminapi/.. (classes/)
+http://fedora:6767/CFIDE/adminapi/.. (componentutils/)
+http://fedora:6767/CFIDE/adminapi/.. (debug/)
+
+The following directories were used for web application scanning:
+
+http://fedora:6767/
+http://fedora:6767/CFIDE
+http://fedora:6767/CFIDE/CFIDE
+http://fedora:6767/CFIDE/adminapi
+http://fedora:6767/CFIDE/adminapi/_datasource
+http://fedora:6767/CFIDE/adminapi/customtags
+http://fedora:6767/CFIDE/adminapi/customtags/resources
+http://fedora:6767/CFIDE/administrator
+http://fedora:6767/CFIDE/administrator/archives
+http://fedora:6767/CFIDE/administrator/entman
+http://fedora:6767/CFIDE/administrator/help
+http://fedora:6767/CFIDE/administrator/mail
+http://fedora:6767/CFIDE/administrator/settings
+http://fedora:6767/CFIDE/cfide
+http://fedora:6767/CFIDE/classes
+http://fedora:6767/CFIDE/componentutils
+http://fedora:6767/CFIDE/componentutils/gatewaymenu
+http://fedora:6767/CFIDE/debug
+http://fedora:6767/CFIDE/debug/includes
+http://fedora:6767/CFIDE/scripts
+http://fedora:6767/CFIDE/scripts/ajax
+http://fedora:6767/CFIDE/scripts/ajax/FCKeditor
+http://fedora:6767/CFIDE/scripts/ajax/dump
+http://fedora:6767/CFIDE/scripts/ajax/ext
+http://fedora:6767/CFIDE/scripts/ajax/messages
+http://fedora:6767/CFIDE/scripts/ajax/package
+http://fedora:6767/CFIDE/scripts/ajax/resources
+http://fedora:6767/CFIDE/scripts/ajax/spry
+http://fedora:6767/CFIDE/scripts/ajax/yui
+http://fedora:6767/CFIDE/scripts/xsl
+http://fedora:6767/CFIDE/wizards
+http://fedora:6767/CFIDE/wizards/common
+http://fedora:6767/cfide
+http://fedora:6767/cfide/adminapi
+http://fedora:6767/cfide/adminapi/_datasource
+http://fedora:6767/cfide/adminapi/customtags
+http://fedora:6767/cfide/administrator
+http://fedora:6767/cfide/classes
+http://fedora:6767/cfide/componentutils
+http://fedora:6767/cfide/componentutils/gatewaymenu
+http://fedora:6767/cfide/debug
+http://fedora:6767/cfide/debug/includes
+http://fedora:6767/cfide/scripts
+http://fedora:6767/cfide/scripts/ajax
+http://fedora:6767/cfide/scripts/ajax/FCKeditor
+http://fedora:6767/cfide/scripts/ajax/dump
+http://fedora:6767/cfide/scripts/ajax/ext
+http://fedora:6767/cfide/scripts/ajax/messages
+http://fedora:6767/cfide/scripts/ajax/package
+http://fedora:6767/cfide/scripts/ajax/spry
+http://fedora:6767/cfide/scripts/ajax/yui
+http://fedora:6767/cfide/scripts/xsl
+http://fedora:6767/cfide/wizards
+http://fedora:6767/cfide/wizards/common
+http://fedora:6767/flex2gateway
+http://fedora:6767/flex2gateway/cfamfpolling
+http://fedora:6767/flex2gateway/http
+
+While this is not, in and of itself, a bug, you should manually inspect these directories to ensure that they are in compliance with company security standards
+
+The following directories were excluded from web application scanning because the ""Regex pattern to exclude directories from CGI scanning"" setting of the VT ""Global variable settings"" (OID: 1.3.6.1.4.1.25623.1.0.12288) for this scan was: ""/(index\.php|image|img|css|js$|js/|javascript|style|theme|icon|jquery|graphic|grafik|picture|bilder|thumbnail|media/|skins?/)""
+
+http://fedora:6767/CFIDE/administrator/images
+http://fedora:6767/CFIDE/images
+http://fedora:6767/CFIDE/images/skins
+http://fedora:6767/CFIDE/scripts/css
+http://fedora:6767/cfide/administrator/images
+http://fedora:6767/cfide/images
+http://fedora:6767/cfide/images/skins
+http://fedora:6767/cfide/scripts/css
+
+Directory listing/indexing found at:
+
+http://fedora:6767/
+http://fedora:6767/CFIDE/
+http://fedora:6767/CFIDE/..
+http://fedora:6767/CFIDE/adminapi/
+http://fedora:6767/CFIDE/adminapi/..
+http://fedora:6767/CFIDE/adminapi/_datasource/
+http://fedora:6767/CFIDE/adminapi/_datasource/..
+http://fedora:6767/CFIDE/adminapi/customtags/
+http://fedora:6767/CFIDE/classes/
+http://fedora:6767/CFIDE/classes/..
+http://fedora:6767/CFIDE/componentutils/
+http://fedora:6767/CFIDE/componentutils/..
+http://fedora:6767/CFIDE/componentutils/gatewaymenu/
+http://fedora:6767/CFIDE/debug/
+http://fedora:6767/CFIDE/debug/..
+http://fedora:6767/CFIDE/debug/includes/
+http://fedora:6767/CFIDE/images/
+http://fedora:6767/CFIDE/images/..
+http://fedora:6767/CFIDE/images/skins/
+http://fedora:6767/CFIDE/scripts/
+http://fedora:6767/CFIDE/scripts/..
+http://fedora:6767/CFIDE/scripts/ajax/
+http://fedora:6767/CFIDE/scripts/css/
+http://fedora:6767/CFIDE/scripts/xsl/
+http://fedora:6767/CFIDE/wizards/
+http://fedora:6767/CFIDE/wizards/..
+http://fedora:6767/CFIDE/wizards/common/
+http://fedora:6767/cfide/
+http://fedora:6767/cfide/..
+http://fedora:6767/cfide/adminapi/
+http://fedora:6767/cfide/adminapi/..
+http://fedora:6767/cfide/adminapi/_datasource/
+http://fedora:6767/cfide/adminapi/customtags/
+http://fedora:6767/cfide/classes/
+http://fedora:6767/cfide/classes/..
+http://fedora:6767/cfide/componentutils/
+http://fedora:6767/cfide/componentutils/..
+http://fedora:6767/cfide/componentutils/gatewaymenu/
+http://fedora:6767/cfide/debug/
+http://fedora:6767/cfide/debug/..
+http://fedora:6767/cfide/debug/includes/
+http://fedora:6767/cfide/images/
+http://fedora:6767/cfide/images/..
+http://fedora:6767/cfide/images/skins/
+http://fedora:6767/cfide/scripts/
+http://fedora:6767/cfide/scripts/..
+http://fedora:6767/cfide/scripts/ajax/
+http://fedora:6767/cfide/scripts/css/
+http://fedora:6767/cfide/scripts/xsl/
+http://fedora:6767/cfide/wizards/
+http://fedora:6767/cfide/wizards/..
+http://fedora:6767/cfide/wizards/common/
+
+The ""Number of pages to mirror"" setting (Current: 200) of the VT ""Web mirroring"" (OID: 1.3.6.1.4.1.25623.1.0.10662) was reached. Raising this limit allows to mirror this host more thoroughly but might increase the scanning time.
+
+The following CGIs were discovered:
+
+Syntax : cginame (arguments [default value])
+
+http://fedora:6767/CFIDE/componentutils/_component_cfcToHTML.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/_component_cfcToMCDL.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/_component_style.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/_component_utils.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/cfcexplorer.cfc (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/cfcexplorer_utils.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/componentdetail.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/componentdoc.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/componentlist.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/login.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/packagelist.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/CFIDE/componentutils/utils.cfc (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/_component_cfcToHTML.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/_component_cfcToMCDL.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/_component_style.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/_component_utils.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/cfcexplorer.cfc (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/cfcexplorer_utils.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/componentdetail.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/componentdoc.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/componentlist.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/login.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/packagelist.cfm (j_password_required [Password Required] submit [Login] j_password [] )
+http://fedora:6767/cfide/componentutils/utils.cfc (j_password_required [Password Required] submit [Login] j_password [] )
+",1.3.6.1.4.1.25623.1.0.111038,"",5e356673-dadd-4511-9268-d4a92e5e789a,"deepseek_scan",2026-11-27T20:35:10Z,55255b50-588b-4445-ba0a-5e38f3d8df8d,"","","","","
+Details:
+Web Application Scanning Consolidation / Info Reporting
+(OID: 1.3.6.1.4.1.25623.1.0.111038)
+Version used: 2026-02-24T05:57:09Z
+","","","",""
